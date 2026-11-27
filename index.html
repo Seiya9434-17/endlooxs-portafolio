@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ENDLOOXS — Edgar Rodriguez | Identidad Digital y Proyectos Multidisciplinarios</title>
-  <meta name="description" content="Portafolio oficial de ENDLOOXS por Edgar Rodriguez en Panamá. Optimización de sistemas Windows 11 (Optima0x), ensambles PC custom de gama alta (+$1,000 USD), Community Management y dirección visual @endlooxs." />
+  <title>ENDLOOXS — Edgar Rodriguez | Identidad Digital, Sistemas y Proyectos</title>
+  <meta name="description" content="Portafolio oficial de ENDLOOXS por Edgar Rodriguez en Panamá. Optimización de sistemas Windows 11 (Optima0x), ensambles PC custom (+$1,000 USD), Community Management y dirección visual @endlooxs." />
 
-  <!-- Google Fonts: Space Grotesk (Display), Plus Jakarta Sans (UI/Body), JetBrains Mono (Telemetry) -->
+  <!-- Open Graph / Vista previa al compartir enlace -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ENDLOOXS — Edgar Rodriguez | Ecosistema Multidisciplinario" />
+  <meta property="og:description" content="Identidad digital, optimización Windows 11 (Optima0x), ensambles PC custom (+$1,000 USD) y dirección visual @endlooxs." />
+  <meta property="og:image" content="./logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon vectorial del emblema -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230E1117' stroke='%23D4AF37' stroke-width='3'/%3E%3Cpath d='M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z' fill='%23D4AF37' fill-opacity='0.2' stroke='%23D4AF37' stroke-width='3.6' stroke-linejoin='round'/%3E%3Cpath d='M35 63L42.5 59.5L40 69.5L35 63Z' fill='%23E11D48'/%3E%3C/svg%3E" />
+
+  <!-- Fuentes: Space Grotesk, Plus Jakarta Sans y JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -23,8 +33,8 @@
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            psBlue: '#0055FF',
-            psnBlue: '#0070CC',
+            electricBlue: '#0055FF',
+            cobaltBlue: '#0070CC',
             wolfGold: '#D4AF37',
             crimson: '#E11D48',
           },
@@ -33,425 +43,20 @@
     };
   </script>
 
-  <style>
-    /* =========================================================================
-       1. DESIGN TOKENS — BLANCO FUTURISTA (DEFAULT), OBSIDIANA & AZUL PROFUNDO
-       ========================================================================= */
-    :root,
-    [data-theme="light"] {
-      --bg-page: #FFFFFF;
-      --bg-ice: #F4F7FB;
-      --bg-surface: #FFFFFF;
-      --bg-surface-alt: #EDF2F8;
-      --bg-glass: rgba(255, 255, 255, 0.80);
-      --bg-glass-strong: rgba(255, 255, 255, 0.96);
-      --ink-primary: #090E1A;
-      --ink-secondary: #475569;
-      --ink-muted: #64748B;
-      --hairline: rgba(15, 23, 42, 0.085);
-      --hairline-strong: rgba(15, 23, 42, 0.16);
-      --shadow-soft: 0 10px 30px -15px rgba(9, 14, 26, 0.08), 0 1px 3px rgba(9, 14, 26, 0.04);
-      --shadow-elevated: 0 28px 60px -20px rgba(0, 112, 204, 0.17), 0 6px 18px -6px rgba(9, 14, 26, 0.06);
-      --spotlight-color: rgba(0, 112, 204, 0.085);
-      --utility-bg: #050814;
-      --utility-ink: rgba(255, 255, 255, 0.86);
-    }
-
-    [data-theme="dark"] {
-      --bg-page: #070910;
-      --bg-ice: #0C101C;
-      --bg-surface: #111625;
-      --bg-surface-alt: #182034;
-      --bg-glass: rgba(9, 12, 22, 0.80);
-      --bg-glass-strong: rgba(13, 18, 31, 0.96);
-      --ink-primary: #F8FAFC;
-      --ink-secondary: #94A3B8;
-      --ink-muted: #64748B;
-      --hairline: rgba(255, 255, 255, 0.085);
-      --hairline-strong: rgba(255, 255, 255, 0.17);
-      --shadow-soft: 0 18px 42px -18px rgba(0, 0, 0, 0.78);
-      --shadow-elevated: 0 28px 64px -18px rgba(0, 0, 0, 0.92);
-      --spotlight-color: rgba(0, 112, 204, 0.16);
-      --utility-bg: #030509;
-      --utility-ink: rgba(248, 250, 252, 0.82);
-    }
-
-    [data-theme="navy"] {
-      --bg-page: #040B1D;
-      --bg-ice: #07132E;
-      --bg-surface: #0B1B3E;
-      --bg-surface-alt: #122754;
-      --bg-glass: rgba(5, 14, 36, 0.82);
-      --bg-glass-strong: rgba(9, 22, 52, 0.96);
-      --ink-primary: #F1F6FF;
-      --ink-secondary: #9BB4DC;
-      --ink-muted: #6D89B8;
-      --hairline: rgba(120, 170, 255, 0.15);
-      --hairline-strong: rgba(120, 170, 255, 0.28);
-      --shadow-soft: 0 20px 46px -18px rgba(2, 6, 20, 0.82);
-      --shadow-elevated: 0 30px 66px -16px rgba(0, 85, 255, 0.34);
-      --spotlight-color: rgba(59, 130, 246, 0.18);
-      --utility-bg: #020612;
-      --utility-ink: rgba(241, 246, 255, 0.86);
-    }
-
-    /* =========================================================================
-       2. ACCENT TOKENS — AZUL PSN / DORADO / ROJO CRIMSON
-       ========================================================================= */
-    :root,
-    [data-accent="blue"] {
-      --accent: #0055FF;
-      --accent-alt: #0070CC;
-      --accent-hover: #0044CC;
-      --accent-ink: #FFFFFF;
-      --accent-soft: rgba(0, 85, 255, 0.09);
-      --accent-border: rgba(0, 85, 255, 0.30);
-    }
-
-    [data-accent="gold"] {
-      --accent: #D4AF37;
-      --accent-alt: #B89124;
-      --accent-hover: #B89124;
-      --accent-ink: #090E1A;
-      --accent-soft: rgba(212, 175, 55, 0.14);
-      --accent-border: rgba(212, 175, 55, 0.44);
-    }
-
-    [data-accent="red"] {
-      --accent: #E11D48;
-      --accent-alt: #BE123C;
-      --accent-hover: #BE123C;
-      --accent-ink: #FFFFFF;
-      --accent-soft: rgba(225, 29, 72, 0.10);
-      --accent-border: rgba(225, 29, 72, 0.34);
-    }
-
-    /* =========================================================================
-       3. CORE LAYOUT, SURFACES & TYPOGRAPHY
-       ========================================================================= */
-    html, body {
-      background-color: var(--bg-page);
-      color: var(--ink-primary);
-      overflow-x: hidden;
-      transition: background-color 0.35s ease, color 0.35s ease;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    ::selection {
-      background-color: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    /* Top 2px Scroll Progress Bar (Blue -> Gold -> Crimson) */
-    #scrollProgress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 2.5px;
-      width: 0%;
-      z-index: 100;
-      background: linear-gradient(90deg, #0055FF 0%, #0070CC 38%, #D4AF37 72%, #E11D48 100%);
-      pointer-events: none;
-      transition: width 0.06s linear;
-    }
-
-    .surface-ice { background-color: var(--bg-ice); }
-    .surface-card {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--hairline);
-      box-shadow: var(--shadow-soft);
-    }
-    .surface-alt {
-      background-color: var(--bg-surface-alt);
-      border: 1px solid var(--hairline);
-    }
-    .surface-glass {
-      background-color: var(--bg-glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-color: var(--hairline);
-    }
-    .surface-glass-strong {
-      background-color: var(--bg-glass-strong);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-color: var(--hairline);
-    }
-
-    .ink-main { color: var(--ink-primary); }
-    .ink-sub { color: var(--ink-secondary); }
-    .ink-muted { color: var(--ink-muted); }
-    .border-hair { border-color: var(--hairline); }
-    .border-hair-strong { border-color: var(--hairline-strong); }
-    .accent-ink { color: var(--accent); }
-    .accent-fill { background-color: var(--accent); color: var(--accent-ink); }
-    .accent-pill { background-color: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-border); }
-
-    .display-tight { letter-spacing: -0.035em; }
-
-    /* Dark Woven Carbon Backdrop for Wolf Medallion */
-    .carbon-medallion {
-      background-color: #0E1117;
-      background-image:
-        linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%),
-        linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%);
-      background-size: 6px 6px;
-      background-position: 0 0, 3px 3px;
-    }
-
-    /* =========================================================================
-       4. PS5 SIGNATURE DOUBLE-RING HALO PILL BUTTONS + SPECULAR SWEEP
-       ========================================================================= */
-    .halo-btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2.5px;
-      border-radius: 9999px;
-      background: transparent;
-      border: 1.5px solid transparent;
-      cursor: pointer;
-      text-decoration: none;
-      transition: box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform;
-    }
-    .halo-btn-inner {
-      position: relative;
-      overflow: hidden;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      width: 100%;
-      border-radius: 9999px;
-      padding: 0.78rem 1.55rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-      background-color: var(--accent);
-      color: var(--accent-ink);
-      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-    .halo-btn-inner::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
-      transform: translateX(-135%);
-      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-      pointer-events: none;
-    }
-    .halo-btn:hover .halo-btn-inner::after {
-      transform: translateX(135%);
-    }
-    .halo-btn:hover,
-    .halo-btn:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 2px var(--accent);
-    }
-    .halo-btn:hover .halo-btn-inner {
-      background-color: var(--accent-hover);
-    }
-    .halo-btn:active {
-      transform: scale(0.98);
-    }
-
-    .halo-btn-sm .halo-btn-inner {
-      padding: 0.52rem 1.15rem;
-      font-size: 0.8125rem;
-    }
-
-    .halo-btn-secondary .halo-btn-inner {
-      background-color: var(--bg-surface);
-      color: var(--ink-primary);
-      border: 1px solid var(--hairline-strong);
-    }
-    .halo-btn-secondary:hover .halo-btn-inner {
-      background-color: var(--accent-soft);
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* =========================================================================
-       5. AMBIENT SPOTLIGHT CARDS & HERO 3D MONOLITH PHYSICS
-       ========================================================================= */
-    .spotlight-card {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.35s ease;
-    }
-    .spotlight-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(440px circle at var(--mx, -420px) var(--my, -420px), var(--spotlight-color), transparent 65%);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      pointer-events: none;
-      z-index: 1;
-    }
-    [data-ambient="on"] .spotlight-card:hover::before { opacity: 1; }
-    .spotlight-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-border);
-      box-shadow: var(--shadow-elevated);
-    }
-    .spotlight-card > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .monolith-perspective { perspective: 1200px; }
-    .monolith-stage {
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-    .monolith-glare {
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(500px circle at var(--gx, 50%) var(--gy, 24%), rgba(0, 112, 204, 0.14), transparent 60%);
-      pointer-events: none;
-      transition: opacity 0.35s ease;
-    }
-    [data-ambient="off"] .monolith-glare,
-    [data-ambient="off"] .ambient-glow {
-      opacity: 0 !important;
-    }
-
-    /* =========================================================================
-       6. KEYFRAMES — ORBITS, FLOATING CARDS, MARQUEE & WAVEFORMS
-       ========================================================================= */
-    @keyframes orbitCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    @keyframes orbitCCW { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-    @keyframes floatA {
-      0%, 100% { transform: translateY(0px) translateZ(26px); }
-      50% { transform: translateY(-6px) translateZ(26px); }
-    }
-    @keyframes floatB {
-      0%, 100% { transform: translateY(0px) translateZ(32px); }
-      50% { transform: translateY(6px) translateZ(32px); }
-    }
-    @keyframes dashFlow { to { stroke-dashoffset: -48; } }
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.55; transform: scale(1); }
-      50% { opacity: 0.95; transform: scale(1.05); }
-    }
-
-    .orbit-cw { animation: orbitCW 38s linear infinite; }
-    .orbit-ccw { animation: orbitCCW 54s linear infinite; }
-    .float-a { animation: floatA 5.8s ease-in-out infinite; }
-    .float-b { animation: floatB 6.6s ease-in-out infinite; }
-    .float-c { animation: floatA 6.9s ease-in-out infinite 0.9s; }
-    .float-d { animation: floatB 7.3s ease-in-out infinite 1.4s; }
-    .dash-flow { stroke-dasharray: 6 6; animation: dashFlow 2.1s linear infinite; }
-    .pulse-glow { animation: pulseGlow 6s ease-in-out infinite; }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marqueeScroll 32s linear infinite;
-    }
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
-
-    /* =========================================================================
-       7. DARK CONTRAST BAND ("ECOSISTEMA EN MOVIMIENTO")
-       ========================================================================= */
-    .dark-showcase-band {
-      background:
-        radial-gradient(circle at 16% 18%, rgba(0, 85, 255, 0.24) 0%, transparent 46%),
-        radial-gradient(circle at 84% 82%, rgba(212, 175, 55, 0.11) 0%, transparent 45%),
-        linear-gradient(168deg, #040711 0%, #050814 48%, #071128 100%);
-    }
-
-    .chapter-card {
-      border: 1px solid rgba(255, 255, 255, 0.085);
-      background: rgba(255, 255, 255, 0.025);
-      opacity: 0.58;
-      transition: background-color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
-    }
-    .chapter-card:hover {
-      opacity: 0.9;
-      background: rgba(255, 255, 255, 0.055);
-    }
-    .chapter-card.is-active {
-      opacity: 1;
-      background: rgba(255, 255, 255, 0.075);
-      border-color: var(--chapter-color, #0055FF);
-      box-shadow: 0 20px 48px -24px var(--chapter-glow, rgba(0, 85, 255, 0.45));
-    }
-
-    /* Sliding Pill Filter */
-    #filterSlider {
-      position: absolute;
-      top: 6px;
-      bottom: 6px;
-      border-radius: 9999px;
-      background-color: var(--accent);
-      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), width 0.32s cubic-bezier(0.22, 1, 0.36, 1);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Scroll Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Motion Off Overrides */
-    [data-motion="off"] .orbit-cw,
-    [data-motion="off"] .orbit-ccw,
-    [data-motion="off"] .float-a,
-    [data-motion="off"] .float-b,
-    [data-motion="off"] .float-c,
-    [data-motion="off"] .float-d,
-    [data-motion="off"] .dash-flow,
-    [data-motion="off"] .pulse-glow,
-    [data-motion="off"] .marquee-track {
-      animation: none !important;
-    }
-    [data-motion="off"] .monolith-stage {
-      transform: none !important;
-    }
-    [data-motion="off"] .spotlight-card:hover {
-      transform: none;
-    }
-
-    /* Refined Scrollbar */
-    ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-track { background: var(--bg-ice); }
-    ::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 9999px; }
-  </style>
+  <!-- Hoja de estilos separada -->
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body class="font-sans antialiased">
 
-  <!-- Thin Top Scroll-Progress Bar -->
+  <!-- Barra superior de progreso de lectura -->
   <div id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- Toast Notification Stack -->
+  <!-- Notificaciones Toast -->
   <div id="toastStack" class="fixed bottom-20 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 sm:bottom-6 z-[95] flex flex-col gap-2 pointer-events-none"></div>
 
-  <!-- =========================================================================
-       TOP UTILITY BAR (SONY / PS5 INSPIRED)
-       ========================================================================= -->
-  <div class="text-[10px] sm:text-[11px] font-mono tracking-[0.18em] uppercase border-b border-white/10" style="background-color: var(--utility-bg); color: var(--utility-ink);">
+  <!-- Barra superior de estado -->
+  <div class="utility-bar text-[10px] sm:text-[11px] font-mono tracking-[0.18em] uppercase border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-3">
       <div class="flex items-center gap-2.5 min-w-0">
         <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37] shrink-0"></span>
@@ -461,8 +66,11 @@
       <div class="flex items-center gap-4 shrink-0">
         <span class="hidden md:inline-flex items-center gap-2 text-white/75">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          DISPONIBLE PARA PROYECTOS
+          <span data-i18n="utilityStatus">DISPONIBLE PARA PROYECTOS</span>
         </span>
+        <button id="utilityLangBtn" type="button" class="px-2 py-0.5 rounded bg-white/10 hover:bg-white/20 text-white transition-colors">
+          ES / EN
+        </button>
         <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
           @endlooxs ↗
         </a>
@@ -475,16 +83,13 @@
     </div>
   </div>
 
-  <!-- =========================================================================
-       STICKY FROSTED-GLASS NAVBAR
-       ========================================================================= -->
+  <!-- Navegación fija con efecto cristal -->
   <header class="sticky top-0 inset-x-0 z-40 surface-glass border-b">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
 
-      <!-- Brand Emblem + Wordmark -->
+      <!-- Emblema + Marca -->
       <a href="#inicio" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-full carbon-medallion border border-[#D4AF37]/65 flex items-center justify-center overflow-hidden shadow-sm transition-transform duration-300 group-hover:scale-105">
-          <!-- Built-in Crisp ENDLOOXS Geometric Wolf Emblem (Golden + Subtle Crimson) -->
           <svg class="brand-svg w-7 h-7" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#D4AF37" fill-opacity="0.16" stroke="#D4AF37" stroke-width="3.6" stroke-linejoin="round"/>
             <path d="M27 61L40 44L47 51L59 36" stroke="#D4AF37" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -501,31 +106,28 @@
         </div>
       </a>
 
-      <!-- Clean Navigation Links -->
+      <!-- Enlaces principales -->
       <nav class="hidden lg:flex items-center gap-7 text-[13.5px] font-medium ink-sub">
-        <a href="#inicio" class="hover:text-[var(--accent)] transition-colors">Inicio</a>
-        <a href="#ecosistema" class="hover:text-[var(--accent)] transition-colors">Ecosistema</a>
-        <a href="#proyectos" class="hover:text-[var(--accent)] transition-colors">Proyectos</a>
-        <a href="#sobre-mi" class="hover:text-[var(--accent)] transition-colors">Sobre Mí</a>
-        <a href="#contacto" class="hover:text-[var(--accent)] transition-colors">Contacto</a>
+        <a href="#inicio" data-i18n="navHome" class="hover:text-[var(--accent)] transition-colors">Inicio</a>
+        <a href="#ecosistema" data-i18n="navEco" class="hover:text-[var(--accent)] transition-colors">Ecosistema</a>
+        <a href="#comparativa" data-i18n="navCompare" class="hover:text-[var(--accent)] transition-colors">Comparativa</a>
+        <a href="#proyectos" data-i18n="navProjects" class="hover:text-[var(--accent)] transition-colors">Proyectos</a>
+        <a href="#sobre-mi" data-i18n="navAbout" class="hover:text-[var(--accent)] transition-colors">Sobre Mí</a>
+        <a href="#contacto" data-i18n="navContact" class="hover:text-[var(--accent)] transition-colors">Contacto</a>
       </nav>
 
-      <!-- Right Controls: Ajustes + Mobile Menu -->
+      <!-- Controles derechos -->
       <div class="flex items-center gap-2.5">
-        <button
-          id="navSettingsBtn"
-          type="button"
-          class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full surface-card text-xs sm:text-[13px] font-semibold ink-main hover:border-[var(--accent)] transition-all"
-        >
+        <button id="navSettingsBtn" type="button" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full surface-card text-xs sm:text-[13px] font-semibold ink-main hover:border-[var(--accent)] transition-all">
           <svg class="w-4 h-4 accent-ink" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <span class="hidden sm:inline">Ajustes</span>
+          <span class="hidden sm:inline" data-i18n="btnSettings">Ajustes</span>
         </button>
 
         <a href="#contacto" data-magnetic class="hidden sm:inline-flex halo-btn halo-btn-sm">
-          <span class="halo-btn-inner">Contactar</span>
+          <span class="halo-btn-inner" data-i18n="btnContact">Contactar</span>
         </a>
 
         <button id="mobileNavBtn" type="button" aria-label="Abrir menú" class="lg:hidden p-2.5 rounded-full surface-card ink-main">
@@ -536,30 +138,30 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
+    <!-- Menú móvil -->
     <div id="mobileNavDrawer" class="hidden lg:hidden surface-glass-strong border-t border-hair px-5 py-4">
       <nav class="flex flex-col gap-3 text-sm font-medium ink-sub">
-        <a href="#inicio" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Inicio</a>
-        <a href="#ecosistema" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Ecosistema</a>
-        <a href="#proyectos" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Proyectos</a>
-        <a href="#sobre-mi" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Sobre Mí</a>
-        <a href="#contacto" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Contacto</a>
+        <a href="#inicio" data-i18n="navHome" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Inicio</a>
+        <a href="#ecosistema" data-i18n="navEco" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Ecosistema</a>
+        <a href="#comparativa" data-i18n="navCompare" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Comparativa</a>
+        <a href="#proyectos" data-i18n="navProjects" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Proyectos</a>
+        <a href="#sobre-mi" data-i18n="navAbout" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Sobre Mí</a>
+        <a href="#contacto" data-i18n="navContact" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- =========================================================================
-         1. HERO SECTION — 100% NEUTRAL & MULTIDISCIPLINARY
+         1. INICIO — NEUTRAL, MULTIDISCIPLINARIO Y MONOLITO 3D PROFUNDO
          ========================================================================= -->
     <section id="inicio" class="relative overflow-hidden pt-12 sm:pt-20 lg:pt-24">
-      <!-- Interactive 60fps Ambient Light & Architectural Grid Canvas -->
       <canvas id="heroLightCanvas" class="pointer-events-none absolute inset-0 w-full h-full" aria-hidden="true"></canvas>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
 
-          <!-- Left Column: Neutral Multidisciplinary Positioning -->
+          <!-- Columna izquierda -->
           <div class="lg:col-span-6 reveal">
             <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full surface-card mb-6">
               <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
@@ -569,18 +171,18 @@
             </div>
 
             <h1 class="font-display display-tight font-light text-4xl sm:text-5xl lg:text-[3.85rem] leading-[1.05] ink-main mb-6">
-              Identidad digital, sistemas y <span class="font-semibold">proyectos multidisciplinarios<span class="accent-ink">.</span></span>
+              <span data-i18n="heroTitleA">Identidad digital, sistemas y</span>
+              <span class="font-semibold"><span data-i18n="heroTitleB">proyectos multidisciplinarios</span><span class="accent-ink">.</span></span>
             </h1>
 
-            <p class="text-base sm:text-lg ink-sub leading-relaxed max-w-xl mb-9">
-              El ecosistema personal de <strong class="ink-main font-semibold">Edgar Rodriguez</strong>: optimización avanzada de Windows 11, arquitectura de PCs custom de gama alta, gestión de comunidades digitales y curaduría visual bajo la marca <strong class="ink-main font-semibold">@endlooxs</strong>.
+            <p data-i18n="heroSubtitle" class="text-base sm:text-lg ink-sub leading-relaxed max-w-xl mb-9">
+              El ecosistema personal de Edgar Rodriguez: optimización avanzada de Windows 11, arquitectura de PCs custom de gama alta, gestión de comunidades digitales y curaduría visual bajo @endlooxs.
             </p>
 
-            <!-- Two PS5 Signature Halo Pill CTAs -->
             <div class="flex flex-wrap items-center gap-3.5 mb-10">
               <a href="#proyectos" data-magnetic class="halo-btn">
                 <span class="halo-btn-inner">
-                  <span>Explorar Proyectos</span>
+                  <span data-i18n="heroCtaPrimary">Explorar Proyectos</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -588,11 +190,11 @@
               </a>
 
               <a href="#contacto" data-magnetic class="halo-btn halo-btn-secondary">
-                <span class="halo-btn-inner">Contactar</span>
+                <span class="halo-btn-inner" data-i18n="btnContact">Contactar</span>
               </a>
             </div>
 
-            <!-- Balanced Pillar Indicators -->
+            <!-- Indicadores equilibrados de pilares -->
             <div class="pt-6 border-t border-hair flex flex-wrap items-center gap-2.5">
               <a href="#ecosistema" data-jump-chapter="1" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full surface-alt text-xs font-mono font-medium ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#0055FF]"></span> Sistemas OS
@@ -609,32 +211,29 @@
             </div>
           </div>
 
-          <!-- Right Column: 3D-Tilting Centerpiece Monolith with 4 Symmetrical Cards -->
+          <!-- Columna derecha: Escenario 3D Multicapa con Órbitas Inclinadas -->
           <div class="lg:col-span-6 monolith-perspective reveal">
             <div
               id="heroMonolith"
-              class="monolith-stage relative mx-auto w-full max-w-[550px] min-h-[430px] sm:min-h-[480px] rounded-[34px] surface-card p-6 sm:p-8 flex items-center justify-center overflow-hidden"
+              class="monolith-stage relative mx-auto w-full max-w-[560px] min-h-[440px] sm:min-h-[495px] rounded-[34px] surface-card p-6 sm:p-8 flex items-center justify-center"
             >
-              <!-- Specular Pointer Glare -->
-              <div id="monolithGlare" class="monolith-glare" aria-hidden="true"></div>
-
-              <!-- Concentric Orbital Rings & Architectural Crosshairs -->
-              <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <div class="w-[330px] h-[330px] sm:w-[405px] sm:h-[405px] rounded-full border border-dashed border-[#0070CC]/20 orbit-cw"></div>
+              <!-- Fondo interior con recorte para brillos y rejilla 3D -->
+              <div class="monolith-inner-clip">
+                <div id="monolithGlare" class="monolith-glare" aria-hidden="true"></div>
+                <div class="monolith-floor-grid" aria-hidden="true"></div>
+                <div class="ambient-glow pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-35 pulse-glow" style="background: radial-gradient(circle, var(--accent) 0%, rgba(212,175,55,0.24) 55%, transparent 76%);"></div>
               </div>
-              <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <div class="w-[240px] h-[240px] sm:w-[295px] sm:h-[295px] rounded-full border border-[#D4AF37]/30 orbit-ccw"></div>
-              </div>
-              <div class="pointer-events-none absolute inset-x-8 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)]/25 to-transparent"></div>
-              <div class="pointer-events-none absolute inset-y-8 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-[#D4AF37]/25 to-transparent"></div>
-              <div class="ambient-glow pointer-events-none absolute w-56 h-56 rounded-full blur-3xl opacity-30 pulse-glow" style="background: radial-gradient(circle, var(--accent) 0%, rgba(212,175,55,0.22) 56%, transparent 76%);"></div>
 
-              <!-- Crisp Geometric Wolf Emblem Core (Zero Overlay Text) -->
-              <div
-                class="relative z-20 w-36 h-36 sm:w-44 sm:h-44 rounded-full carbon-medallion border-2 border-[#D4AF37]/75 flex items-center justify-center shadow-[0_24px_54px_-12px_rgba(0,0,0,0.55)] overflow-hidden"
-                style="transform: translateZ(42px);"
-              >
-                <svg class="brand-svg w-28 h-28 sm:w-32 sm:h-32 drop-shadow-[0_10px_22px_rgba(212,175,55,0.32)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Emblema ENDLOOXS">
+              <!-- Órbitas 3D inclinadas en el espacio (gyroscope rings) -->
+              <div class="gyro-3d-shell pointer-events-none" aria-hidden="true">
+                <div class="gyro-ring gyro-ring-1"></div>
+                <div class="gyro-ring gyro-ring-2"></div>
+                <div class="gyro-ring gyro-ring-3"></div>
+              </div>
+
+              <!-- Emblema central flotando en eje Z -->
+              <div class="monolith-core-3d relative z-20 w-36 h-36 sm:w-44 sm:h-44 rounded-full carbon-medallion border-2 border-[#D4AF37]/80 flex items-center justify-center overflow-hidden">
+                <svg class="brand-svg w-28 h-28 sm:w-32 sm:h-32 drop-shadow-[0_12px_24px_rgba(212,175,55,0.36)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Emblema ENDLOOXS">
                   <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#D4AF37" fill-opacity="0.16" stroke="#D4AF37" stroke-width="3.2" stroke-linejoin="round"/>
                   <path d="M27 61L40 44L47 51L59 36" stroke="#D4AF37" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M36 75L46 60L55 63L63 53" stroke="#D4AF37" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -645,8 +244,8 @@
                 <img class="brand-img hidden w-full h-full object-cover" alt="Emblema ENDLOOXS" />
               </div>
 
-              <!-- 4 Symmetrically Balanced Floating Telemetry Cards -->
-              <div class="float-a absolute top-4 left-4 sm:top-7 sm:left-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg max-w-[165px] sm:max-w-none">
+              <!-- 4 Tarjetas orbitales con elevación Z independiente -->
+              <div class="float-a z-layer-1 absolute top-4 left-4 sm:top-7 sm:left-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-xl max-w-[165px] sm:max-w-none">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[#0055FF] shrink-0"></span>
                   <span class="font-display font-semibold text-xs sm:text-sm ink-main">Sistemas &amp; Software</span>
@@ -654,7 +253,7 @@
                 <span class="block font-mono text-[10px] ink-muted mt-0.5 pl-4">Windows 11 / Optima0x</span>
               </div>
 
-              <div class="float-b absolute top-4 right-4 sm:top-7 sm:right-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg max-w-[165px] sm:max-w-none">
+              <div class="float-b z-layer-2 absolute top-4 right-4 sm:top-7 sm:right-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-xl max-w-[165px] sm:max-w-none">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[#D4AF37] shrink-0"></span>
                   <span class="font-display font-semibold text-xs sm:text-sm ink-main">Hardware Custom</span>
@@ -662,7 +261,7 @@
                 <span class="block font-mono text-[10px] ink-muted mt-0.5 pl-4">Ensambles $1,000+</span>
               </div>
 
-              <div class="float-c absolute bottom-4 left-4 sm:bottom-7 sm:left-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg max-w-[165px] sm:max-w-none">
+              <div class="float-c z-layer-2 absolute bottom-4 left-4 sm:bottom-7 sm:left-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-xl max-w-[165px] sm:max-w-none">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[#E11D48] shrink-0"></span>
                   <span class="font-display font-semibold text-xs sm:text-sm ink-main">Social Media</span>
@@ -674,7 +273,7 @@
                 href="https://www.instagram.com/endlooxs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="float-d group absolute bottom-4 right-4 sm:bottom-7 sm:right-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg hover:border-[var(--accent)] transition-colors max-w-[165px] sm:max-w-none"
+                class="float-d z-layer-1 group absolute bottom-4 right-4 sm:bottom-7 sm:right-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-xl hover:border-[var(--accent)] transition-colors max-w-[165px] sm:max-w-none"
               >
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[#0070CC] ring-2 ring-[#D4AF37]/40 shrink-0"></span>
@@ -688,7 +287,7 @@
         </div>
       </div>
 
-      <!-- Subtle Continuous Multidisciplinary Marquee Strip -->
+      <!-- Cinta continua de especialidades -->
       <div class="relative z-10 border-y border-hair surface-ice py-3.5 overflow-hidden">
         <div class="marquee-track font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] ink-muted">
           <div class="flex items-center gap-8 pr-8">
@@ -728,7 +327,7 @@
     </section>
 
     <!-- =========================================================================
-         2. IMMERSIVE DARK CONTRAST BAND — "ECOSISTEMA EN MOVIMIENTO"
+         2. BANDA INMERSIVA OSCURA — "ECOSISTEMA EN MOVIMIENTO" CON VISOR 3D
          ========================================================================= -->
     <section id="ecosistema" class="dark-showcase-band relative py-24 sm:py-32 text-white">
       <div class="pointer-events-none absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#0070CC]/70 to-transparent"></div>
@@ -736,17 +335,17 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Section Header -->
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 reveal">
           <div class="max-w-2xl">
-            <span class="font-mono text-xs font-semibold tracking-[0.22em] text-[#60A5FA] uppercase block mb-3">
+            <span data-i18n="sec01Tag" class="font-mono text-xs font-semibold tracking-[0.22em] text-[#60A5FA] uppercase block mb-3">
               01 // ECOSISTEMA EN MOVIMIENTO
             </span>
             <h2 class="font-display display-tight font-light text-3xl sm:text-5xl text-white mb-4">
-              Cuatro pilares. <span class="font-semibold">Un mismo estándar de ejecución.</span>
+              <span data-i18n="sec01TitleA">Cuatro pilares.</span>
+              <span class="font-semibold" data-i18n="sec01TitleB">Un mismo estándar de ejecución.</span>
             </h2>
-            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Tecnología, hardware y estrategia digital integrados bajo una estética sobria. Desplázate o haz clic en cualquier capítulo para explorar el visor interactivo.
+            <p data-i18n="sec01Desc" class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Tecnología, hardware y estrategia digital integrados bajo una estética sobria. Desplázate o selecciona cualquier capítulo para explorar el visor 3D interactivo.
             </p>
           </div>
 
@@ -757,18 +356,17 @@
           </div>
         </div>
 
-        <!-- Sticky Split Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
-          <!-- Left Column: 4 Interactive Chapters -->
+          <!-- 4 Capítulos interactivos -->
           <div class="lg:col-span-5 space-y-4 lg:space-y-5" id="chapterTrack">
             <button type="button" data-chapter="0" style="--chapter-color:#0070CC; --chapter-glow:rgba(0,112,204,0.45);" class="chapter-card is-active w-full text-left rounded-3xl p-6 sm:p-7">
               <div class="flex items-center justify-between mb-3">
                 <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#60A5FA] uppercase">01 / ARQUITECTURA ENDLOOXS</span>
                 <span class="w-2 h-2 rounded-full bg-[#0070CC]"></span>
               </div>
-              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Núcleo de Marca &amp; Visión</h3>
-              <p class="text-sm text-slate-300 leading-relaxed">
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2" data-i18n="ch0Title">Núcleo de Marca &amp; Visión</h3>
+              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="ch0Desc">
                 Identidad minimalista de alto contraste que conecta ingeniería técnica, criterio visual y proyectos digitales bajo @endlooxs.
               </p>
             </button>
@@ -778,8 +376,8 @@
                 <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#38BDF8] uppercase">02 / OPTIMIZACIÓN WINDOWS 11</span>
                 <span class="w-2 h-2 rounded-full bg-[#38BDF8]"></span>
               </div>
-              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Suite Optima0x &amp; Control de Latencia</h3>
-              <p class="text-sm text-slate-300 leading-relaxed">
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2" data-i18n="ch1Title">Suite Optima0x &amp; Control de Latencia</h3>
+              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="ch1Desc">
                 Scripts .bat con detección dinámica de rutas, limpieza automatizada de RAM y configuración persistente en Optima0x.cfg para máximo rendimiento.
               </p>
             </button>
@@ -789,8 +387,8 @@
                 <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#D4AF37] uppercase">03 / ENSAMBLES PC GAMA ALTA</span>
                 <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
               </div>
-              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Hardware Custom ($1,000+)</h3>
-              <p class="text-sm text-slate-300 leading-relaxed">
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2" data-i18n="ch2Title">Hardware Custom ($1,000+)</h3>
+              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="ch2Desc">
                 Selección inteligente sin cuellos de botella, diseño de flujo térmico silencioso, cableado quirúrgico y validación bajo estrés.
               </p>
             </button>
@@ -800,20 +398,19 @@
                 <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#FB7185] uppercase">04 / COMMUNITY MANAGEMENT</span>
                 <span class="w-2 h-2 rounded-full bg-[#E11D48]"></span>
               </div>
-              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Redes Sociales &amp; Curaduría 9:16</h3>
-              <p class="text-sm text-slate-300 leading-relaxed">
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2" data-i18n="ch3Title">Redes Sociales &amp; Curaduría 9:16</h3>
+              <p class="text-sm text-slate-300 leading-relaxed" data-i18n="ch3Desc">
                 Calendarios editoriales, retención en formatos verticales, crecimiento orgánico y manejo cercano de comunidades digitales.
               </p>
             </button>
           </div>
 
-          <!-- Right Column: Sticky Dynamic SVG/CSS Visual Stage -->
-          <div class="lg:col-span-7 lg:sticky lg:top-24">
-            <div class="relative rounded-[32px] border border-white/12 bg-white/[0.035] backdrop-blur-2xl p-6 sm:p-8 lg:p-10 overflow-hidden shadow-2xl">
+          <!-- Visor 3D fijo al hacer scroll -->
+          <div class="lg:col-span-7 lg:sticky lg:top-24 perspective-1200">
+            <div data-tilt-3d data-tilt-max="7" class="tilt-card relative rounded-[32px] border border-white/12 bg-white/[0.04] backdrop-blur-2xl p-6 sm:p-8 lg:p-10 overflow-hidden shadow-2xl">
               <div id="coreAurora1" class="ambient-glow pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl transition-all duration-700" style="background: rgba(0, 112, 204, 0.34);"></div>
               <div id="coreAurora2" class="ambient-glow pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 rounded-full blur-3xl transition-all duration-700" style="background: rgba(212, 175, 55, 0.14);"></div>
 
-              <!-- Stage Header -->
               <div class="relative z-10 flex items-center justify-between gap-3 pb-5 mb-6 border-b border-white/10">
                 <div class="flex items-center gap-2.5">
                   <span id="coreDot" class="w-2.5 h-2.5 rounded-full bg-[#0070CC] transition-colors duration-500"></span>
@@ -824,15 +421,9 @@
                 </span>
               </div>
 
-              <!-- Dynamic Visual Mount -->
-              <div id="coreVisualStage" class="relative z-10 min-h-[260px] sm:min-h-[295px] flex items-center justify-center mb-7">
-                <!-- Populated dynamically via JS -->
-              </div>
+              <div id="coreVisualStage" class="relative z-10 min-h-[260px] sm:min-h-[300px] flex items-center justify-center mb-7"></div>
 
-              <!-- Telemetry Footer Grid -->
-              <div id="coreTelemetry" class="relative z-10 grid grid-cols-3 gap-3 pt-5 border-t border-white/10">
-                <!-- Populated dynamically via JS -->
-              </div>
+              <div id="coreTelemetry" class="relative z-10 grid grid-cols-3 gap-3 pt-5 border-t border-white/10"></div>
             </div>
           </div>
 
@@ -841,41 +432,96 @@
     </section>
 
     <!-- =========================================================================
-         3. PROYECTOS & CASOS DE ESTUDIO (SLIDING FILTER + BENTO + MODAL)
+         3. COMPARADOR INTERACTIVO ANTES VS. DESPUÉS (OPTIMA0X & SOCIAL MEDIA)
+         ========================================================================= -->
+    <section id="comparativa" class="py-20 sm:py-28 surface-ice border-b border-hair">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 reveal">
+          <div>
+            <span data-i18n="compareTag" class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+              01.5 // IMPACTO REAL
+            </span>
+            <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main">
+              <span data-i18n="compareTitleA">Arrastra y compara</span>
+              <span class="font-semibold" data-i18n="compareTitleB">el antes y el después</span>
+            </h2>
+          </div>
+
+          <!-- Selector de modo del comparador -->
+          <div class="inline-flex items-center p-1.5 rounded-full surface-card self-start lg:self-auto">
+            <button type="button" data-compare-mode="optima" class="compare-mode-btn px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-all accent-fill">
+              Optima0x — Windows 11
+            </button>
+            <button type="button" data-compare-mode="social" class="compare-mode-btn px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold ink-sub hover:ink-main transition-all">
+              Dirección Visual — Social Media
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenedor del Slider Comparador -->
+        <div class="reveal perspective-1200">
+          <div class="rounded-[32px] surface-card p-3 sm:p-4 shadow-xl">
+            <div id="compareStage" class="compare-stage relative w-full min-h-[340px] sm:min-h-[385px] rounded-[24px] overflow-hidden select-none touch-none" style="--pos: 50%;">
+
+              <!-- Capa DESPUÉS (Base completa) -->
+              <div id="compareAfter" class="compare-layer compare-after absolute inset-0 p-6 sm:p-10 flex flex-col justify-between"></div>
+
+              <!-- Capa ANTES (Recortada dinámicamente por --pos) -->
+              <div id="compareBefore" class="compare-layer compare-before absolute inset-0 p-6 sm:p-10 flex flex-col justify-between"></div>
+
+              <!-- Línea divisora + Manija interactiva <> -->
+              <div id="compareDivider" class="compare-divider" aria-hidden="true">
+                <div class="compare-handle" role="slider" tabindex="0" aria-label="Deslizar comparativa antes y después" aria-valuemin="8" aria-valuemax="92" aria-valuenow="50">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3" />
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. PROYECTOS & SPEC SHEETS (CASOS DE ESTUDIO CON FICHA TÉCNICA + 3D)
          ========================================================================= -->
     <section id="proyectos" class="py-20 sm:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Section Header + Animated Sliding-Pill Filter -->
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
           <div>
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
-              02 // PROYECTOS &amp; CASOS DE ESTUDIO
+            <span data-i18n="sec02Tag" class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+              02 // PROYECTOS &amp; SPEC SHEETS
             </span>
             <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main">
-              Trabajo real <span class="font-semibold">y resultados medibles</span>
+              <span data-i18n="sec02TitleA">Casos de estudio</span>
+              <span class="font-semibold" data-i18n="sec02TitleB">con ficha técnica</span>
             </h2>
           </div>
 
           <div class="overflow-x-auto max-w-full pb-1">
             <div id="filterBar" class="relative inline-flex items-center p-1.5 rounded-full surface-card">
               <div id="filterSlider" aria-hidden="true"></div>
-              <button type="button" data-filter="all" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Todos</button>
-              <button type="button" data-filter="sistemas" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Sistemas</button>
-              <button type="button" data-filter="hardware" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Hardware</button>
+              <button type="button" data-filter="all" data-i18n="filterAll" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Todos</button>
+              <button type="button" data-filter="sistemas" data-i18n="filterSys" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Sistemas</button>
+              <button type="button" data-filter="hardware" data-i18n="filterHw" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Hardware</button>
               <button type="button" data-filter="social" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Social Media</button>
-              <button type="button" data-filter="marca" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Marca</button>
+              <button type="button" data-filter="marca" data-i18n="filterBrand" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Marca</button>
             </div>
           </div>
         </div>
 
-        <!-- Bento Grid of Real Projects -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Bento Grid 3D -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 perspective-1200">
 
-          <!-- Project 01: Optima0x (7 Cols) -->
-          <article data-category="sistemas" data-case="optima0x" class="project-card spotlight-card reveal lg:col-span-7 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+          <!-- Proyecto 01: Optima0x -->
+          <article data-category="sistemas" data-case="optima0x" data-tilt-3d data-tilt-max="6" class="project-card spotlight-card tilt-card reveal lg:col-span-7 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
             <div>
-              <div class="rounded-2xl bg-[#050A18] border border-white/10 p-5 mb-6 relative overflow-hidden">
+              <div class="tilt-depth-sm rounded-2xl bg-[#050A18] border border-white/10 p-5 mb-6 relative overflow-hidden">
                 <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
                   <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0055FF]"></span> Optima0x.bat · Active</span>
                   <span class="text-[#60A5FA]">Optima0x.cfg</span>
@@ -900,7 +546,7 @@
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25">
                   Sistemas &amp; OS
                 </span>
-                <span class="font-mono text-xs ink-muted">01</span>
+                <span class="font-mono text-xs ink-muted">01 // SPEC SHEET</span>
               </div>
 
               <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
@@ -913,16 +559,16 @@
 
             <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
               <span class="font-mono text-xs ink-muted">Windows 11 · Batch · Optima0x.cfg</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
-                Ver caso de estudio →
+              <span data-i18n="viewSpec" class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Ver ficha técnica →
               </span>
             </div>
           </article>
 
-          <!-- Project 02: Ensambles PC Custom ($1,000+) (5 Cols) -->
-          <article data-category="hardware" data-case="hardware-custom" class="project-card spotlight-card reveal lg:col-span-5 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+          <!-- Proyecto 02: Hardware Custom -->
+          <article data-category="hardware" data-case="hardware-custom" data-tilt-3d data-tilt-max="6" class="project-card spotlight-card tilt-card reveal lg:col-span-5 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
             <div>
-              <div class="rounded-2xl bg-gradient-to-br from-[#0A101E] to-[#131926] border border-white/10 p-5 mb-6 relative overflow-hidden">
+              <div class="tilt-depth-sm rounded-2xl bg-gradient-to-br from-[#0A101E] to-[#131926] border border-white/10 p-5 mb-6 relative overflow-hidden">
                 <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
                   <span class="text-[#D4AF37] font-semibold">CUSTOM PC ARCHITECTURE</span>
                   <span>$1,000+ USD</span>
@@ -941,7 +587,7 @@
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#D4AF37]/15 text-[#A58119] border border-[#D4AF37]/35">
                   Hardware Custom
                 </span>
-                <span class="font-mono text-xs ink-muted">02</span>
+                <span class="font-mono text-xs ink-muted">02 // SPEC SHEET</span>
               </div>
 
               <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
@@ -954,16 +600,16 @@
 
             <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
               <span class="font-mono text-xs ink-muted">Cotización · Airflow · Benchmarks</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
-                Ver caso →
+              <span data-i18n="viewSpecShort" class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Ver ficha →
               </span>
             </div>
           </article>
 
-          <!-- Project 03: Community Management & Estrategia Digital (5 Cols) -->
-          <article data-category="social" data-case="social-growth" class="project-card spotlight-card reveal lg:col-span-5 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+          <!-- Proyecto 03: Social Media -->
+          <article data-category="social" data-case="social-growth" data-tilt-3d data-tilt-max="6" class="project-card spotlight-card tilt-card reveal lg:col-span-5 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
             <div>
-              <div class="rounded-2xl bg-gradient-to-br from-[#160A12] to-[#0A0F1D] border border-white/10 p-5 mb-6">
+              <div class="tilt-depth-sm rounded-2xl bg-gradient-to-br from-[#160A12] to-[#0A0F1D] border border-white/10 p-5 mb-6">
                 <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
                   <span class="text-[#FB7185] font-semibold">SOCIAL STRATEGY</span>
                   <span>RETENCIÓN &amp; MARCA</span>
@@ -985,7 +631,7 @@
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#E11D48]/10 text-[#E11D48] border border-[#E11D48]/25">
                   Social Media
                 </span>
-                <span class="font-mono text-xs ink-muted">03</span>
+                <span class="font-mono text-xs ink-muted">03 // SPEC SHEET</span>
               </div>
 
               <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
@@ -998,16 +644,16 @@
 
             <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
               <span class="font-mono text-xs ink-muted">Estrategia · Contenido · Comunidad</span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
-                Ver caso →
+              <span data-i18n="viewSpecShort" class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Ver ficha →
               </span>
             </div>
           </article>
 
-          <!-- Project 04: @endlooxs — Identidad & Dirección Visual (7 Cols) -->
-          <article data-category="marca" data-case="endlooxs-brand" class="project-card spotlight-card reveal lg:col-span-7 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+          <!-- Proyecto 04: Marca Personal @endlooxs -->
+          <article data-category="marca" data-case="endlooxs-brand" data-tilt-3d data-tilt-max="6" class="project-card spotlight-card tilt-card reveal lg:col-span-7 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
             <div>
-              <div class="rounded-2xl bg-[#060A15] border border-white/10 p-5 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="tilt-depth-sm rounded-2xl bg-[#060A15] border border-white/10 p-5 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div class="flex items-center gap-3.5">
                   <div class="w-12 h-12 rounded-full carbon-medallion border border-[#D4AF37]/70 flex items-center justify-center shrink-0 overflow-hidden">
                     <svg class="brand-svg w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1022,7 +668,7 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span class="w-5 h-5 rounded-full bg-[#0070CC] border border-white/20"></span>
+                  <span class="w-5 h-5 rounded-full bg-[#0055FF] border border-white/20"></span>
                   <span class="w-5 h-5 rounded-full bg-[#D4AF37] border border-white/20"></span>
                   <span class="w-5 h-5 rounded-full bg-[#E11D48] border border-white/20"></span>
                   <span class="w-5 h-5 rounded-full bg-[#FFFFFF] border border-white/20"></span>
@@ -1033,7 +679,7 @@
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold accent-pill">
                   Marca Personal
                 </span>
-                <span class="font-mono text-xs ink-muted">04</span>
+                <span class="font-mono text-xs ink-muted">04 // SPEC SHEET</span>
               </div>
 
               <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
@@ -1045,17 +691,11 @@
             </div>
 
             <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
-              <a
-                href="https://www.instagram.com/endlooxs/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onclick="event.stopPropagation()"
-                class="font-mono text-xs font-semibold accent-ink hover:underline"
-              >
+              <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="font-mono text-xs font-semibold accent-ink hover:underline">
                 Abrir @endlooxs ↗
               </a>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
-                Ver caso de estudio →
+              <span data-i18n="viewSpec" class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Ver ficha técnica →
               </span>
             </div>
           </article>
@@ -1065,32 +705,30 @@
     </section>
 
     <!-- =========================================================================
-         4. SOBRE MÍ & GALERÍA PERSONAL (CLOSED PRODUCTION VIEW)
+         5. SOBRE MÍ & GALERÍA PERSONAL 4:5 (PRODUCCIÓN CERRADA CON TILT 3D)
          ========================================================================= -->
     <section id="sobre-mi" class="py-20 sm:py-28 surface-ice border-y border-hair">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="mb-12 reveal">
-          <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+          <span data-i18n="sec03Tag" class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
             03 // SOBRE MÍ &amp; GALERÍA
           </span>
           <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main">
-            Edgar Rodriguez: <span class="font-semibold">precisión técnica y curaduría visual</span>
+            Edgar Rodriguez: <span class="font-semibold" data-i18n="sec03TitleB">precisión técnica y curaduría visual</span>
           </h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
 
-          <!-- Left Sticky Profile Card (Zero Upload Triggers) -->
+          <!-- Tarjeta de perfil fija -->
           <div class="lg:col-span-5 lg:sticky lg:top-24 reveal">
             <div class="rounded-[28px] surface-card p-6 sm:p-8">
 
               <div class="flex items-center gap-5 mb-7">
-                <!-- Profile Portrait Frame with Silent Bespoke Emblem Fallback -->
                 <div class="relative w-24 h-28 sm:w-28 sm:h-32 shrink-0 rounded-2xl carbon-medallion border border-[#D4AF37]/45 overflow-hidden flex items-center justify-center shadow-lg">
-                  <!-- Seamless Dark Editorial Fallback Artwork (Shown when MEDIA_CONFIG.profile is absent) -->
                   <div id="profileFallback" class="w-full h-full relative flex flex-col items-center justify-center p-3">
-                    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,112,204,0.28),transparent_65%)]"></div>
+                    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,85,255,0.28),transparent_65%)]"></div>
                     <svg class="relative z-10 w-14 h-14" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <circle cx="50" cy="50" r="44" stroke="#D4AF37" stroke-opacity="0.28" stroke-width="1.2" stroke-dasharray="3 3"/>
                       <path d="M25 65L18 56L28 49L22 39L37 33L47 18L52 30L60 22L60 36L71 42L73 49L84 54L78 62L65 60L61 69L69 75C57 83 39 83 27 74C22 70 23 67 25 65Z" fill="#D4AF37" fill-opacity="0.16" stroke="#D4AF37" stroke-width="3" stroke-linejoin="round"/>
@@ -1098,60 +736,55 @@
                     </svg>
                     <span class="relative z-10 mt-1.5 font-mono text-[9px] tracking-[0.22em] text-white/70 uppercase">ER • PA</span>
                   </div>
-                  <!-- Real Portrait Image (Revealed only on successful load) -->
                   <img id="profileRealImg" src="" alt="Edgar Rodriguez — Fundador de ENDLOOXS" class="hidden w-full h-full object-cover" />
                 </div>
 
                 <div>
-                  <span class="font-mono text-[10px] font-semibold tracking-[0.18em] text-[#B89124] uppercase">FUNDADOR • ENDLOOXS</span>
+                  <span class="font-mono text-[10px] font-semibold tracking-[0.18em] text-[#B89124] uppercase" data-i18n="founderTag">FUNDADOR • ENDLOOXS</span>
                   <h3 class="font-display font-bold text-2xl ink-main mt-0.5">Edgar Rodriguez</h3>
-                  <p class="text-xs sm:text-sm ink-muted mt-1">Panamá · Perfil Híbrido Técnico-Creativo</p>
+                  <p class="text-xs sm:text-sm ink-muted mt-1" data-i18n="profileSub">Panamá · Perfil Híbrido Técnico-Creativo</p>
                 </div>
               </div>
 
-              <!-- Editorial Bio -->
               <div class="space-y-4 text-sm sm:text-[15px] ink-sub leading-relaxed mb-7">
-                <p>
-                  Desde Panamá dirijo <strong class="ink-main font-semibold">ENDLOOXS</strong> con un principio claro: unir la exactitud técnica con el criterio estético. Trabajo desde el rendimiento a bajo nivel en Windows 11 y el armado de PCs custom de gama alta, hasta la dirección visual y gestión estratégica de comunidades digitales.
+                <p data-i18n="bioP1">
+                  Desde Panamá dirijo ENDLOOXS con un principio claro: unir la exactitud técnica con el criterio estético. Trabajo desde el rendimiento a bajo nivel en Windows 11 y el armado de PCs custom de gama alta, hasta la dirección visual y gestión estratégica de comunidades digitales.
                 </p>
-                <p>
+                <p data-i18n="bioP2">
                   Mi enfoque prioriza soluciones limpias, resultados medibles y una presentación visual minimalista que transmita solidez sin exceso.
                 </p>
               </div>
 
-              <!-- 3 Clean Quick-Fact Pills -->
               <div class="grid grid-cols-3 gap-2.5 pt-6 border-t border-hair">
                 <div class="rounded-2xl surface-alt p-3 text-center">
-                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted">Base</span>
+                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted" data-i18n="factBase">Base</span>
                   <span class="block text-xs font-semibold ink-main mt-0.5">Panamá</span>
                 </div>
                 <div class="rounded-2xl surface-alt p-3 text-center">
-                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted">Perfil</span>
+                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted" data-i18n="factRole">Perfil</span>
                   <span class="block text-xs font-semibold ink-main mt-0.5">Híbrido Pro</span>
                 </div>
                 <div class="rounded-2xl surface-alt p-3 text-center">
-                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted">Estado</span>
-                  <span class="block text-xs font-semibold accent-ink mt-0.5">Disponible</span>
+                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted" data-i18n="factStatus">Estado</span>
+                  <span class="block text-xs font-semibold accent-ink mt-0.5" data-i18n="statusAvailable">Disponible</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right Column: 4 Vertical 4:5 Editorial Gallery Cards -->
+          <!-- Galería 4:5 con efecto 3D -->
           <div class="lg:col-span-7 reveal">
             <div class="flex flex-wrap items-end justify-between gap-3 mb-5">
               <div>
-                <h3 class="font-display font-semibold text-lg sm:text-xl ink-main">Galería Personal</h3>
-                <p class="text-xs sm:text-sm ink-sub">Curaduría vertical 4:5 de retratos, sistemas, hardware y @endlooxs. Haz clic para ampliar.</p>
+                <h3 class="font-display font-semibold text-lg sm:text-xl ink-main" data-i18n="galleryTitle">Galería Personal</h3>
+                <p class="text-xs sm:text-sm ink-sub" data-i18n="gallerySub">Curaduría vertical 4:5 de retratos, sistemas, hardware y @endlooxs. Haz clic para ampliar.</p>
               </div>
               <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-semibold accent-ink hover:underline">
-                Ver feed en Instagram ↗
+                Instagram ↗
               </a>
             </div>
 
-            <div id="galleryGrid" class="grid grid-cols-2 gap-4">
-              <!-- Rendered cleanly via JS using MEDIA_CONFIG.gallery with bespoke dark fallbacks -->
-            </div>
+            <div id="galleryGrid" class="grid grid-cols-2 gap-4 perspective-1200"></div>
           </div>
 
         </div>
@@ -1159,29 +792,28 @@
     </section>
 
     <!-- =========================================================================
-         5. CONTACTO DIRECTO (REAL DATA + INTERACTIVE BRIEF BUILDER)
+         6. CONTACTO DIRECTO
          ========================================================================= -->
     <section id="contacto" class="py-20 sm:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-          <!-- Left Column: Direct Channels with 1-Click Copy -->
           <div class="lg:col-span-5 reveal">
-            <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+            <span data-i18n="sec04Tag" class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
               04 // CONTACTO DIRECTO
             </span>
             <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main mb-4">
-              Hablemos de tu <span class="font-semibold">próximo proyecto</span>
+              <span data-i18n="sec04TitleA">Hablemos de tu</span>
+              <span class="font-semibold" data-i18n="sec04TitleB">próximo proyecto</span>
             </h2>
-            <p class="text-sm sm:text-base ink-sub leading-relaxed mb-8">
+            <p data-i18n="sec04Desc" class="text-sm sm:text-base ink-sub leading-relaxed mb-8">
               Disponible para optimización de Windows 11, cotización y armado de PCs custom (+$1,000 USD), Community Management o colaboraciones de marca.
             </p>
 
             <div class="space-y-3.5">
-              <!-- WhatsApp / Phone -->
               <div class="spotlight-card rounded-2xl surface-card p-4 flex items-center justify-between gap-3">
                 <a href="https://wa.me/50768890772" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 min-w-0 group">
-                  <div class="w-11 h-11 shrink-0 rounded-xl bg-[#0070CC]/10 text-[#0070CC] border border-[#0070CC]/25 flex items-center justify-center">
+                  <div class="w-11 h-11 shrink-0 rounded-xl bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25 flex items-center justify-center">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                     </svg>
@@ -1191,12 +823,11 @@
                     <span class="block text-sm font-semibold ink-main group-hover:text-[var(--accent)] transition-colors">+507 6889-0772 ↗</span>
                   </div>
                 </a>
-                <button type="button" data-copy="+507 6889-0772" data-copy-label="Teléfono" class="copy-btn shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <button type="button" data-copy="+507 6889-0772" data-copy-label="Teléfono" data-i18n="btnCopy" class="copy-btn shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
                   Copiar
                 </button>
               </div>
 
-              <!-- Email -->
               <div class="spotlight-card rounded-2xl surface-card p-4 flex items-center justify-between gap-3">
                 <a href="mailto:ej.rj2007@gmail.com" class="flex items-center gap-3.5 min-w-0 group">
                   <div class="w-11 h-11 shrink-0 rounded-xl bg-[#D4AF37]/15 text-[#A58119] border border-[#D4AF37]/35 flex items-center justify-center">
@@ -1205,16 +836,15 @@
                     </svg>
                   </div>
                   <div class="min-w-0">
-                    <span class="block font-mono text-[10px] uppercase tracking-wider ink-muted">Correo Electrónico</span>
+                    <span class="block font-mono text-[10px] uppercase tracking-wider ink-muted" data-i18n="emailLabel">Correo Electrónico</span>
                     <span class="block text-sm font-semibold ink-main group-hover:text-[var(--accent)] truncate transition-colors">ej.rj2007@gmail.com</span>
                   </div>
                 </a>
-                <button type="button" data-copy="ej.rj2007@gmail.com" data-copy-label="Correo" class="copy-btn shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <button type="button" data-copy="ej.rj2007@gmail.com" data-copy-label="Correo" data-i18n="btnCopy" class="copy-btn shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
                   Copiar
                 </button>
               </div>
 
-              <!-- Instagram -->
               <div class="spotlight-card rounded-2xl surface-card p-4 flex items-center justify-between gap-3">
                 <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 min-w-0 group">
                   <div class="w-11 h-11 shrink-0 rounded-xl bg-[#E11D48]/10 text-[#E11D48] border border-[#E11D48]/25 flex items-center justify-center">
@@ -1229,22 +859,20 @@
                     <span class="block text-sm font-semibold ink-main group-hover:text-[var(--accent)] transition-colors">@endlooxs ↗</span>
                   </div>
                 </a>
-                <button type="button" data-copy="@endlooxs" data-copy-label="Usuario" class="copy-btn shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <button type="button" data-copy="@endlooxs" data-copy-label="Usuario" data-i18n="btnCopy" class="copy-btn shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
                   Copiar
                 </button>
               </div>
             </div>
           </div>
 
-          <!-- Right Column: Quick Interactive Message Builder -->
           <div class="lg:col-span-7 reveal">
             <div class="rounded-[28px] surface-card p-6 sm:p-8 lg:p-9">
               <div class="flex items-center justify-between gap-2 mb-5">
-                <h3 class="font-display font-semibold text-xl ink-main">Mensaje Rápido</h3>
-                <span class="font-mono text-[11px] ink-muted uppercase">Conexión directa</span>
+                <h3 class="font-display font-semibold text-xl ink-main" data-i18n="quickMsgTitle">Mensaje Rápido</h3>
+                <span class="font-mono text-[11px] ink-muted uppercase" data-i18n="quickMsgSub">Conexión directa</span>
               </div>
 
-              <!-- Selectable Topic Chips -->
               <div id="topicChips" class="flex flex-wrap gap-2 mb-6">
                 <button type="button" data-topic="Optimización Windows" class="topic-btn px-4 py-2 rounded-full text-xs font-semibold transition-all accent-fill">
                   Optimización Windows
@@ -1262,35 +890,25 @@
 
               <div class="space-y-4">
                 <div>
-                  <label for="briefName" class="block font-mono text-[11px] uppercase tracking-wider ink-muted mb-1.5">Tu Nombre (opcional)</label>
-                  <input
-                    id="briefName"
-                    type="text"
-                    placeholder="Ej. Carlos Mendoza"
-                    class="w-full px-4 py-3 rounded-2xl surface-alt text-sm ink-main placeholder:text-slate-400 focus:outline-none focus:border-[var(--accent)] transition-colors"
-                  />
+                  <label for="briefName" data-i18n="nameLabel" class="block font-mono text-[11px] uppercase tracking-wider ink-muted mb-1.5">Tu Nombre (opcional)</label>
+                  <input id="briefName" type="text" placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 rounded-2xl surface-alt text-sm ink-main placeholder:text-slate-400 focus:outline-none focus:border-[var(--accent)] transition-colors" />
                 </div>
 
                 <div>
-                  <label for="briefMsg" class="block font-mono text-[11px] uppercase tracking-wider ink-muted mb-1.5">Cuéntame tu idea o necesidad</label>
-                  <textarea
-                    id="briefMsg"
-                    rows="4"
-                    placeholder="Describe brevemente tu proyecto, presupuesto estimado o consulta..."
-                    class="w-full px-4 py-3 rounded-2xl surface-alt text-sm ink-main placeholder:text-slate-400 focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
-                  ></textarea>
+                  <label for="briefMsg" data-i18n="msgLabel" class="block font-mono text-[11px] uppercase tracking-wider ink-muted mb-1.5">Cuéntame tu idea o necesidad</label>
+                  <textarea id="briefMsg" rows="4" placeholder="Describe brevemente tu proyecto, presupuesto estimado o consulta..." class="w-full px-4 py-3 rounded-2xl surface-alt text-sm ink-main placeholder:text-slate-400 focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"></textarea>
                 </div>
 
                 <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <button type="button" id="sendWhatsAppBtn" data-magnetic class="halo-btn flex-1">
                     <span class="halo-btn-inner">
-                      <span>Enviar por WhatsApp</span>
+                      <span data-i18n="sendWa">Enviar por WhatsApp</span>
                       <span>↗</span>
                     </span>
                   </button>
 
                   <button type="button" id="sendEmailBtn" data-magnetic class="halo-btn halo-btn-secondary flex-1">
-                    <span class="halo-btn-inner">Enviar por Correo</span>
+                    <span class="halo-btn-inner" data-i18n="sendMail">Enviar por Correo</span>
                   </button>
                 </div>
               </div>
@@ -1302,9 +920,7 @@
     </section>
   </main>
 
-  <!-- =========================================================================
-       ARCHITECTURAL FOOTER
-       ========================================================================= -->
+  <!-- Pie de página -->
   <footer class="bg-[#050814] text-white/85 border-t border-white/10 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
@@ -1324,6 +940,7 @@
       <nav class="flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-white/65">
         <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
         <a href="#ecosistema" class="hover:text-white transition-colors">Ecosistema</a>
+        <a href="#comparativa" class="hover:text-white transition-colors">Comparativa</a>
         <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
         <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre Mí</a>
         <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
@@ -1334,36 +951,22 @@
     </div>
   </footer>
 
-  <!-- =========================================================================
-       SUBTLE FLOATING SETTINGS BUTTON (VISITOR UI PREFERENCES ONLY)
-       ========================================================================= -->
-  <button
-    id="floatingSettingsBtn"
-    type="button"
-    aria-label="Abrir Ajustes de Página"
-    title="Ajustes de Página"
-    class="fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full surface-glass-strong border border-hair-strong shadow-2xl flex items-center justify-center ink-main hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
-  >
+  <!-- Botón flotante de Ajustes -->
+  <button id="floatingSettingsBtn" type="button" aria-label="Abrir Ajustes de Página" title="Ajustes de Página" class="fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full surface-glass-strong border border-hair-strong shadow-2xl flex items-center justify-center ink-main hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>
   </button>
 
-  <!-- =========================================================================
-       6. PANEL DE AJUSTES DE PÁGINA (VISITOR PREFERENCES ONLY — ZERO UPLOADS)
-       ========================================================================= -->
+  <!-- Panel lateral de Ajustes de Página (Sin menciones a PSN/PS5) -->
   <div id="settingsBackdrop" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm"></div>
 
-  <aside
-    id="settingsDrawer"
-    aria-label="Ajustes de Página"
-    class="fixed top-0 right-0 z-[55] h-full w-full max-w-sm surface-glass-strong border-l border-hair shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col"
-  >
+  <aside id="settingsDrawer" aria-label="Ajustes de Página" class="fixed top-0 right-0 z-[55] h-full w-full max-w-sm surface-glass-strong border-l border-hair shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
     <div class="px-6 py-5 border-b border-hair flex items-center justify-between">
       <div>
         <span class="font-mono text-[10px] uppercase tracking-[0.2em] accent-ink font-semibold">ENDLOOXS UI</span>
-        <h3 class="font-display font-bold text-lg ink-main">Ajustes de Página</h3>
+        <h3 class="font-display font-bold text-lg ink-main" data-i18n="settingsTitle">Ajustes de Página</h3>
       </div>
       <button id="closeSettingsBtn" type="button" aria-label="Cerrar ajustes" class="p-2 rounded-full surface-card ink-sub hover:ink-main">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1405,7 +1008,7 @@
               <span class="w-6 h-6 rounded-full bg-[#040B1D] border border-blue-500/60"></span>
               <div>
                 <p class="text-sm font-semibold ink-main">Azul Profundo</p>
-                <p class="text-[11px] ink-muted">Estética PSN nocturna</p>
+                <p class="text-[11px] ink-muted">Estética azul nocturna</p>
               </div>
             </div>
             <span class="theme-dot w-2.5 h-2.5 rounded-full"></span>
@@ -1419,7 +1022,7 @@
         <div class="grid grid-cols-3 gap-2">
           <button type="button" data-set-accent="blue" class="accent-opt flex flex-col items-center gap-2 p-3 rounded-2xl surface-card transition-all">
             <span class="w-5 h-5 rounded-full bg-[#0055FF]"></span>
-            <span class="text-[11px] font-semibold ink-main">Azul PSN</span>
+            <span class="text-[11px] font-semibold ink-main">Azul Eléctrico</span>
           </button>
           <button type="button" data-set-accent="gold" class="accent-opt flex flex-col items-center gap-2 p-3 rounded-2xl surface-card transition-all">
             <span class="w-5 h-5 rounded-full bg-[#D4AF37]"></span>
@@ -1432,14 +1035,27 @@
         </div>
       </div>
 
-      <!-- Preferencias de Visualización -->
+      <!-- Idioma / Language -->
+      <div>
+        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ink-muted mb-3">Idioma / Language</span>
+        <div class="grid grid-cols-2 gap-2">
+          <button type="button" data-set-lang="es" class="lang-opt py-2.5 px-3 rounded-full surface-card text-xs font-semibold ink-main transition-all">
+            Español (ES)
+          </button>
+          <button type="button" data-set-lang="en" class="lang-opt py-2.5 px-3 rounded-full surface-card text-xs font-semibold ink-main transition-all">
+            English (EN)
+          </button>
+        </div>
+      </div>
+
+      <!-- Experiencia 3D, Audio y Luz -->
       <div class="rounded-2xl surface-card p-4 space-y-4">
-        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ink-muted">Experiencia Visual</span>
+        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ink-muted">Experiencia Interactiva</span>
 
         <div class="flex items-center justify-between gap-3">
           <div>
-            <p class="text-sm font-semibold ink-main">Animaciones y física 3D</p>
-            <p class="text-[11px] ink-muted">Inercia 3D, órbitas y movimiento</p>
+            <p class="text-sm font-semibold ink-main">Físicas 3D &amp; Animaciones</p>
+            <p class="text-[11px] ink-muted">Monolito 3D, tarjetas y lienzo</p>
           </div>
           <button id="motionToggle" type="button" role="switch" aria-checked="true" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors">
             <span id="motionKnob" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform"></span>
@@ -1448,8 +1064,18 @@
 
         <div class="pt-3 border-t border-hair flex items-center justify-between gap-3">
           <div>
+            <p class="text-sm font-semibold ink-main">Audio de Interfaz</p>
+            <p class="text-[11px] ink-muted">Sonidos sutiles al interactuar</p>
+          </div>
+          <button id="soundToggle" type="button" role="switch" aria-checked="false" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors">
+            <span id="soundKnob" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform"></span>
+          </button>
+        </div>
+
+        <div class="pt-3 border-t border-hair flex items-center justify-between gap-3">
+          <div>
             <p class="text-sm font-semibold ink-main">Efecto de luz ambiental</p>
-            <p class="text-[11px] ink-muted">Spotlight radial y brillo sutil</p>
+            <p class="text-[11px] ink-muted">Spotlight radial y reflejos</p>
           </div>
           <button id="ambientToggle" type="button" role="switch" aria-checked="true" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors">
             <span id="ambientKnob" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform"></span>
@@ -1458,7 +1084,6 @@
       </div>
     </div>
 
-    <!-- Restablecer Ajustes -->
     <div class="p-5 border-t border-hair">
       <button id="resetPrefsBtn" type="button" class="w-full py-3 rounded-full surface-card text-xs font-semibold ink-sub hover:text-[#E11D48] hover:border-[#E11D48]/50 transition-all">
         Restablecer ajustes
@@ -1466,9 +1091,7 @@
     </div>
   </aside>
 
-  <!-- =========================================================================
-       CASE STUDY MODAL
-       ========================================================================= -->
+  <!-- Modal de Caso de Estudio + Ficha Técnica (Spec Sheet) -->
   <div id="caseModal" class="fixed inset-0 z-[65] hidden items-center justify-center p-4 bg-black/65 backdrop-blur-md">
     <div class="relative w-full max-w-2xl rounded-[30px] surface-glass-strong border border-hair p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
       <button id="closeCaseModalBtn" type="button" aria-label="Cerrar caso de estudio" class="absolute top-5 right-5 p-2 rounded-full surface-card ink-sub hover:ink-main">
@@ -1491,6 +1114,15 @@
         </div>
       </div>
 
+      <!-- Tabla Spec Sheet -->
+      <div class="rounded-2xl surface-card overflow-hidden mb-6">
+        <div class="px-4 py-2.5 border-b border-hair flex items-center justify-between">
+          <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] accent-ink">SPEC SHEET // FICHA TÉCNICA</span>
+          <span class="font-mono text-[10px] ink-muted">ENDLOOXS</span>
+        </div>
+        <div id="caseSpecs" class="divide-y divide-[var(--hairline)]"></div>
+      </div>
+
       <div class="border-t border-hair pt-5 mb-5">
         <h4 class="font-mono text-[10px] uppercase tracking-[0.18em] ink-muted mb-3">Entregables</h4>
         <ul id="caseDeliverables" class="space-y-2 text-sm ink-main"></ul>
@@ -1509,9 +1141,7 @@
     </div>
   </div>
 
-  <!-- =========================================================================
-       FULLSCREEN GALLERY LIGHTBOX (ESC, ARROWLEFT, ARROWRIGHT)
-       ========================================================================= -->
+  <!-- Lightbox de Galería -->
   <div id="lightboxModal" class="fixed inset-0 z-[75] hidden items-center justify-center p-4 sm:p-8 bg-black/92 backdrop-blur-lg">
     <button id="closeLightboxBtn" type="button" aria-label="Cerrar galería" class="absolute top-5 right-5 p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1541,1101 +1171,7 @@
     </button>
   </div>
 
-  <!-- =========================================================================
-       PRODUCTION ENGINE (SELF-CONTAINED VANILLA JS)
-       ========================================================================= -->
-  <script>
-    /* =========================================================================
-       MEDIA_CONFIG — CONFIGURACIÓN DE IMÁGENES DEL REPOSITORIO GITHUB / VERCEL
-       -------------------------------------------------------------------------
-       Coloca tus archivos de imagen en la raíz del repositorio junto a index.html.
-       - Si un archivo existe, se muestra automáticamente con encuadre limpio.
-       - Si aún no lo has subido o dejas '', se renderiza automáticamente un arte
-         editorial oscuro de respaldo (sin íconos rotos ni botones públicos).
-       ========================================================================= */
-    const MEDIA_CONFIG = {
-      logo: './logo.jpg',       // Deja '' si prefieres el emblema SVG vectorial del lobo
-      profile: './perfil.jpg',  // Tu retrato principal en la sección Sobre Mí
-      gallery: [
-        './foto1.jpg',          // 01 // RETRATO
-        './foto2.jpg',          // 02 // SISTEMAS
-        './foto3.jpg',          // 03 // HARDWARE
-        './foto4.jpg',          // 04 // @ENDLOOXS
-      ],
-    };
-
-    (function () {
-      'use strict';
-
-      const PREFS_KEY = 'endlooxs_ui_prefs_v1';
-      const reducedMotionPref = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const isTouchDevice = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-
-      const DEFAULT_PREFS = {
-        theme: 'light',
-        accent: 'blue',
-        motion: !reducedMotionPref,
-        ambient: true,
-      };
-
-      let prefs = loadPrefs();
-      let activeTopic = 'Optimización Windows';
-      let activeFilter = 'all';
-      let currentChapter = 0;
-      let chapterLocked = false;
-      let currentLightboxIndex = 0;
-
-      /* -----------------------------------------------------------------------
-         PREFERENCES STORAGE & TOAST FEEDBACK
-         ----------------------------------------------------------------------- */
-      function loadPrefs() {
-        try {
-          const raw = localStorage.getItem(PREFS_KEY);
-          if (!raw) return { ...DEFAULT_PREFS };
-          const parsed = JSON.parse(raw);
-          return {
-            theme: ['light', 'dark', 'navy'].includes(parsed.theme) ? parsed.theme : DEFAULT_PREFS.theme,
-            accent: ['blue', 'gold', 'red'].includes(parsed.accent) ? parsed.accent : DEFAULT_PREFS.accent,
-            motion: typeof parsed.motion === 'boolean' ? parsed.motion : DEFAULT_PREFS.motion,
-            ambient: typeof parsed.ambient === 'boolean' ? parsed.ambient : DEFAULT_PREFS.ambient,
-          };
-        } catch (e) {
-          return { ...DEFAULT_PREFS };
-        }
-      }
-
-      function savePrefs() {
-        try {
-          localStorage.setItem(PREFS_KEY, JSON.stringify(prefs));
-        } catch (e) {}
-      }
-
-      function toast(message, tone = 'accent') {
-        const stack = document.getElementById('toastStack');
-        const el = document.createElement('div');
-        const dotMap = {
-          accent: 'bg-[var(--accent)]',
-          gold: 'bg-[#D4AF37]',
-          red: 'bg-[#E11D48]',
-        };
-        el.className = 'pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-full surface-glass-strong border border-hair text-xs font-semibold ink-main shadow-2xl transition-all duration-300 translate-y-3 opacity-0';
-        el.innerHTML = `<span class="w-2 h-2 rounded-full shrink-0 ${dotMap[tone] || dotMap.accent}"></span><span>${message}</span>`;
-        stack.appendChild(el);
-        requestAnimationFrame(() => el.classList.remove('translate-y-3', 'opacity-0'));
-        setTimeout(() => {
-          el.classList.add('translate-y-3', 'opacity-0');
-          setTimeout(() => el.remove(), 300);
-        }, 2600);
-      }
-
-      /* -----------------------------------------------------------------------
-         TOP SCROLL PROGRESS BAR
-         ----------------------------------------------------------------------- */
-      const scrollProgressEl = document.getElementById('scrollProgress');
-      function updateScrollProgress() {
-        const y = window.scrollY || document.documentElement.scrollTop;
-        const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        scrollProgressEl.style.width = (max > 0 ? Math.min(100, Math.max(0, (y / max) * 100)) : 0) + '%';
-      }
-      window.addEventListener('scroll', updateScrollProgress, { passive: true });
-      updateScrollProgress();
-
-      /* -----------------------------------------------------------------------
-         SILENT, SEAMLESS MEDIA LOADER (LOGO & PROFILE)
-         ----------------------------------------------------------------------- */
-      function probeImage(src, onSuccess) {
-        if (!src || typeof src !== 'string' || !src.trim()) return;
-        const probe = new Image();
-        probe.onload = () => onSuccess(src);
-        probe.onerror = () => {}; // Silent fallback: keep crisp bespoke artwork
-        probe.src = src;
-      }
-
-      // Brand Logo Loader
-      probeImage(MEDIA_CONFIG.logo, (validSrc) => {
-        document.querySelectorAll('.brand-svg').forEach((svg) => svg.classList.add('hidden'));
-        document.querySelectorAll('.brand-img').forEach((img) => {
-          img.src = validSrc;
-          img.classList.remove('hidden');
-        });
-      });
-
-      // Profile Portrait Loader
-      const profileFallback = document.getElementById('profileFallback');
-      const profileRealImg = document.getElementById('profileRealImg');
-      probeImage(MEDIA_CONFIG.profile, (validSrc) => {
-        profileRealImg.src = validSrc;
-        profileRealImg.classList.remove('hidden');
-        profileFallback.classList.add('hidden');
-      });
-
-      /* -----------------------------------------------------------------------
-         4:5 EDITORIAL GALLERY WITH BESPOKE DARK ARTWORK FALLBACKS & LIGHTBOX
-         ----------------------------------------------------------------------- */
-      const GALLERY_META = [
-        {
-          tag: '01 // RETRATO',
-          title: 'Edgar · Dirección Personal',
-          caption: 'Estética sobria y enfoque multidisciplinario en Panamá.',
-          fallbackArtwork: `
-            <div class="relative w-full h-full bg-gradient-to-b from-[#0C1324] via-[#091121] to-[#050814] p-5 flex flex-col justify-between overflow-hidden">
-              <div class="pointer-events-none absolute -top-12 -right-12 w-40 h-40 rounded-full blur-2xl bg-[#0070CC]/25"></div>
-              <div class="pointer-events-none absolute -bottom-10 -left-10 w-36 h-36 rounded-full blur-2xl bg-[#D4AF37]/15"></div>
-              <div class="relative z-10 flex items-center justify-between font-mono text-[9px] tracking-[0.2em] text-white/60">
-                <span>01 // RETRATO</span>
-                <span>4:5</span>
-              </div>
-              <div class="relative z-10 my-auto flex flex-col items-center justify-center">
-                <svg viewBox="0 0 140 140" class="w-28 h-28 sm:w-32 sm:h-32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="70" cy="70" r="62" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-                  <circle cx="70" cy="70" r="48" stroke="#D4AF37" stroke-opacity="0.38" stroke-width="1.2" stroke-dasharray="4 4"/>
-                  <path d="M70 40C79 40 86 47 86 56C86 65 79 72 70 72C61 72 54 65 54 56C54 47 61 40 70 40Z" stroke="#F8FAFC" stroke-opacity="0.85" stroke-width="1.6"/>
-                  <path d="M40 108C43 90 55 82 70 82C85 82 97 90 100 108" stroke="#0070CC" stroke-width="1.8" stroke-linecap="round"/>
-                  <circle cx="96" cy="44" r="3" fill="#D4AF37"/>
-                </svg>
-              </div>
-              <div class="relative z-10 border-t border-white/10 pt-3">
-                <p class="font-display font-semibold text-xs sm:text-sm text-white">Edgar · Dirección Personal</p>
-                <p class="font-mono text-[10px] text-white/55 mt-0.5">ENDLOOXS Studio</p>
-              </div>
-            </div>
-          `,
-        },
-        {
-          tag: '02 // SISTEMAS',
-          title: 'Entorno & Optima0x Lab',
-          caption: 'Optimización Windows 11, scripts automatizados y latencia controlada.',
-          fallbackArtwork: `
-            <div class="relative w-full h-full bg-gradient-to-b from-[#061128] via-[#071836] to-[#040814] p-5 flex flex-col justify-between overflow-hidden">
-              <div class="pointer-events-none absolute -top-10 -left-10 w-44 h-44 rounded-full blur-2xl bg-[#0055FF]/30"></div>
-              <div class="relative z-10 flex items-center justify-between font-mono text-[9px] tracking-[0.2em] text-[#60A5FA]">
-                <span>02 // SISTEMAS</span>
-                <span>4:5</span>
-              </div>
-              <div class="relative z-10 my-auto space-y-3">
-                <div class="rounded-xl bg-white/[0.05] border border-white/10 p-3 font-mono text-[10px] text-slate-300 space-y-1.5">
-                  <div class="flex justify-between text-[#60A5FA]"><span>Optima0x.cfg</span><span>LIVE</span></div>
-                  <div class="h-1 w-full rounded bg-white/10 overflow-hidden"><div class="h-full w-4/5 bg-[#0055FF]"></div></div>
-                  <div class="h-1 w-full rounded bg-white/10 overflow-hidden"><div class="h-full w-3/5 bg-[#D4AF37]"></div></div>
-                </div>
-                <svg viewBox="0 0 180 56" class="w-full h-12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M0 44 C26 42, 42 18, 72 28 C102 38, 126 16, 180 14" stroke="#60A5FA" stroke-width="2"/>
-                  <circle cx="136" cy="18" r="3.5" fill="#0055FF"/>
-                </svg>
-              </div>
-              <div class="relative z-10 border-t border-white/10 pt-3">
-                <p class="font-display font-semibold text-xs sm:text-sm text-white">Entorno &amp; Optima0x Lab</p>
-                <p class="font-mono text-[10px] text-white/55 mt-0.5">Windows 11 Engine</p>
-              </div>
-            </div>
-          `,
-        },
-        {
-          tag: '03 // HARDWARE',
-          title: 'Ensamble Custom +$1,000',
-          caption: 'Selección de componentes, flujo térmico y ensamblaje de precisión.',
-          fallbackArtwork: `
-            <div class="relative w-full h-full bg-gradient-to-b from-[#17130A] via-[#131218] to-[#060810] p-5 flex flex-col justify-between overflow-hidden">
-              <div class="pointer-events-none absolute top-1/3 -right-12 w-40 h-40 rounded-full blur-2xl bg-[#D4AF37]/24"></div>
-              <div class="relative z-10 flex items-center justify-between font-mono text-[9px] tracking-[0.2em] text-[#D4AF37]">
-                <span>03 // HARDWARE</span>
-                <span>4:5</span>
-              </div>
-              <div class="relative z-10 my-auto">
-                <svg viewBox="0 0 180 120" class="w-full h-28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="14" y="10" width="152" height="100" rx="14" stroke="rgba(255,255,255,0.18)" stroke-width="1.3"/>
-                  <rect x="28" y="24" width="44" height="36" rx="8" fill="rgba(212,175,55,0.14)" stroke="#D4AF37" stroke-width="1.2"/>
-                  <rect x="28" y="70" width="94" height="24" rx="6" fill="rgba(0,112,204,0.18)" stroke="#60A5FA" stroke-width="1.2"/>
-                  <circle cx="136" cy="42" r="14" stroke="rgba(255,255,255,0.28)" stroke-width="1.2" stroke-dasharray="3 3"/>
-                  <circle cx="136" cy="42" r="4" fill="#D4AF37"/>
-                  <path d="M26 52 H152" stroke="#D4AF37" stroke-opacity="0.55" stroke-width="1.2" class="dash-flow"/>
-                </svg>
-              </div>
-              <div class="relative z-10 border-t border-white/10 pt-3">
-                <p class="font-display font-semibold text-xs sm:text-sm text-white">Ensamble Custom +$1,000</p>
-                <p class="font-mono text-[10px] text-white/55 mt-0.5">Thermal &amp; Balance</p>
-              </div>
-            </div>
-          `,
-        },
-        {
-          tag: '04 // @ENDLOOXS',
-          title: 'Estética & Curaduría Visual',
-          caption: 'Identidad personal, ritmo visual y presencia orgánica en Instagram.',
-          fallbackArtwork: `
-            <div class="relative w-full h-full bg-gradient-to-b from-[#1A0B14] via-[#100D1B] to-[#050814] p-5 flex flex-col justify-between overflow-hidden">
-              <div class="pointer-events-none absolute -bottom-10 -right-10 w-40 h-40 rounded-full blur-2xl bg-[#E11D48]/24"></div>
-              <div class="relative z-10 flex items-center justify-between font-mono text-[9px] tracking-[0.2em] text-[#FB7185]">
-                <span>04 // @ENDLOOXS</span>
-                <span>4:5</span>
-              </div>
-              <div class="relative z-10 my-auto flex flex-col items-center">
-                <div class="w-20 h-20 rounded-full carbon-medallion border border-[#D4AF37]/70 flex items-center justify-center shadow-lg">
-                  <svg class="w-13 h-13" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#D4AF37" fill-opacity="0.16" stroke="#D4AF37" stroke-width="3.6" stroke-linejoin="round"/>
-                    <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#E11D48"/>
-                  </svg>
-                </div>
-                <div class="flex items-center gap-1.5 mt-4">
-                  <span class="w-4 h-1.5 rounded-full bg-[#0070CC]"></span>
-                  <span class="w-4 h-1.5 rounded-full bg-[#D4AF37]"></span>
-                  <span class="w-4 h-1.5 rounded-full bg-[#E11D48]"></span>
-                </div>
-              </div>
-              <div class="relative z-10 border-t border-white/10 pt-3">
-                <p class="font-display font-semibold text-xs sm:text-sm text-white">Estética &amp; Curaduría Visual</p>
-                <p class="font-mono text-[10px] text-white/55 mt-0.5">instagram.com/endlooxs</p>
-              </div>
-            </div>
-          `,
-        },
-      ];
-
-      // Runtime state of resolved gallery items
-      const galleryResolved = GALLERY_META.map((meta, idx) => ({
-        ...meta,
-        loadedSrc: '',
-        configuredSrc: (MEDIA_CONFIG.gallery && MEDIA_CONFIG.gallery[idx]) || '',
-      }));
-
-      const galleryGrid = document.getElementById('galleryGrid');
-      const lightboxModal = document.getElementById('lightboxModal');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxArtwork = document.getElementById('lightboxArtwork');
-      const lightboxTag = document.getElementById('lightboxTag');
-      const lightboxCaption = document.getElementById('lightboxCaption');
-
-      function renderGallery() {
-        galleryGrid.innerHTML = '';
-        galleryResolved.forEach((item, idx) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.setAttribute('aria-label', `Ampliar ${item.title}`);
-          btn.className = 'group relative aspect-[4/5] w-full text-left rounded-2xl surface-card overflow-hidden transition-all duration-500 hover:border-[var(--accent)] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]';
-
-          btn.innerHTML = `
-            <div class="gallery-fallback w-full h-full transition-transform duration-700 group-hover:scale-[1.03]">
-              ${item.fallbackArtwork}
-            </div>
-            <img class="gallery-real hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${item.title}" />
-            <div class="gallery-real-caption hidden absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/85 via-black/35 to-transparent">
-              <span class="block font-mono text-[9px] tracking-[0.18em] text-[#D4AF37] uppercase">${item.tag}</span>
-              <span class="block font-display font-semibold text-xs sm:text-sm text-white mt-0.5">${item.title}</span>
-            </div>
-          `;
-
-          btn.addEventListener('click', () => openLightbox(idx));
-          galleryGrid.appendChild(btn);
-
-          // Silently probe configured repo image; reveal seamlessly only if present
-          probeImage(item.configuredSrc, (validSrc) => {
-            item.loadedSrc = validSrc;
-            const fb = btn.querySelector('.gallery-fallback');
-            const imgEl = btn.querySelector('.gallery-real');
-            const capEl = btn.querySelector('.gallery-real-caption');
-            imgEl.src = validSrc;
-            imgEl.classList.remove('hidden');
-            capEl.classList.remove('hidden');
-            fb.classList.add('hidden');
-          });
-        });
-      }
-
-      function openLightbox(idx) {
-        currentLightboxIndex = (idx + galleryResolved.length) % galleryResolved.length;
-        const item = galleryResolved[currentLightboxIndex];
-        lightboxTag.textContent = item.tag;
-        lightboxCaption.textContent = `${item.title} — ${item.caption}`;
-
-        if (item.loadedSrc) {
-          lightboxImg.src = item.loadedSrc;
-          lightboxImg.alt = item.title;
-          lightboxImg.classList.remove('hidden');
-          lightboxArtwork.classList.add('hidden');
-          lightboxArtwork.innerHTML = '';
-        } else {
-          lightboxImg.classList.add('hidden');
-          lightboxImg.src = '';
-          lightboxArtwork.innerHTML = item.fallbackArtwork;
-          lightboxArtwork.classList.remove('hidden');
-        }
-
-        lightboxModal.classList.remove('hidden');
-        lightboxModal.classList.add('flex');
-      }
-
-      function closeLightbox() {
-        lightboxModal.classList.add('hidden');
-        lightboxModal.classList.remove('flex');
-      }
-
-      document.getElementById('closeLightboxBtn').addEventListener('click', closeLightbox);
-      document.getElementById('lbPrevBtn').addEventListener('click', () => openLightbox(currentLightboxIndex - 1));
-      document.getElementById('lbNextBtn').addEventListener('click', () => openLightbox(currentLightboxIndex + 1));
-      lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
-
-      /* -----------------------------------------------------------------------
-         SETTINGS DRAWER (VISITOR UI PREFERENCES ONLY)
-         ----------------------------------------------------------------------- */
-      const htmlEl = document.documentElement;
-      const settingsDrawer = document.getElementById('settingsDrawer');
-      const settingsBackdrop = document.getElementById('settingsBackdrop');
-
-      function updateSwitch(btnId, knobId, active) {
-        const btn = document.getElementById(btnId);
-        const knob = document.getElementById(knobId);
-        btn.setAttribute('aria-checked', String(active));
-        btn.style.backgroundColor = active ? 'var(--accent)' : '#94A3B8';
-        knob.classList.toggle('translate-x-6', active);
-        knob.classList.toggle('translate-x-1', !active);
-      }
-
-      function applyPrefs() {
-        htmlEl.setAttribute('data-theme', prefs.theme);
-        htmlEl.setAttribute('data-accent', prefs.accent);
-        htmlEl.setAttribute('data-motion', prefs.motion ? 'on' : 'off');
-        htmlEl.setAttribute('data-ambient', prefs.ambient ? 'on' : 'off');
-
-        document.querySelectorAll('.theme-opt').forEach((btn) => {
-          const on = btn.dataset.setTheme === prefs.theme;
-          btn.style.borderColor = on ? 'var(--accent)' : '';
-          btn.querySelector('.theme-dot').style.backgroundColor = on ? 'var(--accent)' : 'transparent';
-        });
-
-        document.querySelectorAll('.accent-opt').forEach((btn) => {
-          const on = btn.dataset.setAccent === prefs.accent;
-          btn.style.borderColor = on ? 'var(--accent)' : '';
-          btn.style.backgroundColor = on ? 'var(--accent-soft)' : '';
-        });
-
-        updateSwitch('motionToggle', 'motionKnob', prefs.motion);
-        updateSwitch('ambientToggle', 'ambientKnob', prefs.ambient);
-
-        savePrefs();
-        positionFilterSlider();
-      }
-
-      function openSettings() {
-        settingsBackdrop.classList.remove('hidden');
-        settingsDrawer.classList.remove('translate-x-full');
-      }
-
-      function closeSettings() {
-        settingsDrawer.classList.add('translate-x-full');
-        settingsBackdrop.classList.add('hidden');
-      }
-
-      function cycleThemeQuick() {
-        const themes = ['light', 'dark', 'navy'];
-        const names = { light: 'Blanco Futurista', dark: 'Obsidiana Oscuro', navy: 'Azul Profundo' };
-        prefs.theme = themes[(themes.indexOf(prefs.theme) + 1) % themes.length];
-        applyPrefs();
-        toast(`Tema: ${names[prefs.theme]}`);
-      }
-
-      document.getElementById('navSettingsBtn').addEventListener('click', openSettings);
-      document.getElementById('floatingSettingsBtn').addEventListener('click', openSettings);
-      document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
-      settingsBackdrop.addEventListener('click', closeSettings);
-      document.getElementById('utilityThemeBtn').addEventListener('click', cycleThemeQuick);
-
-      document.querySelectorAll('.theme-opt').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          prefs.theme = btn.dataset.setTheme;
-          applyPrefs();
-          toast('Tema visual actualizado');
-        });
-      });
-
-      document.querySelectorAll('.accent-opt').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          prefs.accent = btn.dataset.setAccent;
-          applyPrefs();
-          toast('Color de acento actualizado');
-        });
-      });
-
-      document.getElementById('motionToggle').addEventListener('click', () => {
-        prefs.motion = !prefs.motion;
-        applyPrefs();
-        toast(prefs.motion ? 'Animaciones y física 3D activas' : 'Animaciones pausadas');
-      });
-
-      document.getElementById('ambientToggle').addEventListener('click', () => {
-        prefs.ambient = !prefs.ambient;
-        applyPrefs();
-        toast(prefs.ambient ? 'Luz ambiental activada' : 'Luz ambiental desactivada');
-      });
-
-      document.getElementById('resetPrefsBtn').addEventListener('click', () => {
-        prefs = { ...DEFAULT_PREFS };
-        applyPrefs();
-        toast('Ajustes restablecidos', 'gold');
-      });
-
-      /* -----------------------------------------------------------------------
-         MOBILE MENU
-         ----------------------------------------------------------------------- */
-      const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-      document.getElementById('mobileNavBtn').addEventListener('click', () => mobileNavDrawer.classList.toggle('hidden'));
-      document.querySelectorAll('.mobile-nav-link').forEach((a) => {
-        a.addEventListener('click', () => mobileNavDrawer.classList.add('hidden'));
-      });
-
-      /* -----------------------------------------------------------------------
-         MAGNETIC HALO BUTTONS & AMBIENT SPOTLIGHT CARDS
-         ----------------------------------------------------------------------- */
-      if (!isTouchDevice) {
-        document.querySelectorAll('[data-magnetic]').forEach((btn) => {
-          btn.addEventListener('mousemove', (e) => {
-            if (!prefs.motion) return;
-            const r = btn.getBoundingClientRect();
-            const dx = (e.clientX - (r.left + r.width / 2)) * 0.14;
-            const dy = (e.clientY - (r.top + r.height / 2)) * 0.14;
-            btn.style.transform = `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`;
-          });
-          btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translate3d(0, 0, 0)';
-          });
-        });
-
-        document.querySelectorAll('.spotlight-card').forEach((card) => {
-          card.addEventListener('mousemove', (e) => {
-            if (!prefs.ambient) return;
-            const r = card.getBoundingClientRect();
-            card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-            card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-          });
-        });
-      }
-
-      /* -----------------------------------------------------------------------
-         HERO 60FPS AMBIENT LIGHT & GRID CANVAS
-         ----------------------------------------------------------------------- */
-      const heroCanvas = document.getElementById('heroLightCanvas');
-      const ctx = heroCanvas.getContext('2d');
-      let cw = 0, ch = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const pointer = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
-      const particles = [];
-      let t = 0;
-
-      function resizeCanvas() {
-        const rect = heroCanvas.parentElement.getBoundingClientRect();
-        cw = rect.width;
-        ch = rect.height;
-        heroCanvas.width = Math.floor(cw * dpr);
-        heroCanvas.height = Math.floor(ch * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-        particles.length = 0;
-        const count = cw < 640 ? 20 : 38;
-        for (let i = 0; i < count; i++) {
-          particles.push({
-            x: Math.random() * cw,
-            y: Math.random() * ch,
-            vx: (Math.random() - 0.5) * 0.28,
-            vy: (Math.random() - 0.5) * 0.28,
-            r: Math.random() * 1.5 + 0.9,
-            tone: i % 9 === 0 ? 'gold' : (i % 15 === 0 ? 'red' : 'blue'),
-          });
-        }
-      }
-
-      window.addEventListener('resize', resizeCanvas);
-      heroCanvas.parentElement.addEventListener('mousemove', (e) => {
-        const r = heroCanvas.getBoundingClientRect();
-        pointer.tx = e.clientX - r.left;
-        pointer.ty = e.clientY - r.top;
-      });
-      heroCanvas.parentElement.addEventListener('mouseleave', () => {
-        pointer.tx = -9999;
-        pointer.ty = -9999;
-      });
-
-      function drawCanvas() {
-        ctx.clearRect(0, 0, cw, ch);
-
-        const isLight = prefs.theme === 'light';
-        const gridColor = isLight ? 'rgba(15, 23, 42, 0.032)' : 'rgba(255, 255, 255, 0.03)';
-
-        // Subtle architectural grid
-        ctx.strokeStyle = gridColor;
-        ctx.lineWidth = 1;
-        const step = 72;
-        ctx.beginPath();
-        for (let x = 0; x < cw; x += step) { ctx.moveTo(x, 0); ctx.lineTo(x, ch); }
-        for (let y = 0; y < ch; y += step) { ctx.moveTo(0, y); ctx.lineTo(cw, y); }
-        ctx.stroke();
-
-        if (prefs.ambient) {
-          const blueRgba = isLight ? 'rgba(0, 112, 204,' : 'rgba(59, 130, 246,';
-          const goldRgba = 'rgba(212, 175, 55,';
-          const redRgba = 'rgba(225, 29, 72,';
-
-          if (prefs.motion) t += 0.008;
-
-          // Two soft light ribbons
-          [
-            { yBase: ch * 0.26, amp: 24, freq: 0.003, color: blueRgba + (isLight ? '0.08)' : '0.15)') },
-            { yBase: ch * 0.62, amp: 30, freq: 0.0022, color: goldRgba + (isLight ? '0.09)' : '0.12)') },
-          ].forEach((wave, idx) => {
-            ctx.beginPath();
-            for (let x = 0; x <= cw; x += 20) {
-              const y = wave.yBase + Math.sin(x * wave.freq + t + idx * 1.7) * wave.amp;
-              if (x === 0) ctx.moveTo(x, y);
-              else ctx.lineTo(x, y);
-            }
-            ctx.strokeStyle = wave.color;
-            ctx.lineWidth = 1.4;
-            ctx.stroke();
-          });
-
-          pointer.x += (pointer.tx - pointer.x) * 0.1;
-          pointer.y += (pointer.ty - pointer.y) * 0.1;
-
-          for (let i = 0; i < particles.length; i++) {
-            const p = particles[i];
-            if (prefs.motion) {
-              p.x += p.vx;
-              p.y += p.vy;
-              if (p.x < 0 || p.x > cw) p.vx *= -1;
-              if (p.y < 0 || p.y > ch) p.vy *= -1;
-            }
-
-            const dxp = pointer.x - p.x;
-            const dyp = pointer.y - p.y;
-            const distP = Math.hypot(dxp, dyp);
-            if (prefs.motion && distP < 155 && distP > 1) {
-              p.x -= (dxp / distP) * 0.35;
-              p.y -= (dyp / distP) * 0.35;
-            }
-
-            for (let j = i + 1; j < particles.length; j++) {
-              const q = particles[j];
-              const d = Math.hypot(p.x - q.x, p.y - q.y);
-              if (d < 130) {
-                const a = (1 - d / 130) * (isLight ? 0.10 : 0.15);
-                ctx.strokeStyle = blueRgba + a.toFixed(3) + ')';
-                ctx.lineWidth = 0.85;
-                ctx.beginPath();
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(q.x, q.y);
-                ctx.stroke();
-              }
-            }
-
-            ctx.fillStyle = p.tone === 'gold'
-              ? goldRgba + '0.58)'
-              : p.tone === 'red'
-                ? redRgba + '0.45)'
-                : blueRgba + (isLight ? '0.32)' : '0.52)');
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fill();
-          }
-        }
-
-        requestAnimationFrame(drawCanvas);
-      }
-
-      /* -----------------------------------------------------------------------
-         HERO 3D DAMPED MONOLITH TILT (LERP PHYSICS)
-         ----------------------------------------------------------------------- */
-      const heroMonolith = document.getElementById('heroMonolith');
-      const monolithGlare = document.getElementById('monolithGlare');
-      const tilt = { rx: 0, ry: 0, trx: 0, try: 0, gx: 50, gy: 24, tgx: 50, tgy: 24 };
-
-      if (heroMonolith && !isTouchDevice) {
-        heroMonolith.addEventListener('mousemove', (e) => {
-          if (!prefs.motion) return;
-          const r = heroMonolith.getBoundingClientRect();
-          const nx = (e.clientX - r.left) / r.width;
-          const ny = (e.clientY - r.top) / r.height;
-          tilt.trx = (0.5 - ny) * 10.5;
-          tilt.try = (nx - 0.5) * 10.5;
-          tilt.tgx = nx * 100;
-          tilt.tgy = ny * 100;
-        });
-        heroMonolith.addEventListener('mouseleave', () => {
-          tilt.trx = 0; tilt.try = 0; tilt.tgx = 50; tilt.tgy = 24;
-        });
-      }
-
-      function animateMonolith() {
-        if (prefs.motion && heroMonolith && !isTouchDevice) {
-          tilt.rx += (tilt.trx - tilt.rx) * 0.08;
-          tilt.ry += (tilt.try - tilt.ry) * 0.08;
-          tilt.gx += (tilt.tgx - tilt.gx) * 0.1;
-          tilt.gy += (tilt.tgy - tilt.gy) * 0.1;
-          heroMonolith.style.transform = `rotateX(${tilt.rx.toFixed(2)}deg) rotateY(${tilt.ry.toFixed(2)}deg)`;
-          monolithGlare.style.setProperty('--gx', `${tilt.gx.toFixed(1)}%`);
-          monolithGlare.style.setProperty('--gy', `${tilt.gy.toFixed(1)}%`);
-        }
-        requestAnimationFrame(animateMonolith);
-      }
-
-      /* -----------------------------------------------------------------------
-         DARK CONTRAST BAND — 4-CHAPTER INTERACTIVE SHOWCASE
-         ----------------------------------------------------------------------- */
-      const CHAPTERS = [
-        {
-          code: 'CORE // 01 · ARQUITECTURA ENDLOOXS',
-          chip: '@endlooxs',
-          color: '#0070CC',
-          aurora1: 'rgba(0, 112, 204, 0.36)',
-          aurora2: 'rgba(212, 175, 55, 0.16)',
-          visual: `
-            <div class="w-full flex flex-col items-center justify-center py-4">
-              <div class="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center">
-                <div class="absolute inset-0 rounded-full border border-[#0070CC]/45 orbit-cw"></div>
-                <div class="absolute inset-4 rounded-full border border-dashed border-[#D4AF37]/45 orbit-ccw"></div>
-                <div class="absolute inset-9 rounded-full border border-white/12"></div>
-                <div class="relative w-28 h-28 rounded-full carbon-medallion border-2 border-[#D4AF37]/75 flex items-center justify-center shadow-[0_0_44px_rgba(0,112,204,0.35)]">
-                  <svg class="w-20 h-20" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                    <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#D4AF37" fill-opacity="0.16" stroke="#D4AF37" stroke-width="3.2" stroke-linejoin="round"/>
-                    <path d="M27 61L40 44L47 51L59 36" stroke="#D4AF37" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#E11D48"/>
-                    <path d="M48 62.5L60.5 54.5L52.5 64L48 62.5Z" fill="#E11D48"/>
-                  </svg>
-                </div>
-              </div>
-              <p class="mt-4 font-mono text-[11px] tracking-[0.22em] text-slate-300 uppercase">Tecnología • Hardware • Estrategia</p>
-            </div>
-          `,
-          telemetry: [
-            { label: 'IDENTIDAD', value: 'ENDLOOXS' },
-            { label: 'ENFOQUE', value: 'Híbrido Pro' },
-            { label: 'PERFIL', value: '@endlooxs' },
-          ],
-        },
-        {
-          code: 'CORE // 02 · OPTIMIZACIÓN WINDOWS 11',
-          chip: 'Optima0x.cfg',
-          color: '#38BDF8',
-          aurora1: 'rgba(56, 189, 248, 0.30)',
-          aurora2: 'rgba(0, 85, 255, 0.25)',
-          visual: `
-            <div class="w-full space-y-5">
-              <div class="flex items-center justify-between font-mono text-[11px] text-slate-300">
-                <span>FRAMETIME &amp; RAM WAVEFORM</span>
-                <span class="text-[#38BDF8]">OPTIMA0X ACTIVE</span>
-              </div>
-              <svg viewBox="0 0 420 135" class="w-full h-36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <defs>
-                  <linearGradient id="optWaveGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.34"/>
-                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <line x1="0" y1="30" x2="420" y2="30" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
-                <line x1="0" y1="70" x2="420" y2="70" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
-                <line x1="0" y1="110" x2="420" y2="110" stroke="rgba(255,255,255,0.08)"/>
-                <path d="M0 95 L42 84 L74 38 L102 92 L140 50 L175 88 L210 68" stroke="rgba(225,29,72,0.58)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                <path d="M0 95 C45 92, 92 88, 150 84 C210 79, 270 75, 330 74 C372 73, 398 73, 420 72 L420 128 L0 128 Z" fill="url(#optWaveGrad)"/>
-                <path d="M0 95 C45 92, 92 88, 150 84 C210 79, 270 75, 330 74 C372 73, 398 73, 420 72" stroke="#38BDF8" stroke-width="2.5"/>
-                <circle cx="330" cy="74" r="5" fill="#38BDF8"/>
-                <circle cx="330" cy="74" r="11" stroke="#38BDF8" stroke-opacity="0.45"/>
-              </svg>
-              <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-slate-400">
-                <span class="text-white/90">&gt; Rutas dinámicas verificadas</span>
-                <span>Limpieza RAM automatizada: OK</span>
-              </div>
-            </div>
-          `,
-          telemetry: [
-            { label: 'CONFIG', value: 'Optima0x.cfg' },
-            { label: 'MEMORIA', value: 'Auto Purge' },
-            { label: 'LATENCIA', value: 'Optimizada' },
-          ],
-        },
-        {
-          code: 'CORE // 03 · ENSAMBLES PC GAMA ALTA',
-          chip: 'Custom $1,000+',
-          color: '#D4AF37',
-          aurora1: 'rgba(212, 175, 55, 0.30)',
-          aurora2: 'rgba(0, 112, 204, 0.22)',
-          visual: `
-            <div class="w-full space-y-4">
-              <div class="flex items-center justify-between font-mono text-[11px] text-slate-300">
-                <span>ESQUEMA TÉRMICO &amp; BALANCE DE HARDWARE</span>
-                <span class="text-[#D4AF37]">ZERO BOTTLENECK</span>
-              </div>
-              <svg viewBox="0 0 420 148" class="w-full h-36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="24" y="12" width="372" height="124" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)" stroke-width="1.4"/>
-                <rect x="38" y="28" width="12" height="26" rx="4" fill="#0070CC" fill-opacity="0.6"/>
-                <rect x="38" y="61" width="12" height="26" rx="4" fill="#0070CC" fill-opacity="0.6"/>
-                <rect x="38" y="94" width="12" height="26" rx="4" fill="#0070CC" fill-opacity="0.6"/>
-                <rect x="148" y="28" width="66" height="44" rx="10" fill="rgba(212,175,55,0.16)" stroke="#D4AF37" stroke-width="1.4"/>
-                <text x="181" y="54" text-anchor="middle" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10">CPU</text>
-                <rect x="122" y="84" width="160" height="32" rx="8" fill="rgba(0,112,204,0.20)" stroke="#60A5FA" stroke-width="1.4"/>
-                <text x="202" y="104" text-anchor="middle" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10">GPU // THERMAL CURVE</text>
-                <path d="M56 41 C110 41, 120 48, 356 40" stroke="#60A5FA" stroke-width="1.5" class="dash-flow"/>
-                <path d="M56 74 C140 74, 210 74, 356 74" stroke="#D4AF37" stroke-width="1.5" class="dash-flow"/>
-                <path d="M56 107 C140 107, 220 99, 356 103" stroke="#60A5FA" stroke-width="1.5" class="dash-flow"/>
-                <rect x="370" y="34" width="12" height="44" rx="4" fill="#E11D48" fill-opacity="0.6"/>
-              </svg>
-            </div>
-          `,
-          telemetry: [
-            { label: 'GAMA', value: '$1,000+ USD' },
-            { label: 'AIRFLOW', value: 'Calibrado' },
-            { label: 'ENTREGA', value: 'Stress Tested' },
-          ],
-        },
-        {
-          code: 'CORE // 04 · COMMUNITY & CURADURÍA',
-          chip: 'Feed 9:16 & 4:5',
-          color: '#E11D48',
-          aurora1: 'rgba(225, 29, 72, 0.28)',
-          aurora2: 'rgba(0, 112, 204, 0.22)',
-          visual: `
-            <div class="w-full space-y-5">
-              <div class="flex items-center justify-between font-mono text-[11px] text-slate-300">
-                <span>GRID VERTICAL &amp; PULSO ORGÁNICO</span>
-                <span class="text-[#FB7185]">RETENCIÓN ACTIVA</span>
-              </div>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="rounded-2xl bg-white/[0.05] border border-white/12 p-3.5 flex flex-col justify-between h-32">
-                  <span class="font-mono text-[10px] text-[#FB7185]">01 · HOOK</span>
-                  <div class="space-y-1.5">
-                    <div class="h-1.5 w-3/4 rounded-full bg-white/30"></div>
-                    <div class="h-1.5 w-1/2 rounded-full bg-[#E11D48]/80"></div>
-                  </div>
-                </div>
-                <div class="rounded-2xl bg-white/[0.08] border border-[#0070CC]/55 p-3.5 flex flex-col justify-between h-32">
-                  <span class="font-mono text-[10px] text-[#60A5FA]">02 · ESTÉTICA</span>
-                  <div class="space-y-1.5">
-                    <div class="h-1.5 w-full rounded-full bg-[#0070CC]/85"></div>
-                    <div class="h-1.5 w-2/3 rounded-full bg-white/30"></div>
-                  </div>
-                </div>
-                <div class="rounded-2xl bg-white/[0.05] border border-white/12 p-3.5 flex flex-col justify-between h-32">
-                  <span class="font-mono text-[10px] text-[#D4AF37]">03 · GROWTH</span>
-                  <div class="space-y-1.5">
-                    <div class="h-1.5 w-4/5 rounded-full bg-[#D4AF37]/85"></div>
-                    <div class="h-1.5 w-1/2 rounded-full bg-white/30"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `,
-          telemetry: [
-            { label: 'FORMATO', value: '9:16 & 4:5' },
-            { label: 'ESTRATEGIA', value: 'Editorial' },
-            { label: 'CRECIMIENTO', value: 'Orgánico' },
-          ],
-        },
-      ];
-
-      const chapterCards = document.querySelectorAll('.chapter-card');
-      const chapterCounter = document.getElementById('chapterCounter');
-      const coreAurora1 = document.getElementById('coreAurora1');
-      const coreAurora2 = document.getElementById('coreAurora2');
-      const coreDot = document.getElementById('coreDot');
-      const coreCode = document.getElementById('coreCode');
-      const coreChip = document.getElementById('coreChip');
-      const coreVisualStage = document.getElementById('coreVisualStage');
-      const coreTelemetry = document.getElementById('coreTelemetry');
-
-      function setChapter(idx) {
-        const ch = CHAPTERS[idx];
-        if (!ch) return;
-        currentChapter = idx;
-        chapterCounter.textContent = `0${idx + 1}`;
-        chapterCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
-
-        coreAurora1.style.background = ch.aurora1;
-        coreAurora2.style.background = ch.aurora2;
-        coreDot.style.backgroundColor = ch.color;
-        coreCode.textContent = ch.code;
-        coreChip.textContent = ch.chip;
-        coreVisualStage.innerHTML = ch.visual;
-        coreTelemetry.innerHTML = ch.telemetry.map((m) => `
-          <div class="rounded-2xl bg-white/[0.05] border border-white/10 p-3">
-            <span class="block font-mono text-[9px] text-slate-400 uppercase tracking-wider">${m.label}</span>
-            <span class="block font-display font-semibold text-xs sm:text-sm text-white mt-0.5">${m.value}</span>
-          </div>
-        `).join('');
-      }
-
-      chapterCards.forEach((card) => {
-        card.addEventListener('click', () => {
-          chapterLocked = true;
-          setChapter(Number(card.dataset.chapter));
-          setTimeout(() => { chapterLocked = false; }, 3500);
-        });
-      });
-
-      document.querySelectorAll('[data-jump-chapter]').forEach((link) => {
-        link.addEventListener('click', () => {
-          chapterLocked = true;
-          setChapter(Number(link.dataset.jumpChapter));
-          setTimeout(() => { chapterLocked = false; }, 3500);
-        });
-      });
-
-      const ecosistemaSec = document.getElementById('ecosistema');
-      window.addEventListener('scroll', () => {
-        if (!prefs.motion || chapterLocked || window.innerWidth < 1024 || !ecosistemaSec) return;
-        const secRect = ecosistemaSec.getBoundingClientRect();
-        if (secRect.top >= window.innerHeight * 0.7 || secRect.bottom <= window.innerHeight * 0.3) return;
-        let bestIdx = currentChapter;
-        let minDist = Infinity;
-        const centerY = window.innerHeight * 0.42;
-        chapterCards.forEach((card, idx) => {
-          const r = card.getBoundingClientRect();
-          const d = Math.abs(r.top + r.height / 2 - centerY);
-          if (d < minDist) {
-            minDist = d;
-            bestIdx = idx;
-          }
-        });
-        if (bestIdx !== currentChapter) setChapter(bestIdx);
-      }, { passive: true });
-
-      setChapter(0);
-
-      /* -----------------------------------------------------------------------
-         SLIDING-PILL PROJECT FILTER & CASE STUDY MODAL
-         ----------------------------------------------------------------------- */
-      const filterTabs = document.querySelectorAll('.filter-tab');
-      const filterSlider = document.getElementById('filterSlider');
-      const projectCards = document.querySelectorAll('.project-card');
-
-      function positionFilterSlider() {
-        const activeBtn = document.querySelector(`.filter-tab[data-filter="${activeFilter}"]`);
-        if (!activeBtn || !filterSlider) return;
-        filterSlider.style.width = activeBtn.offsetWidth + 'px';
-        filterSlider.style.transform = `translateX(${activeBtn.offsetLeft - 6}px)`;
-
-        filterTabs.forEach((tab) => {
-          tab.style.color = tab === activeBtn ? 'var(--accent-ink)' : 'var(--ink-secondary)';
-        });
-      }
-
-      filterTabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          activeFilter = tab.dataset.filter;
-          positionFilterSlider();
-          projectCards.forEach((card) => {
-            const match = activeFilter === 'all' || card.dataset.category === activeFilter;
-            card.classList.toggle('hidden', !match);
-            if (activeFilter !== 'all' && match) {
-              card.classList.remove('lg:col-span-5', 'lg:col-span-7');
-              card.classList.add('lg:col-span-12');
-            } else if (activeFilter === 'all') {
-              card.classList.remove('lg:col-span-12');
-              const wide = card.dataset.case === 'optima0x' || card.dataset.case === 'endlooxs-brand';
-              card.classList.add(wide ? 'lg:col-span-7' : 'lg:col-span-5');
-            }
-          });
-        });
-      });
-
-      window.addEventListener('resize', positionFilterSlider);
-
-      const CASE_STUDIES = {
-        optima0x: {
-          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25">01 // SISTEMAS &amp; OS</span>',
-          title: 'Optima0x — Suite de Optimización Windows 11',
-          challenge: 'Muchos optimizadores aplican cambios agresivos o placebo que deterioran la estabilidad de Windows 11 sin aportar mejoras consistentes en gaming ni gestión de RAM.',
-          solution: 'Desarrollo de scripts .bat modulares con detección dinámica de rutas, limpieza automatizada de memoria RAM, configuración persistente en Optima0x.cfg y ajustes reales enfocados en baja latencia.',
-          deliverables: [
-            'Detección dinámica de rutas y ejecución portable en entornos Windows 11.',
-            'Limpieza automatizada de RAM y control de procesos en segundo plano para sesiones de juego.',
-            'Persistencia de preferencias en Optima0x.cfg con respaldo y restauración segura.'
-          ],
-          stack: ['Windows 11', 'Batch (.bat)', 'Optima0x.cfg', 'RAM Management', 'Gaming Latency'],
-          wa: 'Hola Edgar (ENDLOOXS), vi tu proyecto Optima0x y quiero consultar sobre optimización para Windows 11.',
-        },
-        'hardware-custom': {
-          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#D4AF37]/15 text-[#A58119] border border-[#D4AF37]/35">02 // HARDWARE CUSTOM</span>',
-          title: 'Ensambles PC Custom ($1,000+)',
-          challenge: 'Inversiones elevadas en hardware desaprovechadas por malas combinaciones de componentes, cuellos de botella, ruido térmico excesivo o ensamblajes descuidados.',
-          solution: 'Cotización inteligente pieza por pieza según presupuesto y uso real, ensamblaje con gestión limpia de cableado, perfil térmico optimizado y validación completa de estabilidad.',
-          deliverables: [
-            'Cotización balanceada sin cuellos de botella (CPU, GPU, RAM, NVMe y PSU certificada).',
-            'Armado profesional con cable management estético y presión de aire positiva.',
-            'Ajuste de BIOS (XMP/EXPO), curvas de ventilación y benchmarks térmicos de estabilidad.'
-          ],
-          stack: ['Custom Builds $1,000+', 'Airflow & Térmica', 'Cable Management', 'Benchmarks'],
-          wa: 'Hola Edgar (ENDLOOXS), quiero cotizar un armado de PC custom de gama alta (+$1,000 USD).',
-        },
-        'social-growth': {
-          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#E11D48]/10 text-[#E11D48] border border-[#E11D48]/25">03 // SOCIAL MEDIA</span>',
-          title: 'Community Management & Estrategia Digital',
-          challenge: 'Perfiles con baja consistencia visual y publicaciones sin una estructura editorial clara que sostenga la retención ni el vínculo con la audiencia.',
-          solution: 'Planificación editorial estructurada, dirección de contenido vertical y gestión cercana de comunidad orientada a crecimiento orgánico y recordación de marca.',
-          deliverables: [
-            'Calendario editorial mensual y líneas de contenido alineadas a la identidad de marca.',
-            'Estrategia de retención en formatos cortos y coherencia visual del feed.',
-            'Gestión activa de comunidad, métricas de desempeño y optimización continua.'
-          ],
-          stack: ['Community Management', 'Calendario Editorial', 'Retención', 'Analítica Social'],
-          wa: 'Hola Edgar (ENDLOOXS), me gustaría conversar sobre Community Management y estrategia para redes sociales.',
-        },
-        'endlooxs-brand': {
-          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold accent-pill">04 // MARCA PERSONAL</span>',
-          title: '@endlooxs — Identidad & Dirección Visual',
-          challenge: 'Consolidar múltiples disciplinas técnicas y creativas en una identidad personal minimalista, coherente y reconocible en Instagram.',
-          solution: 'Dirección creativa de @endlooxs combinando estética oscura/moody, encuadre vertical 4:5, retoque natural sin artificios y un emblema propio de alto impacto.',
-          deliverables: [
-            'Sistema de identidad visual con emblema geométrico del lobo y paleta controlada.',
-            'Curaduría de fotografía vertical 4:5 y narrativa visual en instagram.com/endlooxs.',
-            'Portafolio web oficial integrado al ecosistema de marca.'
-          ],
-          stack: ['Marca Personal', 'Dirección Visual', 'Curaduría 4:5', 'Instagram @endlooxs'],
-          wa: 'Hola Edgar (ENDLOOXS), vi tu trabajo de marca en @endlooxs y quiero explorar una colaboración.',
-        },
-      };
-
-      const caseModal = document.getElementById('caseModal');
-      function openCaseModal(id) {
-        const c = CASE_STUDIES[id];
-        if (!c) return;
-        document.getElementById('caseBadge').innerHTML = c.badge;
-        document.getElementById('caseTitle').textContent = c.title;
-        document.getElementById('caseChallenge').textContent = c.challenge;
-        document.getElementById('caseSolution').textContent = c.solution;
-        document.getElementById('caseDeliverables').innerHTML = c.deliverables.map((d) => `
-          <li class="flex items-start gap-2.5">
-            <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0"></span>
-            <span>${d}</span>
-          </li>
-        `).join('');
-        document.getElementById('caseStack').innerHTML = c.stack.map((s) => `
-          <span class="px-3 py-1 rounded-full surface-alt font-mono text-[11px] ink-sub">${s}</span>
-        `).join('');
-        document.getElementById('caseWhatsAppLink').href = `https://wa.me/50768890772?text=${encodeURIComponent(c.wa)}`;
-        caseModal.classList.remove('hidden');
-        caseModal.classList.add('flex');
-      }
-
-      function closeCaseModal() {
-        caseModal.classList.add('hidden');
-        caseModal.classList.remove('flex');
-      }
-
-      projectCards.forEach((card) => card.addEventListener('click', () => openCaseModal(card.dataset.case)));
-      document.getElementById('closeCaseModalBtn').addEventListener('click', closeCaseModal);
-      caseModal.addEventListener('click', (e) => { if (e.target === caseModal) closeCaseModal(); });
-
-      /* -----------------------------------------------------------------------
-         ONE-CLICK CLIPBOARD COPY (iFrame-safe) & CONTACT BUILDER
-         ----------------------------------------------------------------------- */
-      document.querySelectorAll('.copy-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const text = btn.dataset.copy;
-          const label = btn.dataset.copyLabel || 'Dato';
-          let copied = false;
-          try {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.setAttribute('readonly', '');
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            copied = document.execCommand('copy');
-            document.body.removeChild(ta);
-          } catch (err) {
-            copied = false;
-          }
-          if (copied) {
-            const prev = btn.textContent;
-            btn.textContent = 'Copiado';
-            toast(`${label} copiado al portapapeles`);
-            setTimeout(() => { btn.textContent = prev; }, 1600);
-          }
-        });
-      });
-
-      const topicBtns = document.querySelectorAll('.topic-btn');
-      topicBtns.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          activeTopic = btn.dataset.topic;
-          topicBtns.forEach((b) => {
-            const on = b === btn;
-            b.classList.toggle('accent-fill', on);
-            b.classList.toggle('surface-alt', !on);
-            b.classList.toggle('ink-sub', !on);
-          });
-        });
-      });
-
-      function readBrief() {
-        const name = document.getElementById('briefName').value.trim();
-        const msg = document.getElementById('briefMsg').value.trim();
-        if (!msg) {
-          toast('Escribe un breve mensaje antes de enviar.', 'gold');
-          document.getElementById('briefMsg').focus();
-          return null;
-        }
-        return { name, topic: activeTopic, msg };
-      }
-
-      document.getElementById('sendWhatsAppBtn').addEventListener('click', () => {
-        const d = readBrief();
-        if (!d) return;
-        const greeting = d.name ? `Hola Edgar (ENDLOOXS), soy ${d.name}.` : 'Hola Edgar (ENDLOOXS).';
-        const text = `${greeting}\n*Tema:* ${d.topic}\n*Mensaje:* ${d.msg}`;
-        window.open(`https://wa.me/50768890772?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
-        toast('Abriendo WhatsApp...');
-      });
-
-      document.getElementById('sendEmailBtn').addEventListener('click', () => {
-        const d = readBrief();
-        if (!d) return;
-        const subject = `[ENDLOOXS] ${d.topic}${d.name ? ' — ' + d.name : ''}`;
-        const body = `${d.name ? 'Hola Edgar, soy ' + d.name + '.\n\n' : 'Hola Edgar,\n\n'}Tema: ${d.topic}\n\nMensaje:\n${d.msg}`;
-        window.location.href = `mailto:ej.rj2007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        toast('Abriendo cliente de correo...');
-      });
-
-      /* -----------------------------------------------------------------------
-         SCROLL REVEAL (INTERSECTIONOBSERVER) & KEYBOARD NAVIGATION
-         ----------------------------------------------------------------------- */
-      const revealEls = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        revealEls.forEach((el) => io.observe(el));
-      } else {
-        revealEls.forEach((el) => el.classList.add('visible'));
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeSettings();
-          closeCaseModal();
-          closeLightbox();
-        }
-        if (!lightboxModal.classList.contains('hidden')) {
-          if (e.key === 'ArrowRight') openLightbox(currentLightboxIndex + 1);
-          if (e.key === 'ArrowLeft') openLightbox(currentLightboxIndex - 1);
-        }
-      });
-
-      /* -----------------------------------------------------------------------
-         BOOT
-         ----------------------------------------------------------------------- */
-      window.addEventListener('load', () => {
-        resizeCanvas();
-        drawCanvas();
-        animateMonolith();
-        positionFilterSlider();
-      });
-
-      applyPrefs();
-      renderGallery();
-      resizeCanvas();
-    })();
-  </script>
+  <!-- Lógica separada -->
+  <script src="./app.js" defer></script>
 </body>
 </html>

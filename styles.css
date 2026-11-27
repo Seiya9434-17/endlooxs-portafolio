@@ -1,0 +1,566 @@
+/* =========================================================================
+   1. DESIGN TOKENS — BLANCO FUTURISTA (DEFAULT), OBSIDIANA & AZUL PROFUNDO
+   ========================================================================= */
+:root,
+[data-theme="light"] {
+  --bg-page: #FFFFFF;
+  --bg-ice: #F4F7FB;
+  --bg-surface: #FFFFFF;
+  --bg-surface-alt: #EDF2F8;
+  --bg-glass: rgba(255, 255, 255, 0.80);
+  --bg-glass-strong: rgba(255, 255, 255, 0.96);
+  --ink-primary: #090E1A;
+  --ink-secondary: #475569;
+  --ink-muted: #64748B;
+  --hairline: rgba(15, 23, 42, 0.085);
+  --hairline-strong: rgba(15, 23, 42, 0.16);
+  --shadow-soft: 0 12px 32px -16px rgba(9, 14, 26, 0.09), 0 1px 3px rgba(9, 14, 26, 0.04);
+  --shadow-elevated: 0 30px 64px -20px rgba(0, 85, 255, 0.18), 0 8px 20px -6px rgba(9, 14, 26, 0.07);
+  --spotlight-color: rgba(0, 85, 255, 0.09);
+  --utility-bg: #050814;
+  --utility-ink: rgba(255, 255, 255, 0.86);
+}
+
+[data-theme="dark"] {
+  --bg-page: #070910;
+  --bg-ice: #0C101C;
+  --bg-surface: #111625;
+  --bg-surface-alt: #182034;
+  --bg-glass: rgba(9, 12, 22, 0.82);
+  --bg-glass-strong: rgba(13, 18, 31, 0.96);
+  --ink-primary: #F8FAFC;
+  --ink-secondary: #94A3B8;
+  --ink-muted: #64748B;
+  --hairline: rgba(255, 255, 255, 0.085);
+  --hairline-strong: rgba(255, 255, 255, 0.18);
+  --shadow-soft: 0 18px 42px -18px rgba(0, 0, 0, 0.80);
+  --shadow-elevated: 0 30px 68px -18px rgba(0, 0, 0, 0.94);
+  --spotlight-color: rgba(0, 112, 204, 0.17);
+  --utility-bg: #030509;
+  --utility-ink: rgba(248, 250, 252, 0.84);
+}
+
+[data-theme="navy"] {
+  --bg-page: #040B1D;
+  --bg-ice: #07132E;
+  --bg-surface: #0B1B3E;
+  --bg-surface-alt: #122754;
+  --bg-glass: rgba(5, 14, 36, 0.84);
+  --bg-glass-strong: rgba(9, 22, 52, 0.96);
+  --ink-primary: #F1F6FF;
+  --ink-secondary: #9BB4DC;
+  --ink-muted: #6D89B8;
+  --hairline: rgba(120, 170, 255, 0.16);
+  --hairline-strong: rgba(120, 170, 255, 0.28);
+  --shadow-soft: 0 20px 46px -18px rgba(2, 6, 20, 0.84);
+  --shadow-elevated: 0 32px 68px -16px rgba(0, 85, 255, 0.36);
+  --spotlight-color: rgba(59, 130, 246, 0.19);
+  --utility-bg: #020612;
+  --utility-ink: rgba(241, 246, 255, 0.86);
+}
+
+/* =========================================================================
+   2. ACCENT TOKENS — AZUL ELÉCTRICO / DORADO / CRIMSON
+   ========================================================================= */
+:root,
+[data-accent="blue"] {
+  --accent: #0055FF;
+  --accent-alt: #0070CC;
+  --accent-hover: #0044CC;
+  --accent-ink: #FFFFFF;
+  --accent-soft: rgba(0, 85, 255, 0.095);
+  --accent-border: rgba(0, 85, 255, 0.34);
+  --accent-glow: rgba(0, 85, 255, 0.42);
+}
+
+[data-accent="gold"] {
+  --accent: #D4AF37;
+  --accent-alt: #B89124;
+  --accent-hover: #B89124;
+  --accent-ink: #090E1A;
+  --accent-soft: rgba(212, 175, 55, 0.14);
+  --accent-border: rgba(212, 175, 55, 0.44);
+  --accent-glow: rgba(212, 175, 55, 0.40);
+}
+
+[data-accent="red"] {
+  --accent: #E11D48;
+  --accent-alt: #BE123C;
+  --accent-hover: #BE123C;
+  --accent-ink: #FFFFFF;
+  --accent-soft: rgba(225, 29, 72, 0.10);
+  --accent-border: rgba(225, 29, 72, 0.34);
+  --accent-glow: rgba(225, 29, 72, 0.40);
+}
+
+/* =========================================================================
+   3. BASE, SUPERFICIES Y TIPOGRAFÍA
+   ========================================================================= */
+html, body {
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+}
+
+.utility-bar {
+  background-color: var(--utility-bg);
+  color: var(--utility-ink);
+}
+
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  z-index: 100;
+  background: linear-gradient(90deg, #0055FF 0%, #0070CC 38%, #D4AF37 72%, #E11D48 100%);
+  pointer-events: none;
+  transition: width 0.06s linear;
+}
+
+.surface-ice { background-color: var(--bg-ice); }
+.surface-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-soft);
+}
+.surface-alt {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--hairline);
+}
+.surface-glass {
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: var(--hairline);
+}
+.surface-glass-strong {
+  background-color: var(--bg-glass-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-color: var(--hairline);
+}
+
+.ink-main { color: var(--ink-primary); }
+.ink-sub { color: var(--ink-secondary); }
+.ink-muted { color: var(--ink-muted); }
+.border-hair { border-color: var(--hairline); }
+.border-hair-strong { border-color: var(--hairline-strong); }
+.accent-ink { color: var(--accent); }
+.accent-fill { background-color: var(--accent); color: var(--accent-ink); }
+.accent-pill {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+.display-tight { letter-spacing: -0.035em; }
+.perspective-1200 { perspective: 1200px; }
+
+.carbon-medallion {
+  background-color: #0E1117;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%);
+  background-size: 6px 6px;
+  background-position: 0 0, 3px 3px;
+}
+
+/* =========================================================================
+   4. BOTONES PILL DE DOBLE ANILLO HALO + BARRIDO ESPECULAR
+   ========================================================================= */
+.halo-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5px;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.halo-btn-inner {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  border-radius: 9999px;
+  padding: 0.78rem 1.55rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.halo-btn-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+  transform: translateX(-135%);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.halo-btn:hover .halo-btn-inner::after { transform: translateX(135%); }
+.halo-btn:hover,
+.halo-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.halo-btn:hover .halo-btn-inner { background-color: var(--accent-hover); }
+.halo-btn:active { transform: scale(0.98); }
+
+.halo-btn-sm .halo-btn-inner {
+  padding: 0.52rem 1.15rem;
+  font-size: 0.8125rem;
+}
+
+.halo-btn-secondary .halo-btn-inner {
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  border: 1px solid var(--hairline-strong);
+}
+
+.halo-btn-secondary:hover .halo-btn-inner {
+  background-color: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================================================
+   5. SISTEMA 3D MULTICAPA (MONOLITO, GIROSCOPIO Y TARJETAS TILT)
+   ========================================================================= */
+.monolith-perspective { perspective: 1300px; }
+
+.monolith-stage {
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: var(--shadow-elevated);
+}
+
+.monolith-inner-clip {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.monolith-floor-grid {
+  position: absolute;
+  inset: -15% -25%;
+  background-image:
+    linear-gradient(to right, rgba(0, 85, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 85, 255, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  transform: perspective(600px) rotateX(62deg) translateY(34%);
+  mask-image: radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.75), transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.75), transparent 72%);
+}
+
+.monolith-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 24%), rgba(0, 85, 255, 0.16), transparent 60%);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* Órbitas giroscópicas reales en 3D */
+.gyro-3d-shell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.gyro-ring {
+  position: absolute;
+  border-radius: 9999px;
+  transform-style: preserve-3d;
+}
+
+.gyro-ring-1 {
+  width: 340px;
+  height: 340px;
+  border: 1.5px dashed rgba(0, 85, 255, 0.32);
+  animation: gyroSpin1 24s linear infinite;
+}
+
+.gyro-ring-2 {
+  width: 280px;
+  height: 280px;
+  border: 1.5px solid rgba(212, 175, 55, 0.42);
+  animation: gyroSpin2 19s linear infinite;
+}
+
+.gyro-ring-3 {
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(225, 29, 72, 0.30);
+  animation: gyroSpin3 16s linear infinite;
+}
+
+.monolith-core-3d {
+  transform: translateZ(66px);
+  box-shadow:
+    0 28px 56px -12px rgba(0, 0, 0, 0.56),
+    0 0 36px -6px var(--accent-glow);
+}
+
+.z-layer-1 { transform: translateZ(38px); }
+.z-layer-2 { transform: translateZ(54px); }
+
+/* Tarjetas interactivas 3D + Spotlight */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.tilt-depth-sm {
+  transform: translateZ(20px);
+  transition: transform 0.3s ease;
+}
+
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(440px circle at var(--mx, -420px) var(--my, -420px), var(--spotlight-color), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-ambient="on"] .spotlight-card:hover::before { opacity: 1; }
+.spotlight-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-elevated);
+}
+.spotlight-card > * { position: relative; z-index: 2; }
+
+[data-ambient="off"] .monolith-glare,
+[data-ambient="off"] .ambient-glow {
+  opacity: 0 !important;
+}
+
+/* =========================================================================
+   6. COMPARADOR ANTES VS. DESPUÉS
+   ========================================================================= */
+.compare-stage {
+  background-color: #070B16;
+  cursor: ew-resize;
+}
+
+.compare-after {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(0, 85, 255, 0.24), transparent 50%),
+    radial-gradient(circle at 70% 85%, rgba(212, 175, 55, 0.14), transparent 52%),
+    linear-gradient(135deg, #060D21 0%, #09122B 100%);
+}
+
+.compare-before {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(225, 29, 72, 0.16), transparent 48%),
+    linear-gradient(135deg, #0E0B14 0%, #15111B 100%);
+  clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0);
+}
+
+.compare-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos, 50%);
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), var(--accent), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 0 18px var(--accent-glow);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.compare-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  color: #090E1A;
+  border: 3px solid var(--accent);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.48), 0 0 0 4px rgba(0, 85, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: ew-resize;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.compare-handle:hover,
+.compare-handle:focus-visible {
+  outline: none;
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.56), 0 0 0 6px var(--accent-glow);
+}
+
+/* =========================================================================
+   7. BANDA OSCURA, FILTRO DESLIZANTE Y ANIMACIONES
+   ========================================================================= */
+.dark-showcase-band {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(0, 85, 255, 0.24) 0%, transparent 46%),
+    radial-gradient(circle at 84% 82%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+    linear-gradient(168deg, #040711 0%, #050814 48%, #071128 100%);
+}
+
+.chapter-card {
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background: rgba(255, 255, 255, 0.025);
+  opacity: 0.58;
+  transition: background-color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+}
+
+.chapter-card:hover {
+  opacity: 0.92;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.chapter-card.is-active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.075);
+  border-color: var(--chapter-color, #0055FF);
+  box-shadow: 0 20px 48px -24px var(--chapter-glow, rgba(0, 85, 255, 0.45));
+}
+
+#filterSlider {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  border-radius: 9999px;
+  background-color: var(--accent);
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), width 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gyroSpin1 {
+  0%   { transform: rotateX(68deg) rotateY(14deg) rotateZ(0deg); }
+  100% { transform: rotateX(68deg) rotateY(14deg) rotateZ(360deg); }
+}
+
+@keyframes gyroSpin2 {
+  0%   { transform: rotateX(58deg) rotateY(-42deg) rotateZ(360deg); }
+  100% { transform: rotateX(58deg) rotateY(-42deg) rotateZ(0deg); }
+}
+
+@keyframes gyroSpin3 {
+  0%   { transform: rotateX(34deg) rotateY(62deg) rotateZ(0deg); }
+  100% { transform: rotateX(34deg) rotateY(62deg) rotateZ(360deg); }
+}
+
+@keyframes orbitCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes orbitCCW { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+@keyframes floatA {
+  0%, 100% { transform: translateY(0px) translateZ(38px); }
+  50%      { transform: translateY(-7px) translateZ(38px); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(0px) translateZ(54px); }
+  50%      { transform: translateY(7px) translateZ(54px); }
+}
+@keyframes dashFlow { to { stroke-dashoffset: -48; } }
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 0.85; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+.orbit-cw { animation: orbitCW 34s linear infinite; }
+.orbit-ccw { animation: orbitCCW 48s linear infinite; }
+.float-a { animation: floatA 5.6s ease-in-out infinite; }
+.float-b { animation: floatB 6.4s ease-in-out infinite; }
+.float-c { animation: floatA 6.8s ease-in-out infinite 0.9s; }
+.float-d { animation: floatB 7.2s ease-in-out infinite 1.3s; }
+.dash-flow { stroke-dasharray: 6 6; animation: dashFlow 2.1s linear infinite; }
+.pulse-glow { animation: pulseGlow 6s ease-in-out infinite; }
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Desactivación limpia cuando el usuario apaga Físicas 3D & Animaciones */
+[data-motion="off"] .gyro-ring-1,
+[data-motion="off"] .gyro-ring-2,
+[data-motion="off"] .gyro-ring-3,
+[data-motion="off"] .orbit-cw,
+[data-motion="off"] .orbit-ccw,
+[data-motion="off"] .float-a,
+[data-motion="off"] .float-b,
+[data-motion="off"] .float-c,
+[data-motion="off"] .float-d,
+[data-motion="off"] .dash-flow,
+[data-motion="off"] .pulse-glow,
+[data-motion="off"] .marquee-track {
+  animation: none !important;
+}
+
+[data-motion="off"] .monolith-stage,
+[data-motion="off"] .tilt-card {
+  transform: none !important;
+}
+
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--bg-ice); }
+::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 9999px; }
