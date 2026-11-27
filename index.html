@@ -1,0 +1,3145 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth" data-theme="light" data-accent="blue" data-motion="on" data-spotlight="on">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENDLOOXS — Edgar Rodriguez | Ecosistema Multidisciplinario</title>
+  <meta name="description" content="Portafolio oficial de ENDLOOXS por Edgar Rodriguez en Panamá. Optimización de sistemas Windows 11 (Optima0x), arquitectura y armado de PCs +$1,000 USD, Community Management e identidad visual." />
+
+  <!-- Google Fonts: Space Grotesk (Display), Plus Jakarta Sans (UI/Body), JetBrains Mono (Telemetry/Indices) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            psBlue: '#0055FF',
+            psLight: '#0070CC',
+            wolfGold: '#C8A24A',
+            crimson: '#DC2626',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* =========================================================================
+       1. DESIGN SYSTEM TOKENS — LIGHT (DEFAULT), DARK OBSIDIAN & DEEP PSN NAVY
+       ========================================================================= */
+    :root,
+    [data-theme="light"] {
+      --bg-page: #FFFFFF;
+      --bg-alabaster: #F4F6FA;
+      --bg-surface: #FFFFFF;
+      --bg-surface-alt: #EDF1F7;
+      --bg-glass: rgba(255, 255, 255, 0.78);
+      --bg-glass-strong: rgba(255, 255, 255, 0.94);
+      --ink-primary: #0A0F1C;
+      --ink-secondary: #475569;
+      --ink-muted: #64748B;
+      --hairline: rgba(15, 23, 42, 0.085);
+      --hairline-strong: rgba(15, 23, 42, 0.16);
+      --shadow-soft: 0 10px 30px -15px rgba(10, 15, 28, 0.08), 0 1px 3px rgba(10, 15, 28, 0.04);
+      --shadow-elevated: 0 28px 60px -20px rgba(0, 85, 255, 0.16), 0 6px 18px -6px rgba(10, 15, 28, 0.06);
+      --spotlight-color: rgba(0, 85, 255, 0.08);
+      --grid-color: rgba(15, 23, 42, 0.045);
+      --utility-bg: #050814;
+      --utility-ink: rgba(255, 255, 255, 0.86);
+      --graphite-accent: #111827;
+      --graphite-hover: #1F2937;
+      --graphite-ink: #FFFFFF;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #07090F;
+      --bg-alabaster: #0C101B;
+      --bg-surface: #111624;
+      --bg-surface-alt: #181F31;
+      --bg-glass: rgba(10, 13, 22, 0.78);
+      --bg-glass-strong: rgba(13, 17, 29, 0.95);
+      --ink-primary: #F8FAFC;
+      --ink-secondary: #94A3B8;
+      --ink-muted: #64748B;
+      --hairline: rgba(255, 255, 255, 0.085);
+      --hairline-strong: rgba(255, 255, 255, 0.17);
+      --shadow-soft: 0 18px 42px -18px rgba(0, 0, 0, 0.75);
+      --shadow-elevated: 0 28px 64px -18px rgba(0, 0, 0, 0.9);
+      --spotlight-color: rgba(0, 112, 204, 0.16);
+      --grid-color: rgba(255, 255, 255, 0.035);
+      --utility-bg: #030509;
+      --utility-ink: rgba(248, 250, 252, 0.82);
+      --graphite-accent: #F8FAFC;
+      --graphite-hover: #E2E8F0;
+      --graphite-ink: #0A0F1C;
+    }
+
+    [data-theme="navy"] {
+      --bg-page: #040B1C;
+      --bg-alabaster: #07122B;
+      --bg-surface: #0B1938;
+      --bg-surface-alt: #11244D;
+      --bg-glass: rgba(5, 14, 34, 0.80);
+      --bg-glass-strong: rgba(9, 21, 48, 0.96);
+      --ink-primary: #F1F6FF;
+      --ink-secondary: #9BB4DC;
+      --ink-muted: #6D88B5;
+      --hairline: rgba(120, 170, 255, 0.14);
+      --hairline-strong: rgba(120, 170, 255, 0.26);
+      --shadow-soft: 0 20px 46px -18px rgba(2, 6, 20, 0.8);
+      --shadow-elevated: 0 30px 66px -16px rgba(0, 85, 255, 0.34);
+      --spotlight-color: rgba(59, 130, 246, 0.18);
+      --grid-color: rgba(96, 165, 250, 0.055);
+      --utility-bg: #020612;
+      --utility-ink: rgba(241, 246, 255, 0.85);
+      --graphite-accent: #F1F6FF;
+      --graphite-hover: #DBEAFE;
+      --graphite-ink: #040B1C;
+    }
+
+    /* =========================================================================
+       2. ACCENT TOKENS (PSN BLUE / METALLIC GOLD / CRIMSON / MINIMAL GRAPHITE)
+       ========================================================================= */
+    :root,
+    [data-accent="blue"] {
+      --accent: #0055FF;
+      --accent-hover: #0044CC;
+      --accent-ink: #FFFFFF;
+      --accent-soft: rgba(0, 85, 255, 0.09);
+      --accent-border: rgba(0, 85, 255, 0.32);
+      --accent-glow: rgba(0, 85, 255, 0.36);
+    }
+
+    [data-accent="gold"] {
+      --accent: #C8A24A;
+      --accent-hover: #AE8933;
+      --accent-ink: #0A0F1C;
+      --accent-soft: rgba(200, 162, 74, 0.14);
+      --accent-border: rgba(200, 162, 74, 0.42);
+      --accent-glow: rgba(200, 162, 74, 0.34);
+    }
+
+    [data-accent="red"] {
+      --accent: #DC2626;
+      --accent-hover: #B91C1C;
+      --accent-ink: #FFFFFF;
+      --accent-soft: rgba(220, 38, 38, 0.10);
+      --accent-border: rgba(220, 38, 38, 0.34);
+      --accent-glow: rgba(220, 38, 38, 0.34);
+    }
+
+    [data-accent="graphite"] {
+      --accent: var(--graphite-accent);
+      --accent-hover: var(--graphite-hover);
+      --accent-ink: var(--graphite-ink);
+      --accent-soft: rgba(100, 116, 139, 0.13);
+      --accent-border: rgba(100, 116, 139, 0.36);
+      --accent-glow: rgba(100, 116, 139, 0.25);
+    }
+
+    /* =========================================================================
+       3. BASE & ARCHITECTURAL UTILITIES
+       ========================================================================= */
+    html, body {
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      overflow-x: hidden;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background-color: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    /* 2px Fixed Top Reading Progress Bar */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      z-index: 100;
+      background: linear-gradient(90deg, #0055FF 0%, #C8A24A 58%, #DC2626 100%);
+      pointer-events: none;
+      transition: width 0.06s linear;
+    }
+
+    .surface-alabaster { background-color: var(--bg-alabaster); }
+    .surface-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--hairline);
+      box-shadow: var(--shadow-soft);
+    }
+    .surface-alt {
+      background-color: var(--bg-surface-alt);
+      border: 1px solid var(--hairline);
+    }
+    .surface-glass {
+      background-color: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-color: var(--hairline);
+    }
+    .surface-glass-strong {
+      background-color: var(--bg-glass-strong);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-color: var(--hairline);
+    }
+
+    .ink-main { color: var(--ink-primary); }
+    .ink-sub { color: var(--ink-secondary); }
+    .ink-muted { color: var(--ink-muted); }
+    .border-hair { border-color: var(--hairline); }
+    .border-hair-strong { border-color: var(--hairline-strong); }
+    .accent-ink { color: var(--accent); }
+    .accent-fill { background-color: var(--accent); color: var(--accent-ink); }
+    .accent-pill { background-color: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-border); }
+
+    .display-tight {
+      letter-spacing: -0.035em;
+    }
+
+    .bg-arch-grid {
+      background-image:
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* Woven Carbon Medallion Texture (faithful to wolf emblem backdrop) */
+    .carbon-medallion {
+      background-color: #101216;
+      background-image:
+        linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%),
+        linear-gradient(45deg, rgba(255, 255, 255, 0.045) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.045) 75%);
+      background-size: 6px 6px;
+      background-position: 0 0, 3px 3px;
+    }
+
+    /* =========================================================================
+       4. UPGRADED PS5 DOUBLE-RING HALO PILL BUTTONS + INTERNAL LIGHT SWEEP
+       ========================================================================= */
+    .halo-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5px;
+      border-radius: 9999px;
+      background: transparent;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+      text-decoration: none;
+      will-change: transform;
+    }
+    .halo-btn-inner {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      width: 100%;
+      border-radius: 9999px;
+      padding: 0.78rem 1.55rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      background-color: var(--accent);
+      color: var(--accent-ink);
+      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+    /* Specular light sweep on hover */
+    .halo-btn-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+      transform: translateX(-130%);
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+    }
+    .halo-btn:hover .halo-btn-inner::after {
+      transform: translateX(130%);
+    }
+    .halo-btn:hover,
+    .halo-btn:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .halo-btn:hover .halo-btn-inner {
+      background-color: var(--accent-hover);
+    }
+    .halo-btn:active {
+      transform: scale(0.98);
+    }
+
+    .halo-btn-sm .halo-btn-inner {
+      padding: 0.52rem 1.15rem;
+      font-size: 0.8125rem;
+    }
+
+    .halo-btn-secondary .halo-btn-inner {
+      background-color: var(--bg-surface);
+      color: var(--ink-primary);
+      border: 1px solid var(--hairline-strong);
+    }
+    .halo-btn-secondary:hover .halo-btn-inner {
+      background-color: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* =========================================================================
+       5. CURSOR SPOTLIGHT CARDS & EDITORIAL TRANSITIONS
+       ========================================================================= */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.35s ease;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(420px circle at var(--mx, -400px) var(--my, -400px), var(--spotlight-color), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    [data-spotlight="on"] .spotlight-card:hover::before {
+      opacity: 1;
+    }
+    .spotlight-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-border);
+      box-shadow: var(--shadow-elevated);
+    }
+    .spotlight-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================================================================
+       6. HERO 3D DAMPED MONOLITH & ORBITAL RINGS
+       ========================================================================= */
+    .monolith-perspective {
+      perspective: 1200px;
+    }
+    .monolith-stage {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .monolith-glare {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 20%), rgba(255, 255, 255, 0.24), transparent 62%);
+      pointer-events: none;
+      opacity: 0.75;
+      transition: opacity 0.35s ease;
+    }
+    [data-theme="dark"] .monolith-glare,
+    [data-theme="navy"] .monolith-glare {
+      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 20%), rgba(96, 165, 250, 0.16), transparent 62%);
+    }
+
+    @keyframes orbitCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes orbitCCW { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) translateZ(28px); }
+      50% { transform: translateY(-7px) translateZ(28px); }
+    }
+    @keyframes floatSlowAlt {
+      0%, 100% { transform: translateY(0px) translateZ(34px); }
+      50% { transform: translateY(7px) translateZ(34px); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -48; }
+    }
+    @keyframes pulseSoft {
+      0%, 100% { opacity: 0.65; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+
+    .orbit-cw { animation: orbitCW 38s linear infinite; }
+    .orbit-ccw { animation: orbitCCW 52s linear infinite; }
+    .float-a { animation: floatSlow 5.6s ease-in-out infinite; }
+    .float-b { animation: floatSlowAlt 6.4s ease-in-out infinite; }
+    .float-c { animation: floatSlow 6.8s ease-in-out infinite 0.8s; }
+    .float-d { animation: floatSlowAlt 7.2s ease-in-out infinite 1.3s; }
+    .dash-flow { stroke-dasharray: 6 6; animation: dashFlow 2.2s linear infinite; }
+    .pulse-soft { animation: pulseSoft 6s ease-in-out infinite; }
+
+    /* =========================================================================
+       7. FULL-BLEED DARK CONTRAST BAND (PS5-EXCEEDING SCROLL SHOWCASE)
+       ========================================================================= */
+    .dark-chapter-band {
+      background:
+        radial-gradient(circle at 18% 15%, rgba(0, 85, 255, 0.24) 0%, transparent 45%),
+        radial-gradient(circle at 82% 80%, rgba(200, 162, 74, 0.11) 0%, transparent 45%),
+        linear-gradient(165deg, #040710 0%, #061026 52%, #040914 100%);
+    }
+
+    .chapter-card {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.025);
+      transition: background-color 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+      opacity: 0.56;
+    }
+    .chapter-card:hover {
+      opacity: 0.88;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .chapter-card.is-active {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.075);
+      border-color: var(--chapter-color, #0055FF);
+      box-shadow: 0 20px 50px -24px var(--chapter-glow, rgba(0, 85, 255, 0.45));
+    }
+
+    /* Discipline Switcher Active Tile */
+    .disc-tile {
+      position: relative;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .disc-tile::before {
+      content: '';
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      top: 0;
+      height: 2.5px;
+      border-radius: 0 0 9999px 9999px;
+      background: transparent;
+      transition: background-color 0.25s ease, left 0.25s ease, right 0.25s ease;
+    }
+    .disc-tile.is-active {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-elevated);
+    }
+    .disc-tile.is-active::before {
+      background: var(--accent);
+      left: 10%;
+      right: 10%;
+    }
+
+    /* Segmented Filter Animated Sliding Pill */
+    #filterSlider {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      border-radius: 9999px;
+      background-color: var(--accent);
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), width 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Reduced Motion Support */
+    [data-motion="off"] .orbit-cw,
+    [data-motion="off"] .orbit-ccw,
+    [data-motion="off"] .float-a,
+    [data-motion="off"] .float-b,
+    [data-motion="off"] .float-c,
+    [data-motion="off"] .float-d,
+    [data-motion="off"] .dash-flow,
+    [data-motion="off"] .pulse-soft {
+      animation: none !important;
+    }
+    [data-motion="off"] .monolith-stage {
+      transform: none !important;
+    }
+    [data-motion="off"] .spotlight-card:hover,
+    [data-motion="off"] .disc-tile.is-active {
+      transform: none;
+    }
+    [data-spotlight="off"] .spotlight-card::before {
+      display: none;
+    }
+
+    /* Live Edit Mode Visual Helpers */
+    body.edit-mode .editable-frame {
+      outline: 2px dashed var(--accent);
+      outline-offset: 4px;
+    }
+    body.edit-mode .edit-overlay {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    /* Refined Scrollbar */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: var(--bg-alabaster); }
+    ::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 9999px; }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- Top 2px Architectural Scroll Progress Bar -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Hidden File Inputs for Live Photo & Logo Customization -->
+  <input type="file" id="logoUploadInput" accept="image/*" class="hidden" aria-label="Subir archivo de logo ENDLOOXS" />
+  <input type="file" id="profileUploadInput" accept="image/*" class="hidden" aria-label="Subir foto personal" />
+  <input type="file" id="gallerySlotInput" accept="image/*" class="hidden" aria-label="Subir foto a espacio de galería" />
+  <input type="file" id="galleryMultiInput" accept="image/*" multiple class="hidden" aria-label="Agregar múltiples fotos a la galería" />
+
+  <!-- Toast Notification Stack -->
+  <div id="toastStack" class="fixed bottom-20 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 sm:bottom-6 z-[95] flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- =========================================================================
+       1. DUAL-TIER PRECISION HEADER (SONY UTILITY BAR + FROSTED GLASS NAV)
+       ========================================================================= -->
+  <div class="text-[10px] sm:text-[11px] font-mono tracking-[0.18em] uppercase border-b border-white/10" style="background-color: var(--utility-bg); color: var(--utility-ink);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#C8A24A] shrink-0"></span>
+        <span class="truncate">ENDLOOXS STUDIO · PANAMÁ</span>
+      </div>
+
+      <div class="flex items-center gap-4 shrink-0">
+        <span class="hidden md:inline-flex items-center gap-2 text-white/75">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          DISPONIBLE PARA PROYECTOS
+        </span>
+        <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+          @endlooxs ↗
+        </a>
+        <button id="quickThemeUtilityBtn" type="button" aria-label="Cambiar tema rápido" title="Alternar tema rápido" class="p-1 rounded hover:bg-white/10 text-white/80 hover:text-white transition-colors">
+          <svg id="utilityThemeIcon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 inset-x-0 z-40 surface-glass border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+
+      <!-- Left: Wolf Medallion + Wordmark -->
+      <div class="flex items-center gap-3">
+        <button
+          id="navLogoBtn"
+          type="button"
+          title="ENDLOOXS — Activa Modo Editar Fotos en Ajustes para subir tu logo"
+          class="editable-frame relative group w-10 h-10 rounded-full carbon-medallion border border-[#C8A24A]/65 flex items-center justify-center overflow-hidden shadow-sm transition-transform hover:scale-105"
+        >
+          <!-- Precision Angular Wolf Emblem SVG (Faithful Gold & Crimson) -->
+          <svg class="brand-svg w-7 h-7" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#C8A24A" fill-opacity="0.14" stroke="#C8A24A" stroke-width="3.6" stroke-linejoin="round"/>
+            <path d="M27 61L40 44L47 51L59 36" stroke="#C8A24A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36 75L46 60L55 63L63 53" stroke="#C8A24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M62 42L72 45.5L65.5 48.5L62 42Z" fill="#C8A24A"/>
+            <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#DC2626"/>
+            <path d="M48 62.5L60.5 54.5L52.5 64L48 62.5Z" fill="#DC2626"/>
+          </svg>
+          <img class="brand-img hidden w-full h-full object-cover" src="" alt="Logo ENDLOOXS" />
+          <span class="edit-overlay opacity-0 pointer-events-none absolute inset-0 bg-black/75 flex items-center justify-center font-mono text-[9px] text-[#C8A24A] uppercase tracking-wider">
+            Subir
+          </span>
+        </button>
+
+        <a href="#inicio" class="flex flex-col leading-none">
+          <span class="font-display font-bold text-base sm:text-lg tracking-[0.22em] ink-main">ENDLOOXS</span>
+          <span class="font-mono text-[10px] tracking-[0.14em] ink-muted uppercase mt-0.5">Edgar Rodriguez</span>
+        </a>
+      </div>
+
+      <!-- Center: Editorial Navigation -->
+      <nav class="hidden lg:flex items-center gap-7 text-[13.5px] font-medium ink-sub">
+        <a href="#inicio" class="hover:text-[var(--accent)] transition-colors">Inicio</a>
+        <a href="#ecosistema" class="hover:text-[var(--accent)] transition-colors">Ecosistema</a>
+        <a href="#disciplinas" class="hover:text-[var(--accent)] transition-colors">Disciplinas</a>
+        <a href="#proyectos" class="hover:text-[var(--accent)] transition-colors">Proyectos</a>
+        <a href="#sobre-mi" class="hover:text-[var(--accent)] transition-colors">Sobre Mí</a>
+        <a href="#contacto" class="hover:text-[var(--accent)] transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Right: Ajustes + Hablemos Halo CTA + Mobile Trigger -->
+      <div class="flex items-center gap-2.5">
+        <button
+          id="navSettingsBtn"
+          type="button"
+          class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full surface-card text-xs sm:text-[13px] font-semibold ink-main hover:border-[var(--accent)] transition-all"
+        >
+          <svg class="w-4 h-4 accent-ink" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="hidden sm:inline">Ajustes</span>
+        </button>
+
+        <a href="#contacto" data-magnetic class="hidden sm:inline-flex halo-btn halo-btn-sm">
+          <span class="halo-btn-inner">Hablemos</span>
+        </a>
+
+        <button id="mobileNavBtn" type="button" aria-label="Abrir menú" class="lg:hidden p-2.5 rounded-full surface-card ink-main">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Edit Mode Strip -->
+    <div id="editModeBanner" class="hidden border-t border-hair accent-pill border-x-0 border-b-0">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2 font-medium">
+          <span class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+          <span>Modo Edición activo: haz clic en el emblema, tu retrato o cualquier marco de la galería para subir tus imágenes.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="bannerLogoBtn" type="button" class="px-3 py-1 rounded-full surface-card ink-main font-semibold hover:border-[var(--accent)]">Logo</button>
+          <button id="bannerProfileBtn" type="button" class="px-3 py-1 rounded-full surface-card ink-main font-semibold hover:border-[var(--accent)]">Retrato</button>
+          <button id="bannerExitEditBtn" type="button" class="px-3 py-1 rounded-full accent-fill font-semibold">Finalizar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="hidden lg:hidden surface-glass-strong border-t border-hair px-5 py-4">
+      <nav class="flex flex-col gap-3 text-sm font-medium ink-sub">
+        <a href="#inicio" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Inicio</a>
+        <a href="#ecosistema" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Ecosistema</a>
+        <a href="#disciplinas" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Disciplinas</a>
+        <a href="#proyectos" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Proyectos</a>
+        <a href="#sobre-mi" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Sobre Mí</a>
+        <a href="#contacto" class="mobile-nav-link py-1.5 hover:text-[var(--accent)]">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         2. HERO SECTION — ARCHITECTURAL NEUTRAL MONOLITH + LIGHT-FIELD CANVAS
+         ========================================================================= -->
+    <section id="inicio" class="relative min-h-[calc(100vh-104px)] flex items-center py-14 sm:py-20 lg:py-24 overflow-hidden">
+      <!-- Interactive 60fps Architectural Light-Field Canvas -->
+      <canvas id="heroLightCanvas" class="pointer-events-none absolute inset-0 w-full h-full" aria-hidden="true"></canvas>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+          <!-- Left Column: Neutral, Multidisciplinary Editorial Copy -->
+          <div class="lg:col-span-6 reveal">
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full surface-card mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+              <span class="font-mono text-[11px] font-semibold tracking-[0.2em] ink-sub uppercase">
+                00 // IDENTIDAD MULTIDISCIPLINARIA
+              </span>
+            </div>
+
+            <h1 class="font-display display-tight font-light text-4xl sm:text-6xl lg:text-[4.35rem] leading-[1.03] ink-main mb-6">
+              Ingeniería precisa.<br />
+              <span class="font-semibold">Estética intencional<span class="accent-ink">.</span></span>
+            </h1>
+
+            <p class="text-base sm:text-lg ink-sub leading-relaxed max-w-xl mb-9">
+              <strong class="ink-main font-semibold">ENDLOOXS</strong> es el ecosistema personal de <strong class="ink-main font-semibold">Edgar Rodriguez</strong>: un punto de encuentro entre optimización de sistemas, arquitectura de hardware, gestión de comunidades y dirección visual minimalista.
+            </p>
+
+            <!-- Upgraded Double-Ring Halo Pill CTAs -->
+            <div class="flex flex-wrap items-center gap-3.5 mb-10">
+              <a href="#ecosistema" data-magnetic class="halo-btn">
+                <span class="halo-btn-inner">
+                  <span>Explorar Ecosistema</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </a>
+
+              <a href="#contacto" data-magnetic class="halo-btn halo-btn-secondary">
+                <span class="halo-btn-inner">Iniciar Conversación</span>
+              </a>
+            </div>
+
+            <!-- 4 Clean Interactive Discipline Anchors -->
+            <div class="pt-6 border-t border-hair flex flex-wrap items-center gap-2.5">
+              <a href="#disciplinas" data-jump-disc="0" class="hero-anchor-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full surface-alt text-xs font-mono font-medium ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0055FF]"></span> Sistemas
+              </a>
+              <a href="#disciplinas" data-jump-disc="1" class="hero-anchor-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full surface-alt text-xs font-mono font-medium ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#C8A24A]"></span> Hardware
+              </a>
+              <a href="#disciplinas" data-jump-disc="2" class="hero-anchor-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full surface-alt text-xs font-mono font-medium ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#DC2626]"></span> Social Media
+              </a>
+              <a href="#disciplinas" data-jump-disc="3" class="hero-anchor-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-full surface-alt text-xs font-mono font-medium ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span> Marca
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive 3D Damped Monolith Stage -->
+          <div class="lg:col-span-6 monolith-perspective reveal">
+            <div
+              id="heroMonolith"
+              class="monolith-stage relative mx-auto w-full max-w-[540px] min-h-[420px] sm:min-h-[480px] rounded-[34px] surface-card p-6 sm:p-8 flex items-center justify-center overflow-hidden"
+            >
+              <!-- Specular Pointer Glare -->
+              <div id="monolithGlare" class="monolith-glare" aria-hidden="true"></div>
+
+              <!-- Subtle Architectural Crosshairs & Concentric Orbital Rings -->
+              <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <div class="w-[340px] h-[340px] sm:w-[410px] sm:h-[410px] rounded-full border border-dashed border-[#0055FF]/20 orbit-cw"></div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <div class="w-[245px] h-[245px] sm:w-[300px] sm:h-[300px] rounded-full border border-[#C8A24A]/30 orbit-ccw"></div>
+              </div>
+              <div class="pointer-events-none absolute inset-x-8 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)]/25 to-transparent"></div>
+              <div class="pointer-events-none absolute inset-y-8 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-[#C8A24A]/20 to-transparent"></div>
+              <div class="pointer-events-none absolute w-56 h-56 rounded-full blur-3xl opacity-30 pulse-soft" style="background: radial-gradient(circle, var(--accent) 0%, rgba(200,162,74,0.22) 55%, transparent 75%);"></div>
+
+              <!-- Core Carbon Wolf Medallion (1-Click Editable in Edit Mode) -->
+              <button
+                id="heroMedallionBtn"
+                type="button"
+                title="Emblema ENDLOOXS — Activa Modo Editar en Ajustes para reemplazar"
+                class="editable-frame relative z-20 w-36 h-36 sm:w-44 sm:h-44 rounded-full carbon-medallion border-2 border-[#C8A24A]/70 flex items-center justify-center shadow-[0_24px_50px_-12px_rgba(0,0,0,0.55)] overflow-hidden transition-transform duration-300 hover:scale-105"
+                style="transform: translateZ(42px);"
+              >
+                <svg class="brand-svg w-28 h-28 sm:w-32 sm:h-32 drop-shadow-[0_10px_22px_rgba(200,162,74,0.3)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#C8A24A" fill-opacity="0.14" stroke="#C8A24A" stroke-width="3.2" stroke-linejoin="round"/>
+                  <path d="M27 61L40 44L47 51L59 36" stroke="#C8A24A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M36 75L46 60L55 63L63 53" stroke="#C8A24A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M62 42L72 45.5L65.5 48.5L62 42Z" fill="#C8A24A"/>
+                  <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#DC2626"/>
+                  <path d="M48 62.5L60.5 54.5L52.5 64L48 62.5Z" fill="#DC2626"/>
+                </svg>
+                <img class="brand-img hidden w-full h-full object-cover" src="" alt="Emblema ENDLOOXS" />
+                <span class="edit-overlay opacity-0 pointer-events-none absolute inset-0 bg-black/75 flex items-center justify-center font-mono text-xs text-[#C8A24A] uppercase tracking-wider">
+                  Subir Logo
+                </span>
+              </button>
+
+              <!-- 4 Symmetrically Balanced Glassmorphic Micro-Modules -->
+              <div class="float-a absolute top-5 left-5 sm:top-7 sm:left-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg">
+                <span class="block font-mono text-[9px] uppercase tracking-[0.18em] ink-muted">01 · OS</span>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="w-2 h-2 rounded-full bg-[#0055FF]"></span>
+                  <span class="font-display font-semibold text-xs sm:text-sm ink-main whitespace-nowrap">Sistemas OS</span>
+                </div>
+              </div>
+
+              <div class="float-b absolute top-5 right-5 sm:top-7 sm:right-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg">
+                <span class="block font-mono text-[9px] uppercase tracking-[0.18em] ink-muted">02 · BUILD</span>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="w-2 h-2 rounded-full bg-[#C8A24A]"></span>
+                  <span class="font-display font-semibold text-xs sm:text-sm ink-main whitespace-nowrap">Ensambles $1K+</span>
+                </div>
+              </div>
+
+              <div class="float-c absolute bottom-5 left-5 sm:bottom-7 sm:left-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg">
+                <span class="block font-mono text-[9px] uppercase tracking-[0.18em] ink-muted">03 · GROWTH</span>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="w-2 h-2 rounded-full bg-[#DC2626]"></span>
+                  <span class="font-display font-semibold text-xs sm:text-sm ink-main whitespace-nowrap">Social Media</span>
+                </div>
+              </div>
+
+              <a
+                href="https://www.instagram.com/endlooxs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="float-d group absolute bottom-5 right-5 sm:bottom-7 sm:right-7 z-30 surface-glass-strong border rounded-2xl px-3.5 py-2.5 shadow-lg hover:border-[var(--accent)] transition-colors"
+              >
+                <span class="block font-mono text-[9px] uppercase tracking-[0.18em] ink-muted">04 · BRAND</span>
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="w-2 h-2 rounded-full bg-[#0055FF] ring-2 ring-[#C8A24A]/40"></span>
+                  <span class="font-display font-bold text-xs sm:text-sm ink-main group-hover:text-[var(--accent)] transition-colors whitespace-nowrap">@endlooxs ↗</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. FULL-BLEED DARK CONTRAST BAND — "ECOSISTEMA EN MOVIMIENTO"
+         ========================================================================= -->
+    <section id="ecosistema" class="dark-chapter-band relative py-24 sm:py-32 text-white">
+      <div class="pointer-events-none absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#0055FF]/70 to-transparent"></div>
+      <div class="pointer-events-none absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#C8A24A]/45 to-transparent"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Intro -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 reveal">
+          <div class="max-w-2xl">
+            <span class="font-mono text-xs font-semibold tracking-[0.22em] text-[#60A5FA] uppercase block mb-3">
+              01 // ECOSISTEMA EN MOVIMIENTO
+            </span>
+            <h2 class="font-display display-tight font-light text-3xl sm:text-5xl text-white mb-4">
+              Cuatro disciplinas. <span class="font-semibold">Un mismo estándar técnico.</span>
+            </h2>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Cada área de ENDLOOXS opera con la misma lógica: análisis real, ejecución limpia y estética coherente. Desplázate o selecciona un capítulo para inspeccionar el núcleo interactivo.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2 font-mono text-xs text-slate-400">
+            <span id="chapterCounter" class="text-white font-semibold">01</span>
+            <span>/</span>
+            <span>04</span>
+          </div>
+        </div>
+
+        <!-- Sticky Split Experience (Scroll-Synced on Desktop, Instant Click Everywhere) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+          <!-- Left Column: 4 Synchronized Chapters -->
+          <div class="lg:col-span-5 space-y-4 lg:space-y-6" id="chapterTrack">
+            <button type="button" data-chapter="0" style="--chapter-color:#0055FF; --chapter-glow:rgba(0,85,255,0.42);" class="chapter-card is-active w-full text-left rounded-3xl p-6 sm:p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#60A5FA] uppercase">01 / IDENTIDAD &amp; DIRECCIÓN</span>
+                <span class="w-2 h-2 rounded-full bg-[#0055FF]"></span>
+              </div>
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Núcleo ENDLOOXS (@endlooxs)</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Dirección visual sobria, curaduría editorial minimalista y coherencia de marca personal en cada punto de contacto digital.
+              </p>
+            </button>
+
+            <button type="button" data-chapter="1" style="--chapter-color:#38BDF8; --chapter-glow:rgba(56,189,248,0.38);" class="chapter-card w-full text-left rounded-3xl p-6 sm:p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#38BDF8] uppercase">02 / OPTIMIZACIÓN DE SISTEMAS</span>
+                <span class="w-2 h-2 rounded-full bg-[#38BDF8]"></span>
+              </div>
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Ingeniería Windows 11 &amp; Optima0x</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Scripts avanzados con salvaguardas reales, liberación inteligente de memoria, control de servicios y estabilidad medible sin tweaks placebo.
+              </p>
+            </button>
+
+            <button type="button" data-chapter="2" style="--chapter-color:#C8A24A; --chapter-glow:rgba(200,162,74,0.40);" class="chapter-card w-full text-left rounded-3xl p-6 sm:p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#C8A24A] uppercase">03 / ARQUITECTURA HARDWARE</span>
+                <span class="w-2 h-2 rounded-full bg-[#C8A24A]"></span>
+              </div>
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Ensambles Custom +$1,000 USD</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Cotización pieza por pieza, equilibrio térmico-acústico, cableado quirúrgico y validación completa de estrés y BIOS.
+              </p>
+            </button>
+
+            <button type="button" data-chapter="3" style="--chapter-color:#DC2626; --chapter-glow:rgba(220,38,38,0.40);" class="chapter-card w-full text-left rounded-3xl p-6 sm:p-7">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#F87171] uppercase">04 / COMUNIDAD &amp; CONTENIDO</span>
+                <span class="w-2 h-2 rounded-full bg-[#DC2626]"></span>
+              </div>
+              <h3 class="font-display font-semibold text-xl sm:text-2xl text-white mb-2">Community Management &amp; Reels</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Estrategia editorial orientada a retención, formatos verticales de alto ritmo y gestión orgánica de comunidades digitales.
+              </p>
+            </button>
+          </div>
+
+          <!-- Right Column: Sticky Animated Hardware-Grade Display Core -->
+          <div class="lg:col-span-7 lg:sticky lg:top-24">
+            <div class="relative rounded-[32px] border border-white/12 bg-white/[0.035] backdrop-blur-2xl p-6 sm:p-8 lg:p-10 overflow-hidden shadow-2xl">
+              <!-- Dynamic Aurora Glow -->
+              <div id="coreAurora" class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl transition-all duration-700" style="background: rgba(0, 85, 255, 0.34);"></div>
+              <div id="coreAurora2" class="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 rounded-full blur-3xl transition-all duration-700" style="background: rgba(200, 162, 74, 0.14);"></div>
+
+              <!-- Top Telemetry Header -->
+              <div class="relative z-10 flex items-center justify-between gap-3 pb-5 mb-6 border-b border-white/10">
+                <div class="flex items-center gap-2.5">
+                  <span id="coreDot" class="w-2.5 h-2.5 rounded-full bg-[#0055FF] transition-colors duration-500"></span>
+                  <span id="coreModuleCode" class="font-mono text-[11px] tracking-[0.2em] uppercase text-white/80">CORE // 01 · BRAND ARCHITECTURE</span>
+                </div>
+                <span id="coreChip" class="font-mono text-[10px] px-3 py-1 rounded-full bg-white/10 border border-white/10 text-white/90">
+                  ACTIVE
+                </span>
+              </div>
+
+              <!-- Dynamic Morphing Visual Stage (Bespoke SVG/CSS Telemetry Graphics) -->
+              <div id="coreVisualMount" class="relative z-10 min-h-[250px] sm:min-h-[285px] flex items-center justify-center mb-7">
+                <!-- Rendered dynamically via JS -->
+              </div>
+
+              <!-- Live Telemetry Readout Grid -->
+              <div id="coreTelemetryGrid" class="relative z-10 grid grid-cols-3 gap-3 pt-5 border-t border-white/10">
+                <!-- Rendered dynamically via JS -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. INTERACTIVE SHOWCASE SWITCHER — "EXPLORA CADA DISCIPLINA"
+         ========================================================================= -->
+    <section id="disciplinas" class="py-20 sm:py-28 surface-alabaster border-b border-hair">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header + Prev/Next Controls -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 reveal">
+          <div>
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+              02 // EXPLORA CADA DISCIPLINA
+            </span>
+            <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main">
+              Precisión aplicada <span class="font-semibold">en cada frente</span>
+            </h2>
+          </div>
+
+          <div class="flex items-center gap-2.5 self-start sm:self-auto">
+            <span class="font-mono text-[11px] ink-muted mr-2 hidden sm:inline">← / → teclado</span>
+            <button id="discPrevBtn" type="button" aria-label="Disciplina anterior" class="w-11 h-11 rounded-full surface-card flex items-center justify-center ink-main hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="discNextBtn" type="button" aria-label="Siguiente disciplina" class="w-11 h-11 rounded-full surface-card flex items-center justify-center ink-main hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flagship Rounded Showcase Stage -->
+        <div class="rounded-[32px] surface-card p-6 sm:p-10 lg:p-12 mb-6 reveal">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+            <!-- Left: Bespoke Layered Graphic UI Composition -->
+            <div class="lg:col-span-6">
+              <div id="discArtworkStage" class="rounded-3xl surface-alt border border-hair p-6 sm:p-7 min-h-[290px] flex flex-col justify-between relative overflow-hidden">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </div>
+
+            <!-- Right: Discipline Copy, 3 Animated Capability Metrics & CTA -->
+            <div class="lg:col-span-6">
+              <div id="discBadgeMount" class="mb-4"></div>
+              <h3 id="discTitleMount" class="font-display display-tight font-semibold text-2xl sm:text-3xl ink-main mb-3"></h3>
+              <p id="discDescMount" class="text-sm sm:text-base ink-sub leading-relaxed mb-6"></p>
+
+              <!-- 3 Measurable Capability Specs with Animated Bars -->
+              <div id="discMetricsMount" class="space-y-3.5 mb-8"></div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <a id="discCtaBtn" href="#contacto" data-magnetic class="halo-btn">
+                  <span class="halo-btn-inner">Consultar esta área</span>
+                </a>
+                <a href="#proyectos" class="font-mono text-xs font-semibold accent-ink hover:underline">
+                  Ver casos reales →
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 4 Architectural Selector Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 reveal">
+          <button type="button" data-disc-idx="0" class="disc-tile is-active rounded-2xl surface-card p-4 sm:p-5 text-left">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-[10px] ink-muted">01</span>
+              <span class="w-2 h-2 rounded-full bg-[#0055FF]"></span>
+            </div>
+            <p class="font-display font-semibold text-sm sm:text-base ink-main">Sistemas &amp; OS</p>
+            <p class="text-xs ink-muted mt-0.5">Optima0x · Windows 11</p>
+          </button>
+
+          <button type="button" data-disc-idx="1" class="disc-tile rounded-2xl surface-card p-4 sm:p-5 text-left">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-[10px] ink-muted">02</span>
+              <span class="w-2 h-2 rounded-full bg-[#C8A24A]"></span>
+            </div>
+            <p class="font-display font-semibold text-sm sm:text-base ink-main">Hardware Custom</p>
+            <p class="text-xs ink-muted mt-0.5">Ensambles +$1,000 USD</p>
+          </button>
+
+          <button type="button" data-disc-idx="2" class="disc-tile rounded-2xl surface-card p-4 sm:p-5 text-left">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-[10px] ink-muted">03</span>
+              <span class="w-2 h-2 rounded-full bg-[#DC2626]"></span>
+            </div>
+            <p class="font-display font-semibold text-sm sm:text-base ink-main">Social Media</p>
+            <p class="text-xs ink-muted mt-0.5">Community &amp; Reels</p>
+          </button>
+
+          <button type="button" data-disc-idx="3" class="disc-tile rounded-2xl surface-card p-4 sm:p-5 text-left">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-[10px] ink-muted">04</span>
+              <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+            </div>
+            <p class="font-display font-semibold text-sm sm:text-base ink-main">Identidad Visual</p>
+            <p class="text-xs ink-muted mt-0.5">Marca @endlooxs</p>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. PROYECTOS SELECCIONADOS (SLIDING FILTER + ASYMMETRIC BENTO + MODAL)
+         ========================================================================= -->
+    <section id="proyectos" class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header & Sliding Segmented Filter Bar -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+          <div>
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+              03 // PROYECTOS SELECCIONADOS
+            </span>
+            <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main">
+              Casos de estudio <span class="font-semibold">y ejecución real</span>
+            </h2>
+          </div>
+
+          <div class="overflow-x-auto max-w-full pb-1">
+            <div id="filterBar" class="relative inline-flex items-center p-1.5 rounded-full surface-card">
+              <div id="filterSlider" aria-hidden="true"></div>
+              <button type="button" data-filter="all" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Todos</button>
+              <button type="button" data-filter="sistemas" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Sistemas</button>
+              <button type="button" data-filter="hardware" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Hardware</button>
+              <button type="button" data-filter="social" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Social Media</button>
+              <button type="button" data-filter="marca" class="filter-tab relative z-10 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-colors whitespace-nowrap">Marca</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asymmetric Flagship Bento Grid -->
+        <div id="projectsBento" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+          <!-- Case 01: Optima0x (7 Cols) -->
+          <article data-category="sistemas" data-case="optima0x" class="project-card spotlight-card reveal lg:col-span-7 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+            <div>
+              <!-- Bespoke Visual Artwork Header -->
+              <div class="rounded-2xl bg-[#060B18] border border-white/10 p-5 mb-6 relative overflow-hidden">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
+                  <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#0055FF]"></span> Optima0x.bat · Active</span>
+                  <span class="text-[#60A5FA]">Optima0x.cfg</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2.5 font-mono text-[11px]">
+                  <div class="rounded-xl bg-white/[0.05] border border-white/10 p-3">
+                    <span class="block text-slate-400 text-[9px]">RAM ENGINE</span>
+                    <span class="text-white font-semibold mt-0.5 block">Standby Purge</span>
+                  </div>
+                  <div class="rounded-xl bg-white/[0.05] border border-white/10 p-3">
+                    <span class="block text-slate-400 text-[9px]">GAME GUARD</span>
+                    <span class="text-[#60A5FA] font-semibold mt-0.5 block">DO + FW Lock</span>
+                  </div>
+                  <div class="rounded-xl bg-white/[0.05] border border-white/10 p-3">
+                    <span class="block text-slate-400 text-[9px]">FILOSOFÍA</span>
+                    <span class="text-[#C8A24A] font-semibold mt-0.5 block">Zero Placebo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25">
+                  Sistemas &amp; OS
+                </span>
+                <span class="font-mono text-xs ink-muted">01</span>
+              </div>
+
+              <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
+                Optima0x — Suite de Optimización Windows 11
+              </h3>
+              <p class="text-sm sm:text-[15px] ink-sub leading-relaxed mb-6">
+                Herramienta modular con resolución dinámica de rutas, configuración persistente en <code class="font-mono text-xs px-1.5 py-0.5 rounded surface-alt">Optima0x.cfg</code>, salvaguardas contra descargas en segundo plano durante juego y afinación real de servicios sin tweaks placebo.
+              </p>
+            </div>
+
+            <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
+              <span class="font-mono text-xs ink-muted">Windows 11 · Batch · PowerShell</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Abrir caso de estudio →
+              </span>
+            </div>
+          </article>
+
+          <!-- Case 02: Custom PCs $1,000+ (5 Cols) -->
+          <article data-category="hardware" data-case="hardware-custom" class="project-card spotlight-card reveal lg:col-span-5 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+            <div>
+              <!-- Bespoke Hardware Thermal Visual -->
+              <div class="rounded-2xl bg-gradient-to-br from-[#0B111E] to-[#131926] border border-white/10 p-5 mb-6 relative overflow-hidden">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
+                  <span class="text-[#C8A24A] font-semibold">CUSTOM ARCHITECTURE</span>
+                  <span>+$1,000 USD</span>
+                </div>
+                <svg viewBox="0 0 280 78" class="w-full h-16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="6" y="8" width="268" height="62" rx="12" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+                  <rect x="18" y="20" width="54" height="38" rx="6" fill="rgba(200,162,74,0.14)" stroke="#C8A24A" stroke-width="1.2"/>
+                  <rect x="86" y="20" width="96" height="38" rx="6" fill="rgba(0,85,255,0.16)" stroke="#0055FF" stroke-width="1.2"/>
+                  <path d="M18 39H260" stroke="#60A5FA" stroke-width="1.4" class="dash-flow"/>
+                  <circle cx="230" cy="39" r="14" stroke="rgba(255,255,255,0.28)" stroke-width="1.2" stroke-dasharray="3 3"/>
+                  <circle cx="230" cy="39" r="4" fill="#C8A24A"/>
+                </svg>
+              </div>
+
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#C8A24A]/15 text-[#A17E2A] border border-[#C8A24A]/35">
+                  Hardware Custom
+                </span>
+                <span class="font-mono text-xs ink-muted">02</span>
+              </div>
+
+              <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
+                Estaciones &amp; PCs de Alto Rendimiento ($1,000+)
+              </h3>
+              <p class="text-sm sm:text-[15px] ink-sub leading-relaxed mb-6">
+                Curaduría de componentes pieza por pieza, acústica térmica balanceada, cableado limpio, ajuste de BIOS (XMP/EXPO) y pruebas completas de estabilidad.
+              </p>
+            </div>
+
+            <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
+              <span class="font-mono text-xs ink-muted">Cotización · Airflow · Stress Test</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Abrir caso →
+              </span>
+            </div>
+          </article>
+
+          <!-- Case 03: Community Management & Reels (5 Cols) -->
+          <article data-category="social" data-case="social-growth" class="project-card spotlight-card reveal lg:col-span-5 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+            <div>
+              <!-- Bespoke Vertical Content Matrix -->
+              <div class="rounded-2xl bg-gradient-to-br from-[#130B14] to-[#0B0F1C] border border-white/10 p-5 mb-6">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-4">
+                  <span class="text-[#F87171] font-semibold">CONTENT ENGINE</span>
+                  <span>9:16 VERTICAL</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="h-14 rounded-xl bg-gradient-to-b from-[#DC2626]/30 to-white/[0.04] border border-white/10 p-2 flex flex-col justify-end">
+                    <span class="font-mono text-[9px] text-white/80">HOOK</span>
+                  </div>
+                  <div class="h-14 rounded-xl bg-gradient-to-b from-[#0055FF]/30 to-white/[0.04] border border-white/10 p-2 flex flex-col justify-end">
+                    <span class="font-mono text-[9px] text-white/80">RITMO</span>
+                  </div>
+                  <div class="h-14 rounded-xl bg-gradient-to-b from-[#C8A24A]/30 to-white/[0.04] border border-white/10 p-2 flex flex-col justify-end">
+                    <span class="font-mono text-[9px] text-white/80">RETENCIÓN</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#DC2626]/10 text-[#DC2626] border border-[#DC2626]/25">
+                  Social Media
+                </span>
+                <span class="font-mono text-xs ink-muted">03</span>
+              </div>
+
+              <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
+                Dirección de Comunidad &amp; Contenido Vertical
+              </h3>
+              <p class="text-sm sm:text-[15px] ink-sub leading-relaxed mb-6">
+                Arquitectura editorial, producción estratégica de Reels/TikToks, manejo activo de comunidad y crecimiento orgánico respaldado por analítica.
+              </p>
+            </div>
+
+            <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
+              <span class="font-mono text-xs ink-muted">Estrategia · Reels · Comunidad</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Abrir caso →
+              </span>
+            </div>
+          </article>
+
+          <!-- Case 04: ENDLOOXS (@endlooxs) (7 Cols) -->
+          <article data-category="marca" data-case="endlooxs-brand" class="project-card spotlight-card reveal lg:col-span-7 rounded-[28px] surface-card p-6 sm:p-8 flex flex-col justify-between cursor-pointer group">
+            <div>
+              <!-- Bespoke Editorial Identity Banner -->
+              <div class="rounded-2xl bg-[#070B14] border border-white/10 p-5 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-12 h-12 rounded-full carbon-medallion border border-[#C8A24A]/65 flex items-center justify-center shrink-0">
+                    <svg class="brand-svg w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#C8A24A" fill-opacity="0.16" stroke="#C8A24A" stroke-width="3.6" stroke-linejoin="round"/>
+                      <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#DC2626"/>
+                    </svg>
+                    <img class="brand-img hidden w-full h-full object-cover rounded-full" src="" alt="ENDLOOXS" />
+                  </div>
+                  <div>
+                    <p class="font-display font-bold text-base tracking-[0.18em] text-white">ENDLOOXS</p>
+                    <p class="font-mono text-[11px] text-slate-400">instagram.com/endlooxs · Dirección Creativa</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-[#0055FF] border border-white/20"></span>
+                  <span class="w-5 h-5 rounded-full bg-[#C8A24A] border border-white/20"></span>
+                  <span class="w-5 h-5 rounded-full bg-[#DC2626] border border-white/20"></span>
+                  <span class="w-5 h-5 rounded-full bg-[#FFFFFF] border border-white/20"></span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-3 mb-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold accent-pill">
+                  Marca Personal
+                </span>
+                <span class="font-mono text-xs ink-muted">04</span>
+              </div>
+
+              <h3 class="font-display font-semibold text-xl sm:text-2xl ink-main mb-2.5 group-hover:text-[var(--accent)] transition-colors">
+                ENDLOOXS — Identidad Digital &amp; Curaduría (@endlooxs)
+              </h3>
+              <p class="text-sm sm:text-[15px] ink-sub leading-relaxed mb-6">
+                Dirección visual minimalista de alto contraste, sistema de emblema geométrico, curaduría fotográfica en Instagram y narrativa multiformato que unifica tecnología y estética personal.
+              </p>
+            </div>
+
+            <div class="pt-5 border-t border-hair flex items-center justify-between gap-3">
+              <a
+                href="https://www.instagram.com/endlooxs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick="event.stopPropagation()"
+                class="font-mono text-xs font-semibold accent-ink hover:underline"
+              >
+                Visitar @endlooxs ↗
+              </a>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold accent-ink">
+                Abrir caso de estudio →
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. EDITORIAL PROFILE & PERSONAL VISUAL GALLERY — "DETRÁS DE ENDLOOXS"
+         ========================================================================= -->
+    <section id="sobre-mi" class="py-20 sm:py-28 surface-alabaster border-y border-hair">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="mb-12 reveal">
+          <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+            04 // DETRÁS DE ENDLOOXS
+          </span>
+          <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main">
+            Edgar Rodriguez: <span class="font-semibold">criterio técnico y dirección visual</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+
+          <!-- Left Column: Editable Portrait + Executive Bio + Quick Facts -->
+          <div class="lg:col-span-5 reveal">
+            <div class="rounded-[28px] surface-card p-6 sm:p-8">
+
+              <!-- Portrait Frame + Identity Header -->
+              <div class="flex items-center gap-5 mb-7">
+                <div
+                  id="profileFrame"
+                  class="editable-frame relative group w-24 h-28 sm:w-28 sm:h-32 shrink-0 rounded-2xl bg-gradient-to-b from-[#0E1526] to-[#050814] border border-hair overflow-hidden flex items-center justify-center cursor-pointer shadow-md"
+                >
+                  <!-- Minimalist Editorial Monogram Default -->
+                  <div id="profilePlaceholder" class="w-full h-full flex flex-col items-center justify-center text-center p-3">
+                    <svg class="w-9 h-9 text-[#C8A24A]/85 mb-1.5" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                    <span class="font-mono text-[9px] tracking-[0.18em] text-white/60 uppercase">ER // 01</span>
+                  </div>
+                  <img id="profilePreviewImg" src="" alt="Edgar Rodriguez — ENDLOOXS" class="hidden w-full h-full object-cover" />
+                  <button
+                    id="profileUploadOverlayBtn"
+                    type="button"
+                    class="edit-overlay opacity-0 sm:group-hover:opacity-100 pointer-events-none sm:group-hover:pointer-events-auto absolute inset-0 bg-black/75 flex flex-col items-center justify-center text-white text-[10px] font-mono uppercase tracking-wider transition-opacity"
+                  >
+                    <svg class="w-4 h-4 mb-1 text-[#C8A24A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                    </svg>
+                    <span>Subir Foto</span>
+                  </button>
+                </div>
+
+                <div>
+                  <span class="font-mono text-[10px] font-semibold tracking-[0.18em] text-[#C8A24A] uppercase">Fundador · ENDLOOXS</span>
+                  <h3 class="font-display font-bold text-2xl ink-main mt-0.5">Edgar Rodriguez</h3>
+                  <p class="text-xs sm:text-sm ink-muted mt-1">Panamá · Perfil Híbrido Técnico-Creativo</p>
+                </div>
+              </div>
+
+              <!-- Editorial Narrative -->
+              <div class="space-y-4 text-sm sm:text-[15px] ink-sub leading-relaxed mb-7">
+                <p>
+                  Desde Panamá construyo <strong class="ink-main font-semibold">ENDLOOXS</strong> bajo una premisa clara: no separar la precisión técnica del criterio estético. Trabajo tanto a bajo nivel afinando sistemas Windows 11 y ensamblando PCs de gama alta, como en la dirección visual y el crecimiento orgánico de marcas en redes sociales.
+                </p>
+                <p>
+                  Cada proyecto busca lo mismo: claridad estructural, rendimiento comprobable y una presentación que destaque sin ruido innecesario.
+                </p>
+              </div>
+
+              <!-- Structured Quick-Facts Strip -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-6 border-t border-hair">
+                <div class="rounded-2xl surface-alt p-3">
+                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted">Ubicación</span>
+                  <span class="block text-xs font-semibold ink-main mt-0.5">Panamá</span>
+                </div>
+                <div class="rounded-2xl surface-alt p-3">
+                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted">Enfoque</span>
+                  <span class="block text-xs font-semibold ink-main mt-0.5">Híbrido Pro</span>
+                </div>
+                <div class="rounded-2xl surface-alt p-3">
+                  <span class="block font-mono text-[9px] uppercase tracking-wider ink-muted">Estado</span>
+                  <span class="block text-xs font-semibold accent-ink mt-0.5">Disponible</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 4:5 Vertical Editorial Gallery + Lightbox -->
+          <div class="lg:col-span-7 reveal">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h3 class="font-display font-semibold text-lg sm:text-xl ink-main">Galería Personal</h3>
+                <p class="text-xs sm:text-sm ink-sub">Retratos, setups, ensambles y curaduría de @endlooxs. Haz clic para vista Lightbox.</p>
+              </div>
+
+              <button id="addGalleryBtn" type="button" class="edit-overlay opacity-0 pointer-events-none halo-btn halo-btn-sm">
+                <span class="halo-btn-inner">+ Agregar fotos</span>
+              </button>
+            </div>
+
+            <!-- 4-Slot 4:5 Editorial Grid -->
+            <div id="galleryGrid" class="grid grid-cols-2 gap-4">
+              <!-- Populated dynamically via JS -->
+            </div>
+
+            <p class="mt-4 text-xs ink-muted flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0"></span>
+              <span>Activa <strong>"Modo Editar Fotos y Logo"</strong> en <strong>Ajustes</strong> para subir imágenes en vivo, o enlázalas en <code class="font-mono">STATIC_ASSETS</code> para publicarlas de forma permanente en Vercel.</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. FLAGSHIP CONTACT STUDIO — "INICIEMOS UN PROYECTO"
+         ========================================================================= -->
+    <section id="contacto" class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+          <!-- Left Column: Direct Contact Cards with 1-Click Copy -->
+          <div class="lg:col-span-5 reveal">
+            <span class="font-mono text-xs font-semibold tracking-[0.2em] accent-ink uppercase block mb-2">
+              05 // CONTACTO DIRECTO
+            </span>
+            <h2 class="font-display display-tight font-light text-3xl sm:text-4xl lg:text-5xl ink-main mb-4">
+              Iniciemos un <span class="font-semibold">proyecto</span>
+            </h2>
+            <p class="text-sm sm:text-base ink-sub leading-relaxed mb-8">
+              Disponible para optimización de sistemas Windows, cotización y armado de PCs (+$1,000 USD), gestión de redes sociales o colaboraciones creativas.
+            </p>
+
+            <div class="space-y-3.5">
+              <!-- WhatsApp / Phone -->
+              <div class="spotlight-card rounded-2xl surface-card p-4 flex items-center justify-between gap-3">
+                <a href="https://wa.me/50768890772" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 min-w-0 group">
+                  <div class="w-11 h-11 shrink-0 rounded-xl bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block font-mono text-[10px] uppercase tracking-wider ink-muted">WhatsApp / Teléfono</span>
+                    <span class="block text-sm font-semibold ink-main group-hover:text-[var(--accent)] transition-colors">+507 6889-0772 ↗</span>
+                  </div>
+                </a>
+                <button type="button" data-copy="+507 6889-0772" data-copy-name="Teléfono" class="copy-trigger shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                  Copiar
+                </button>
+              </div>
+
+              <!-- Email -->
+              <div class="spotlight-card rounded-2xl surface-card p-4 flex items-center justify-between gap-3">
+                <a href="mailto:ej.rj2007@gmail.com" class="flex items-center gap-3.5 min-w-0 group">
+                  <div class="w-11 h-11 shrink-0 rounded-xl bg-[#C8A24A]/15 text-[#A17E2A] border border-[#C8A24A]/35 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block font-mono text-[10px] uppercase tracking-wider ink-muted">Correo Electrónico</span>
+                    <span class="block text-sm font-semibold ink-main group-hover:text-[var(--accent)] truncate transition-colors">ej.rj2007@gmail.com</span>
+                  </div>
+                </a>
+                <button type="button" data-copy="ej.rj2007@gmail.com" data-copy-name="Correo" class="copy-trigger shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                  Copiar
+                </button>
+              </div>
+
+              <!-- Instagram -->
+              <div class="spotlight-card rounded-2xl surface-card p-4 flex items-center justify-between gap-3">
+                <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 min-w-0 group">
+                  <div class="w-11 h-11 shrink-0 rounded-xl bg-[#DC2626]/10 text-[#DC2626] border border-[#DC2626]/25 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </div>
+                  <div class="min-w-0">
+                    <span class="block font-mono text-[10px] uppercase tracking-wider ink-muted">Instagram Oficial</span>
+                    <span class="block text-sm font-semibold ink-main group-hover:text-[var(--accent)] transition-colors">@endlooxs ↗</span>
+                  </div>
+                </a>
+                <button type="button" data-copy="@endlooxs" data-copy-name="Usuario" class="copy-trigger shrink-0 px-3.5 py-1.5 rounded-full surface-alt text-xs font-semibold ink-sub hover:ink-main hover:border-[var(--accent)] transition-all">
+                  Copiar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Quick Brief Composer -->
+          <div class="lg:col-span-7 reveal">
+            <div class="rounded-[28px] surface-card p-6 sm:p-8 lg:p-9">
+              <div class="flex items-center justify-between gap-2 mb-5">
+                <h3 class="font-display font-semibold text-xl ink-main">Brief Rápido</h3>
+                <span class="font-mono text-[11px] ink-muted uppercase">Respuesta directa</span>
+              </div>
+
+              <!-- Selectable Topic Chips -->
+              <div id="briefTopics" class="flex flex-wrap gap-2 mb-6">
+                <button type="button" data-topic="Optimización OS" class="topic-btn px-4 py-2 rounded-full text-xs font-semibold transition-all accent-fill">
+                  Optimización OS
+                </button>
+                <button type="button" data-topic="Armado PC $1K+" class="topic-btn px-4 py-2 rounded-full text-xs font-semibold surface-alt ink-sub hover:ink-main transition-all">
+                  Armado PC $1K+
+                </button>
+                <button type="button" data-topic="Community Management" class="topic-btn px-4 py-2 rounded-full text-xs font-semibold surface-alt ink-sub hover:ink-main transition-all">
+                  Community Management
+                </button>
+                <button type="button" data-topic="Marca / Colaboración" class="topic-btn px-4 py-2 rounded-full text-xs font-semibold surface-alt ink-sub hover:ink-main transition-all">
+                  Marca / Colaboración
+                </button>
+              </div>
+
+              <div class="space-y-4">
+                <div>
+                  <label for="briefName" class="block font-mono text-[11px] uppercase tracking-wider ink-muted mb-1.5">Tu Nombre (opcional)</label>
+                  <input
+                    id="briefName"
+                    type="text"
+                    placeholder="Ej. Andrés Castillo"
+                    class="w-full px-4 py-3 rounded-2xl surface-alt text-sm ink-main placeholder:text-slate-400 focus:outline-none focus:border-[var(--accent)] transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label for="briefMsg" class="block font-mono text-[11px] uppercase tracking-wider ink-muted mb-1.5">Detalles del proyecto</label>
+                  <textarea
+                    id="briefMsg"
+                    rows="4"
+                    placeholder="Cuéntame brevemente tu objetivo, presupuesto estimado o idea..."
+                    class="w-full px-4 py-3 rounded-2xl surface-alt text-sm ink-main placeholder:text-slate-400 focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
+                  ></textarea>
+                </div>
+
+                <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <button type="button" id="launchWhatsAppBtn" data-magnetic class="halo-btn flex-1">
+                    <span class="halo-btn-inner">
+                      <span>Enviar por WhatsApp</span>
+                      <span>↗</span>
+                    </span>
+                  </button>
+
+                  <button type="button" id="launchEmailBtn" data-magnetic class="halo-btn halo-btn-secondary flex-1">
+                    <span class="halo-btn-inner">Enviar por Correo</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       8. ARCHITECTURAL FOOTER
+       ========================================================================= -->
+  <footer class="bg-[#050814] text-white/85 border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full carbon-medallion border border-[#C8A24A]/60 flex items-center justify-center overflow-hidden">
+          <svg class="brand-svg w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#C8A24A" fill-opacity="0.16" stroke="#C8A24A" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#DC2626"/>
+          </svg>
+          <img class="brand-img hidden w-full h-full object-cover" src="" alt="ENDLOOXS" />
+        </div>
+        <div>
+          <span class="block font-display font-bold tracking-[0.22em] text-sm text-white">ENDLOOXS</span>
+          <span class="block font-mono text-[10px] text-white/50">Edgar Rodriguez · Panamá</span>
+        </div>
+      </div>
+
+      <nav class="flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-white/65">
+        <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
+        <a href="#ecosistema" class="hover:text-white transition-colors">Ecosistema</a>
+        <a href="#disciplinas" class="hover:text-white transition-colors">Disciplinas</a>
+        <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+        <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre Mí</a>
+        <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="text-[#60A5FA] hover:underline">@endlooxs</a>
+      </nav>
+
+      <p class="font-mono text-[11px] text-white/45">© 2026 ENDLOOXS.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       REFINED FLOATING GLASS DOCK (BOTTOM-RIGHT, COMPACT & NON-INTRUSIVE)
+       ========================================================================= -->
+  <div class="fixed bottom-5 right-5 z-40 inline-flex items-center gap-1 p-1.5 rounded-full surface-glass-strong border border-hair-strong shadow-2xl">
+    <button
+      id="dockThemeBtn"
+      type="button"
+      title="Alternar tema visual"
+      aria-label="Alternar tema visual"
+      class="w-9 h-9 rounded-full flex items-center justify-center ink-sub hover:ink-main hover:bg-[var(--accent-soft)] transition-all"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </button>
+    <div class="w-[1px] h-5 bg-[var(--hairline-strong)]"></div>
+    <button
+      id="dockSettingsBtn"
+      type="button"
+      class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold ink-main hover:text-[var(--accent)] transition-colors"
+    >
+      <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+      <span>Ajustes</span>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       PAGE SETTINGS STUDIO ("AJUSTES DE PÁGINA" SLIDE-OVER DRAWER)
+       ========================================================================= -->
+  <div id="settingsBackdrop" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm"></div>
+
+  <aside
+    id="settingsDrawer"
+    aria-label="Ajustes de Página"
+    class="fixed top-0 right-0 z-[55] h-full w-full max-w-sm surface-glass-strong border-l border-hair shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col"
+  >
+    <div class="px-6 py-5 border-b border-hair flex items-center justify-between">
+      <div>
+        <span class="font-mono text-[10px] uppercase tracking-[0.2em] accent-ink font-semibold">ENDLOOXS STUDIO UI</span>
+        <h3 class="font-display font-bold text-lg ink-main">Ajustes de Página</h3>
+      </div>
+      <button id="closeSettingsBtn" type="button" aria-label="Cerrar ajustes" class="p-2 rounded-full surface-card ink-sub hover:ink-main">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+
+      <!-- 1. Tema Visual -->
+      <div>
+        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ink-muted mb-3">Tema Visual</span>
+        <div class="space-y-2">
+          <button type="button" data-set-theme="light" class="theme-opt w-full flex items-center justify-between p-3.5 rounded-2xl surface-card text-left transition-all">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-white border border-slate-300 shadow-inner"></span>
+              <div>
+                <p class="text-sm font-semibold ink-main">Blanco Futurista</p>
+                <p class="text-[11px] ink-muted">Predeterminado · Cerámica y luz</p>
+              </div>
+            </div>
+            <span class="theme-dot w-2.5 h-2.5 rounded-full"></span>
+          </button>
+
+          <button type="button" data-set-theme="dark" class="theme-opt w-full flex items-center justify-between p-3.5 rounded-2xl surface-card text-left transition-all">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#07090F] border border-slate-600"></span>
+              <div>
+                <p class="text-sm font-semibold ink-main">Obsidiana Pro</p>
+                <p class="text-[11px] ink-muted">Modo oscuro arquitectónico</p>
+              </div>
+            </div>
+            <span class="theme-dot w-2.5 h-2.5 rounded-full"></span>
+          </button>
+
+          <button type="button" data-set-theme="navy" class="theme-opt w-full flex items-center justify-between p-3.5 rounded-2xl surface-card text-left transition-all">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#040B1C] border border-blue-500/60"></span>
+              <div>
+                <p class="text-sm font-semibold ink-main">Azul PSN Profundo</p>
+                <p class="text-[11px] ink-muted">Contraste azul nocturno</p>
+              </div>
+            </div>
+            <span class="theme-dot w-2.5 h-2.5 rounded-full"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Acento Principal -->
+      <div>
+        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ink-muted mb-3">Acento Principal</span>
+        <div class="grid grid-cols-2 gap-2.5">
+          <button type="button" data-set-accent="blue" class="accent-opt flex items-center gap-2.5 p-3 rounded-2xl surface-card transition-all">
+            <span class="w-5 h-5 rounded-full bg-[#0055FF] shrink-0"></span>
+            <span class="text-xs font-semibold ink-main">Azul PSN</span>
+          </button>
+          <button type="button" data-set-accent="gold" class="accent-opt flex items-center gap-2.5 p-3 rounded-2xl surface-card transition-all">
+            <span class="w-5 h-5 rounded-full bg-[#C8A24A] shrink-0"></span>
+            <span class="text-xs font-semibold ink-main">Dorado</span>
+          </button>
+          <button type="button" data-set-accent="red" class="accent-opt flex items-center gap-2.5 p-3 rounded-2xl surface-card transition-all">
+            <span class="w-5 h-5 rounded-full bg-[#DC2626] shrink-0"></span>
+            <span class="text-xs font-semibold ink-main">Crimson</span>
+          </button>
+          <button type="button" data-set-accent="graphite" class="accent-opt flex items-center gap-2.5 p-3 rounded-2xl surface-card transition-all">
+            <span class="w-5 h-5 rounded-full bg-[#111827] border border-white/30 shrink-0"></span>
+            <span class="text-xs font-semibold ink-main">Grafito</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Experiencia & Movimiento -->
+      <div class="rounded-2xl surface-card p-4 space-y-4">
+        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ink-muted">Experiencia &amp; Físicas</span>
+
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <p class="text-sm font-semibold ink-main">Animaciones 3D &amp; Partículas</p>
+            <p class="text-[11px] ink-muted">Inercia 3D, anillos y canvas de luz</p>
+          </div>
+          <button id="motionSwitch" type="button" role="switch" aria-checked="true" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors">
+            <span id="motionKnob" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform"></span>
+          </button>
+        </div>
+
+        <div class="pt-3 border-t border-hair flex items-center justify-between gap-3">
+          <div>
+            <p class="text-sm font-semibold ink-main">Efecto Spotlight Cursor</p>
+            <p class="text-[11px] ink-muted">Brillo radial sutil en tarjetas</p>
+          </div>
+          <button id="spotlightSwitch" type="button" role="switch" aria-checked="true" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors">
+            <span id="spotlightKnob" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Personalizar Medios en Vivo -->
+      <div class="rounded-2xl surface-card p-4 space-y-4">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <p class="text-sm font-semibold ink-main">Modo Editar Fotos y Logo</p>
+            <p class="text-[11px] ink-muted">Prueba tus imágenes en vivo</p>
+          </div>
+          <button id="editSwitch" type="button" role="switch" aria-checked="false" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors">
+            <span id="editKnob" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform"></span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-hair">
+          <button type="button" id="drawerLogoBtn" class="px-3 py-2 rounded-full surface-alt text-xs font-semibold ink-main hover:border-[var(--accent)] transition-all">Subir Logo</button>
+          <button type="button" id="drawerProfileBtn" class="px-3 py-2 rounded-full surface-alt text-xs font-semibold ink-main hover:border-[var(--accent)] transition-all">Subir Retrato</button>
+          <button type="button" id="drawerGalleryBtn" class="col-span-2 px-3 py-2 rounded-full accent-pill text-xs font-semibold transition-all">+ Agregar a la Galería</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safe Two-Step Reset (No confirm()) -->
+    <div class="p-5 border-t border-hair">
+      <button id="resetAllBtn" type="button" class="w-full py-3 rounded-full surface-card text-xs font-semibold text-[#DC2626] hover:border-[#DC2626]/50 transition-all">
+        Restablecer Ajustes y Fotos
+      </button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       FULL CASE STUDY MODAL
+       ========================================================================= -->
+  <div id="caseModal" class="fixed inset-0 z-[65] hidden items-center justify-center p-4 bg-black/65 backdrop-blur-md">
+    <div class="relative w-full max-w-2xl rounded-[30px] surface-glass-strong border border-hair p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button id="closeCaseModalBtn" type="button" aria-label="Cerrar caso de estudio" class="absolute top-5 right-5 p-2 rounded-full surface-card ink-sub hover:ink-main">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div id="caseBadge" class="mb-4"></div>
+      <h3 id="caseTitle" class="font-display display-tight font-bold text-2xl sm:text-3xl ink-main mb-5 pr-8"></h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="rounded-2xl surface-alt p-4">
+          <span class="block font-mono text-[10px] uppercase tracking-wider ink-muted mb-1.5">El Reto</span>
+          <p id="caseChallenge" class="text-sm ink-sub leading-relaxed"></p>
+        </div>
+        <div class="rounded-2xl surface-alt p-4">
+          <span class="block font-mono text-[10px] uppercase tracking-wider accent-ink mb-1.5">La Solución</span>
+          <p id="caseSolution" class="text-sm ink-sub leading-relaxed"></p>
+        </div>
+      </div>
+
+      <div class="border-t border-hair pt-5 mb-5">
+        <h4 class="font-mono text-[10px] uppercase tracking-[0.18em] ink-muted mb-3">Entregables Clave</h4>
+        <ul id="caseDeliverables" class="space-y-2 text-sm ink-main"></ul>
+      </div>
+
+      <div class="border-t border-hair pt-4 mb-7">
+        <h4 class="font-mono text-[10px] uppercase tracking-[0.18em] ink-muted mb-2.5">Stack &amp; Herramientas</h4>
+        <div id="caseStack" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-end gap-3">
+        <a id="caseWhatsAppLink" href="#" target="_blank" rel="noopener noreferrer" class="halo-btn w-full sm:w-auto">
+          <span class="halo-btn-inner">Consultar proyecto similar por WhatsApp ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FULLSCREEN GALLERY LIGHTBOX (WITH PREV / NEXT + KEYBOARD SUPPORT)
+       ========================================================================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-[75] hidden items-center justify-center p-4 sm:p-8 bg-black/92 backdrop-blur-lg">
+    <button id="closeLightboxBtn" type="button" aria-label="Cerrar galería" class="absolute top-5 right-5 p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <button id="lbPrevBtn" type="button" aria-label="Foto anterior" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <div class="max-w-4xl max-h-[86vh] flex flex-col items-center px-10">
+      <img id="lightboxImg" src="" alt="Vista ampliada" class="max-w-full max-h-[76vh] rounded-2xl object-contain shadow-2xl border border-white/15" />
+      <p id="lightboxCaption" class="mt-4 font-mono text-xs text-white/80 tracking-widest uppercase text-center"></p>
+    </div>
+
+    <button id="lbNextBtn" type="button" aria-label="Siguiente foto" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       INTERACTIVE ENGINE (VANILLA JS, ZERO EXTERNAL DEPENDENCIES)
+       ========================================================================= -->
+  <script>
+    /* =========================================================================
+       CONFIGURACIÓN DE IMÁGENES PERMANENTES PARA VERCEL / GITHUB
+       -------------------------------------------------------------------------
+       Cuando subas este archivo index.html a Vercel, coloca tus fotos reales
+       en la misma carpeta y escribe sus rutas aquí para que todos las vean:
+         logo: './logo-endlooxs.png',
+         profile: './edgar-retrato.jpg',
+         gallery: ['./foto1.jpg', './foto2.jpg', './foto3.jpg', './foto4.jpg']
+       ========================================================================= */
+    const STATIC_ASSETS = {
+      logo: '',
+      profile: '',
+      gallery: ['', '', '', ''],
+    };
+
+    (function () {
+      'use strict';
+
+      const KEYS = {
+        STATE: 'endlooxs_flagship_state_v1',
+        LOGO: 'endlooxs_flagship_logo_v1',
+        PROFILE: 'endlooxs_flagship_profile_v1',
+        GALLERY: 'endlooxs_flagship_gallery_v1',
+      };
+
+      const reducedMotionPref = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isTouchDevice = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+
+      const DEFAULT_STATE = {
+        theme: 'light',
+        accent: 'blue',
+        motion: !reducedMotionPref,
+        spotlight: !isTouchDevice,
+        editMode: false,
+      };
+
+      const DEFAULT_GALLERY = [
+        { id: 'g1', tag: '01 // RETRATO', title: 'Edgar · Dirección Personal', src: STATIC_ASSETS.gallery[0] || '', gradient: 'from-[#0B1224] via-[#0F1B38] to-[#050814]' },
+        { id: 'g2', tag: '02 // SISTEMAS', title: 'Entorno & Optima0x Lab', src: STATIC_ASSETS.gallery[1] || '', gradient: 'from-[#07142B] via-[#0B224B] to-[#040914]' },
+        { id: 'g3', tag: '03 // HARDWARE', title: 'Ensamble Custom +$1,000', src: STATIC_ASSETS.gallery[2] || '', gradient: 'from-[#17130B] via-[#241E11] to-[#07090F]' },
+        { id: 'g4', tag: '04 // @ENDLOOXS', title: 'Estética & Curaduría Visual', src: STATIC_ASSETS.gallery[3] || '', gradient: 'from-[#1A0B12] via-[#260F1A] to-[#07090F]' },
+      ];
+
+      let state = readJSON(KEYS.STATE, { ...DEFAULT_STATE });
+      let gallery = readJSON(KEYS.GALLERY, DEFAULT_GALLERY.map(g => ({ ...g })));
+      let activeSlotIndex = null;
+      let lightboxIndex = 0;
+      let activeTopic = 'Optimización OS';
+      let currentChapter = 0;
+      let chapterLocked = false;
+      let currentDiscipline = 0;
+      let resetConfirmArmed = false;
+
+      /* -----------------------------------------------------------------------
+         SAFE STORAGE, TOASTS & CLIENT-SIDE IMAGE COMPRESSION
+         ----------------------------------------------------------------------- */
+      function readJSON(key, fallback) {
+        try {
+          const val = localStorage.getItem(key);
+          return val ? JSON.parse(val) : fallback;
+        } catch (e) {
+          return fallback;
+        }
+      }
+
+      function writeJSON(key, obj) {
+        try {
+          localStorage.setItem(key, JSON.stringify(obj));
+          return true;
+        } catch (e) {
+          toast('Almacenamiento lleno: la foto queda activa en esta sesión.', 'gold');
+          return false;
+        }
+      }
+
+      function writeRaw(key, val) {
+        try {
+          if (!val) localStorage.removeItem(key);
+          else localStorage.setItem(key, val);
+          return true;
+        } catch (e) {
+          toast('Imagen demasiado pesada para guardar en caché local.', 'gold');
+          return false;
+        }
+      }
+
+      function toast(message, tone = 'accent') {
+        const stack = document.getElementById('toastStack');
+        const el = document.createElement('div');
+        const dotColors = {
+          accent: 'bg-[var(--accent)]',
+          gold: 'bg-[#C8A24A]',
+          red: 'bg-[#DC2626]',
+        };
+        el.className = 'pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-full surface-glass-strong border border-hair text-xs font-semibold ink-main shadow-2xl transition-all duration-300 translate-y-3 opacity-0';
+        el.innerHTML = `<span class="w-2 h-2 rounded-full shrink-0 ${dotColors[tone] || dotColors.accent}"></span><span>${message}</span>`;
+        stack.appendChild(el);
+        requestAnimationFrame(() => el.classList.remove('translate-y-3', 'opacity-0'));
+        setTimeout(() => {
+          el.classList.add('translate-y-3', 'opacity-0');
+          setTimeout(() => el.remove(), 300);
+        }, 2800);
+      }
+
+      function compressImage(file, maxDim = 960, quality = 0.84) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onerror = () => reject(new Error('Read failed'));
+          reader.onload = (ev) => {
+            const img = new Image();
+            img.onerror = () => resolve(ev.target.result);
+            img.onload = () => {
+              let { width, height } = img;
+              if (width > maxDim || height > maxDim) {
+                if (width > height) {
+                  height = Math.round((height * maxDim) / width);
+                  width = maxDim;
+                } else {
+                  width = Math.round((width * maxDim) / height);
+                  height = maxDim;
+                }
+              }
+              const canvas = document.createElement('canvas');
+              canvas.width = width;
+              canvas.height = height;
+              canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+              resolve(canvas.toDataURL(file.type === 'image/png' ? 'image/png' : 'image/jpeg', quality));
+            };
+            img.src = ev.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      /* -----------------------------------------------------------------------
+         TOP 2PX SCROLL PROGRESS BAR
+         ----------------------------------------------------------------------- */
+      const scrollBar = document.getElementById('scrollProgress');
+      function updateScrollBar() {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        scrollBar.style.width = (max > 0 ? Math.min(100, Math.max(0, (y / max) * 100)) : 0) + '%';
+      }
+      window.addEventListener('scroll', updateScrollBar, { passive: true });
+      updateScrollBar();
+
+      /* -----------------------------------------------------------------------
+         PAGE SETTINGS ENGINE & DRAWER
+         ----------------------------------------------------------------------- */
+      const htmlEl = document.documentElement;
+      const editModeBanner = document.getElementById('editModeBanner');
+      const settingsDrawer = document.getElementById('settingsDrawer');
+      const settingsBackdrop = document.getElementById('settingsBackdrop');
+
+      function setSwitchUI(btnId, knobId, active) {
+        const btn = document.getElementById(btnId);
+        const knob = document.getElementById(knobId);
+        btn.setAttribute('aria-checked', String(active));
+        btn.style.backgroundColor = active ? 'var(--accent)' : '#94A3B8';
+        knob.classList.toggle('translate-x-6', active);
+        knob.classList.toggle('translate-x-1', !active);
+      }
+
+      function applyState() {
+        htmlEl.setAttribute('data-theme', state.theme);
+        htmlEl.setAttribute('data-accent', state.accent);
+        htmlEl.setAttribute('data-motion', state.motion ? 'on' : 'off');
+        htmlEl.setAttribute('data-spotlight', state.spotlight ? 'on' : 'off');
+
+        document.body.classList.toggle('edit-mode', Boolean(state.editMode));
+        editModeBanner.classList.toggle('hidden', !state.editMode);
+
+        document.querySelectorAll('.theme-opt').forEach((btn) => {
+          const isCurrent = btn.dataset.setTheme === state.theme;
+          btn.style.borderColor = isCurrent ? 'var(--accent)' : '';
+          btn.querySelector('.theme-dot').style.backgroundColor = isCurrent ? 'var(--accent)' : 'transparent';
+        });
+
+        document.querySelectorAll('.accent-opt').forEach((btn) => {
+          const isCurrent = btn.dataset.setAccent === state.accent;
+          btn.style.borderColor = isCurrent ? 'var(--accent)' : '';
+          btn.style.backgroundColor = isCurrent ? 'var(--accent-soft)' : '';
+        });
+
+        setSwitchUI('motionSwitch', 'motionKnob', state.motion);
+        setSwitchUI('spotlightSwitch', 'spotlightKnob', state.spotlight);
+        setSwitchUI('editSwitch', 'editKnob', state.editMode);
+
+        writeJSON(KEYS.STATE, state);
+        positionFilterSlider();
+      }
+
+      function openSettings() {
+        settingsBackdrop.classList.remove('hidden');
+        settingsDrawer.classList.remove('translate-x-full');
+      }
+      function closeSettings() {
+        settingsDrawer.classList.add('translate-x-full');
+        settingsBackdrop.classList.add('hidden');
+      }
+
+      function cycleTheme() {
+        const order = ['light', 'dark', 'navy'];
+        const labels = { light: 'Blanco Futurista', dark: 'Obsidiana Pro', navy: 'Azul PSN Profundo' };
+        const next = order[(order.indexOf(state.theme) + 1) % order.length];
+        state.theme = next;
+        applyState();
+        toast(`Tema: ${labels[next]}`);
+      }
+
+      document.getElementById('navSettingsBtn').addEventListener('click', openSettings);
+      document.getElementById('dockSettingsBtn').addEventListener('click', openSettings);
+      document.getElementById('closeSettingsBtn').addEventListener('click', closeSettings);
+      settingsBackdrop.addEventListener('click', closeSettings);
+      document.getElementById('quickThemeUtilityBtn').addEventListener('click', cycleTheme);
+      document.getElementById('dockThemeBtn').addEventListener('click', cycleTheme);
+
+      document.querySelectorAll('.theme-opt').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.theme = btn.dataset.setTheme;
+          applyState();
+          toast('Tema actualizado');
+        });
+      });
+
+      document.querySelectorAll('.accent-opt').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          state.accent = btn.dataset.setAccent;
+          applyState();
+          toast('Acento principal actualizado');
+        });
+      });
+
+      document.getElementById('motionSwitch').addEventListener('click', () => {
+        state.motion = !state.motion;
+        applyState();
+        toast(state.motion ? 'Físicas y animaciones activas' : 'Modo movimiento reducido');
+      });
+
+      document.getElementById('spotlightSwitch').addEventListener('click', () => {
+        state.spotlight = !state.spotlight;
+        applyState();
+        toast(state.spotlight ? 'Spotlight de cursor activo' : 'Spotlight desactivado');
+      });
+
+      document.getElementById('editSwitch').addEventListener('click', () => {
+        state.editMode = !state.editMode;
+        applyState();
+        toast(state.editMode ? 'Modo Editar Fotos y Logo activo' : 'Modo Edición cerrado');
+      });
+
+      document.getElementById('bannerExitEditBtn').addEventListener('click', () => {
+        state.editMode = false;
+        applyState();
+        toast('Cambios guardados en tu navegador');
+      });
+
+      // Safe 2-click reset without confirm()
+      const resetAllBtn = document.getElementById('resetAllBtn');
+      resetAllBtn.addEventListener('click', () => {
+        if (!resetConfirmArmed) {
+          resetConfirmArmed = true;
+          resetAllBtn.textContent = 'Haz clic otra vez para confirmar';
+          setTimeout(() => {
+            resetConfirmArmed = false;
+            resetAllBtn.textContent = 'Restablecer Ajustes y Fotos';
+          }, 3500);
+          return;
+        }
+        resetConfirmArmed = false;
+        resetAllBtn.textContent = 'Restablecer Ajustes y Fotos';
+        state = { ...DEFAULT_STATE };
+        gallery = DEFAULT_GALLERY.map(g => ({ ...g }));
+        writeRaw(KEYS.LOGO, '');
+        writeRaw(KEYS.PROFILE, '');
+        writeJSON(KEYS.GALLERY, gallery);
+        applyBrandLogo(STATIC_ASSETS.logo);
+        applyProfilePhoto(STATIC_ASSETS.profile);
+        renderGallery();
+        applyState();
+        toast('Ajustes y medios restablecidos', 'gold');
+      });
+
+      /* -----------------------------------------------------------------------
+         MOBILE MENU
+         ----------------------------------------------------------------------- */
+      const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+      document.getElementById('mobileNavBtn').addEventListener('click', () => mobileNavDrawer.classList.toggle('hidden'));
+      document.querySelectorAll('.mobile-nav-link').forEach((a) => {
+        a.addEventListener('click', () => mobileNavDrawer.classList.add('hidden'));
+      });
+
+      /* -----------------------------------------------------------------------
+         MAGNETIC PULL FOR PS5 HALO BUTTONS & CURSOR SPOTLIGHT ON CARDS
+         ----------------------------------------------------------------------- */
+      if (!isTouchDevice) {
+        document.querySelectorAll('[data-magnetic]').forEach((btn) => {
+          btn.addEventListener('mousemove', (e) => {
+            if (!state.motion) return;
+            const r = btn.getBoundingClientRect();
+            const dx = (e.clientX - (r.left + r.width / 2)) * 0.16;
+            const dy = (e.clientY - (r.top + r.height / 2)) * 0.16;
+            btn.style.transform = `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`;
+          });
+          btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate3d(0, 0, 0)';
+          });
+        });
+
+        document.querySelectorAll('.spotlight-card').forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            if (!state.spotlight) return;
+            const r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+          });
+        });
+      }
+
+      /* -----------------------------------------------------------------------
+         HERO INTERACTIVE LIGHT-FIELD CANVAS (60FPS, ADAPTIVE TO THEME)
+         ----------------------------------------------------------------------- */
+      const heroCanvas = document.getElementById('heroLightCanvas');
+      const ctx = heroCanvas.getContext('2d');
+      let cw = 0, ch = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const pointer = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
+      const nodes = [];
+      let canvasTime = 0;
+
+      function resizeHeroCanvas() {
+        const rect = heroCanvas.parentElement.getBoundingClientRect();
+        cw = rect.width;
+        ch = rect.height;
+        heroCanvas.width = Math.floor(cw * dpr);
+        heroCanvas.height = Math.floor(ch * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        nodes.length = 0;
+        const count = cw < 640 ? 22 : 42;
+        for (let i = 0; i < count; i++) {
+          nodes.push({
+            x: Math.random() * cw,
+            y: Math.random() * ch,
+            vx: (Math.random() - 0.5) * 0.28,
+            vy: (Math.random() - 0.5) * 0.28,
+            r: Math.random() * 1.6 + 0.9,
+            accent: i % 9 === 0 ? 'gold' : (i % 15 === 0 ? 'red' : 'blue'),
+          });
+        }
+      }
+
+      window.addEventListener('resize', resizeHeroCanvas);
+      heroCanvas.parentElement.addEventListener('mousemove', (e) => {
+        const rect = heroCanvas.getBoundingClientRect();
+        pointer.tx = e.clientX - rect.left;
+        pointer.ty = e.clientY - rect.top;
+      });
+      heroCanvas.parentElement.addEventListener('mouseleave', () => {
+        pointer.tx = -9999;
+        pointer.ty = -9999;
+      });
+
+      function renderLightField() {
+        ctx.clearRect(0, 0, cw, ch);
+
+        const isLight = state.theme === 'light';
+        const baseBlue = isLight ? 'rgba(0, 85, 255,' : 'rgba(59, 130, 246,';
+        const baseGold = 'rgba(200, 162, 74,';
+        const baseRed = 'rgba(220, 38, 38,';
+        const gridStroke = isLight ? 'rgba(15, 23, 42, 0.032)' : 'rgba(255, 255, 255, 0.03)';
+
+        // Faint architectural grid
+        ctx.strokeStyle = gridStroke;
+        ctx.lineWidth = 1;
+        const step = 72;
+        ctx.beginPath();
+        for (let x = 0; x < cw; x += step) { ctx.moveTo(x, 0); ctx.lineTo(x, ch); }
+        for (let y = 0; y < ch; y += step) { ctx.moveTo(0, y); ctx.lineTo(cw, y); }
+        ctx.stroke();
+
+        // Smooth architectural ribbon light waves
+        if (state.motion) canvasTime += 0.008;
+        const waveConfigs = [
+          { yBase: ch * 0.28, amp: 26, freq: 0.0032, color: baseBlue + (isLight ? '0.07)' : '0.16)') },
+          { yBase: ch * 0.64, amp: 32, freq: 0.0024, color: baseGold + (isLight ? '0.08)' : '0.11)') },
+        ];
+        waveConfigs.forEach((w, idx) => {
+          ctx.beginPath();
+          for (let x = 0; x <= cw; x += 18) {
+            const y = w.yBase + Math.sin(x * w.freq + canvasTime + idx * 1.8) * w.amp;
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.strokeStyle = w.color;
+          ctx.lineWidth = 1.4;
+          ctx.stroke();
+        });
+
+        // Smooth pointer interpolation
+        pointer.x += (pointer.tx - pointer.x) * 0.1;
+        pointer.y += (pointer.ty - pointer.y) * 0.1;
+
+        // Floating geometric nodes & delicate connections
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          if (state.motion) {
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > cw) n.vx *= -1;
+            if (n.y < 0 || n.y > ch) n.vy *= -1;
+          }
+
+          // Subtle cursor reaction
+          const dxp = pointer.x - n.x;
+          const dyp = pointer.y - n.y;
+          const distP = Math.hypot(dxp, dyp);
+          if (state.motion && distP < 160 && distP > 1) {
+            n.x -= (dxp / distP) * 0.35;
+            n.y -= (dyp / distP) * 0.35;
+          }
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j];
+            const dist = Math.hypot(n.x - m.x, n.y - m.y);
+            if (dist < 135) {
+              const alpha = (1 - dist / 135) * (isLight ? 0.10 : 0.16);
+              ctx.strokeStyle = baseBlue + alpha.toFixed(3) + ')';
+              ctx.lineWidth = 0.9;
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(m.x, m.y);
+              ctx.stroke();
+            }
+          }
+
+          ctx.fillStyle = n.accent === 'gold'
+            ? baseGold + '0.55)'
+            : n.accent === 'red'
+              ? baseRed + '0.45)'
+              : baseBlue + (isLight ? '0.32)' : '0.52)');
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        requestAnimationFrame(renderLightField);
+      }
+
+      /* -----------------------------------------------------------------------
+         HERO 3D DAMPED MONOLITH TILT (LERP PHYSICS + SPECULAR GLARE)
+         ----------------------------------------------------------------------- */
+      const heroMonolith = document.getElementById('heroMonolith');
+      const monolithGlare = document.getElementById('monolithGlare');
+      const tilt = { rx: 0, ry: 0, trx: 0, try: 0, gx: 50, gy: 25, tgx: 50, tgy: 25 };
+
+      if (heroMonolith && !isTouchDevice) {
+        heroMonolith.addEventListener('mousemove', (e) => {
+          if (!state.motion) return;
+          const r = heroMonolith.getBoundingClientRect();
+          const nx = (e.clientX - r.left) / r.width;
+          const ny = (e.clientY - r.top) / r.height;
+          tilt.trx = (0.5 - ny) * 11;
+          tilt.try = (nx - 0.5) * 11;
+          tilt.tgx = nx * 100;
+          tilt.tgy = ny * 100;
+        });
+        heroMonolith.addEventListener('mouseleave', () => {
+          tilt.trx = 0; tilt.try = 0; tilt.tgx = 50; tilt.tgy = 25;
+        });
+      }
+
+      function animateMonolith() {
+        if (state.motion && heroMonolith && !isTouchDevice) {
+          tilt.rx += (tilt.trx - tilt.rx) * 0.08;
+          tilt.ry += (tilt.try - tilt.ry) * 0.08;
+          tilt.gx += (tilt.tgx - tilt.gx) * 0.1;
+          tilt.gy += (tilt.tgy - tilt.gy) * 0.1;
+          heroMonolith.style.transform = `rotateX(${tilt.rx.toFixed(2)}deg) rotateY(${tilt.ry.toFixed(2)}deg)`;
+          monolithGlare.style.setProperty('--gx', `${tilt.gx.toFixed(1)}%`);
+          monolithGlare.style.setProperty('--gy', `${tilt.gy.toFixed(1)}%`);
+        }
+        requestAnimationFrame(animateMonolith);
+      }
+
+      /* -----------------------------------------------------------------------
+         DARK CONTRAST SCROLL-DRIVEN CHAPTER SHOWCASE
+         ----------------------------------------------------------------------- */
+      const CHAPTER_DATA = [
+        {
+          code: 'CORE // 01 · BRAND ARCHITECTURE',
+          chip: '@endlooxs',
+          color: '#0055FF',
+          aurora1: 'rgba(0, 85, 255, 0.36)',
+          aurora2: 'rgba(200, 162, 74, 0.18)',
+          visual: `
+            <div class="relative w-full flex flex-col items-center justify-center py-4">
+              <div class="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center">
+                <div class="absolute inset-0 rounded-full border border-[#0055FF]/40 orbit-cw"></div>
+                <div class="absolute inset-4 rounded-full border border-dashed border-[#C8A24A]/45 orbit-ccw"></div>
+                <div class="absolute inset-9 rounded-full border border-white/15"></div>
+                <div class="relative w-28 h-28 rounded-full carbon-medallion border-2 border-[#C8A24A]/70 flex items-center justify-center shadow-[0_0_40px_rgba(0,85,255,0.35)]">
+                  <svg class="w-20 h-20" viewBox="0 0 100 100" fill="none">
+                    <path d="M21 66L13 56L24 49L17 38L34 32L46 14L52 28L61 18L61 34L73 41L75 49L89 54L82 63L67 61L62 71L71 78C58 87 38 87 24 77C18 72 19 68 21 66Z" fill="#C8A24A" fill-opacity="0.16" stroke="#C8A24A" stroke-width="3.2" stroke-linejoin="round"/>
+                    <path d="M27 61L40 44L47 51L59 36" stroke="#C8A24A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M35 63L42.5 59.5L40 69.5L35 63Z" fill="#DC2626"/>
+                    <path d="M48 62.5L60.5 54.5L52.5 64L48 62.5Z" fill="#DC2626"/>
+                  </svg>
+                </div>
+              </div>
+              <p class="mt-4 font-mono text-[11px] tracking-[0.22em] text-slate-300 uppercase">Minimalismo · Coherencia · Presencia</p>
+            </div>
+          `,
+          telemetry: [
+            { label: 'IDENTIDAD', value: 'ENDLOOXS' },
+            { label: 'DIRECCIÓN', value: 'Editorial' },
+            { label: 'CANAL', value: '@endlooxs' },
+          ],
+        },
+        {
+          code: 'CORE // 02 · OS LATENCY ENGINE',
+          chip: 'Optima0x · Win11',
+          color: '#38BDF8',
+          aurora1: 'rgba(56, 189, 248, 0.30)',
+          aurora2: 'rgba(0, 85, 255, 0.25)',
+          visual: `
+            <div class="w-full space-y-5">
+              <div class="flex items-center justify-between font-mono text-[11px] text-slate-300">
+                <span>FRAMETIME STABILITY WAVE</span>
+                <span class="text-[#38BDF8]">LATENCIA REDUCIDA</span>
+              </div>
+              <svg viewBox="0 0 420 130" class="w-full h-36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.32"/>
+                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="30" x2="420" y2="30" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
+                <line x1="0" y1="70" x2="420" y2="70" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
+                <line x1="0" y1="110" x2="420" y2="110" stroke="rgba(255,255,255,0.08)"/>
+                <!-- Before spike line -->
+                <path d="M0 95 L45 86 L72 42 L95 92 L135 55 L165 88 L200 72" stroke="rgba(220,38,38,0.55)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <!-- After Optima0x stabilized wave -->
+                <path d="M0 95 C45 92, 90 88, 145 84 C205 80, 260 76, 320 75 C365 74, 395 74, 420 73 L420 125 L0 125 Z" fill="url(#waveGrad)"/>
+                <path d="M0 95 C45 92, 90 88, 145 84 C205 80, 260 76, 320 75 C365 74, 395 74, 420 73" stroke="#38BDF8" stroke-width="2.5"/>
+                <circle cx="320" cy="75" r="5" fill="#38BDF8"/>
+                <circle cx="320" cy="75" r="11" stroke="#38BDF8" stroke-opacity="0.45"/>
+              </svg>
+              <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-slate-400">
+                <span class="text-white/90">&gt; Optima0x.cfg cargado</span>
+                <span>Delivery Optimization: Protegido</span>
+              </div>
+            </div>
+          `,
+          telemetry: [
+            { label: 'DPC & FRAME', value: 'Estable' },
+            { label: 'MEMORIA', value: 'RAM Purge' },
+            { label: 'SEGURIDAD', value: 'Zero Placebo' },
+          ],
+        },
+        {
+          code: 'CORE // 03 · THERMAL & CHASSIS',
+          chip: 'Custom +$1,000',
+          color: '#C8A24A',
+          aurora1: 'rgba(200, 162, 74, 0.30)',
+          aurora2: 'rgba(0, 85, 255, 0.22)',
+          visual: `
+            <div class="w-full space-y-4">
+              <div class="flex items-center justify-between font-mono text-[11px] text-slate-300">
+                <span>ARQUITECTURA TÉRMICA &amp; AIRFLOW</span>
+                <span class="text-[#C8A24A]">BALANCE DE GAMA ALTA</span>
+              </div>
+              <svg viewBox="0 0 420 145" class="w-full h-36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="24" y="12" width="372" height="122" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)" stroke-width="1.4"/>
+                <!-- Intake fans -->
+                <rect x="38" y="28" width="12" height="26" rx="4" fill="#0055FF" fill-opacity="0.55"/>
+                <rect x="38" y="60" width="12" height="26" rx="4" fill="#0055FF" fill-opacity="0.55"/>
+                <rect x="38" y="92" width="12" height="26" rx="4" fill="#0055FF" fill-opacity="0.55"/>
+                <!-- CPU / VRM Block -->
+                <rect x="148" y="28" width="66" height="44" rx="10" fill="rgba(200,162,74,0.16)" stroke="#C8A24A" stroke-width="1.4"/>
+                <text x="181" y="54" text-anchor="middle" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10">CPU</text>
+                <!-- GPU Block -->
+                <rect x="122" y="84" width="160" height="32" rx="8" fill="rgba(0,85,255,0.18)" stroke="#60A5FA" stroke-width="1.4"/>
+                <text x="202" y="104" text-anchor="middle" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10">GPU // CUSTOM CURVE</text>
+                <!-- Airflow lines -->
+                <path d="M56 41 C110 41, 120 48, 356 40" stroke="#60A5FA" stroke-width="1.5" class="dash-flow"/>
+                <path d="M56 73 C140 73, 210 73, 356 73" stroke="#C8A24A" stroke-width="1.5" class="dash-flow"/>
+                <path d="M56 105 C140 105, 220 98, 356 102" stroke="#60A5FA" stroke-width="1.5" class="dash-flow"/>
+                <!-- Exhaust -->
+                <rect x="370" y="34" width="12" height="44" rx="4" fill="#DC2626" fill-opacity="0.55"/>
+              </svg>
+            </div>
+          `,
+          telemetry: [
+            { label: 'PRESUPUESTO', value: '+$1,000 USD' },
+            { label: 'TÉRMICA', value: 'Silent Airflow' },
+            { label: 'VALIDACIÓN', value: 'BIOS + Stress' },
+          ],
+        },
+        {
+          code: 'CORE // 04 · SOCIAL & STORYBOARD',
+          chip: 'Reels · TikTok',
+          color: '#DC2626',
+          aurora1: 'rgba(220, 38, 38, 0.28)',
+          aurora2: 'rgba(0, 85, 255, 0.22)',
+          visual: `
+            <div class="w-full space-y-5">
+              <div class="flex items-center justify-between font-mono text-[11px] text-slate-300">
+                <span>MATRIZ VERTICAL 9:16 &amp; RETENCIÓN</span>
+                <span class="text-[#F87171]">CRECIMIENTO ORGÁNICO</span>
+              </div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="rounded-2xl bg-white/[0.05] border border-white/12 p-3.5 flex flex-col justify-between h-32">
+                  <span class="font-mono text-[10px] text-[#F87171]">01 · HOOK</span>
+                  <div class="space-y-1.5">
+                    <div class="h-1.5 w-3/4 rounded-full bg-white/30"></div>
+                    <div class="h-1.5 w-1/2 rounded-full bg-[#DC2626]/70"></div>
+                  </div>
+                </div>
+                <div class="rounded-2xl bg-white/[0.08] border border-[#0055FF]/50 p-3.5 flex flex-col justify-between h-32">
+                  <span class="font-mono text-[10px] text-[#60A5FA]">02 · NARRATIVA</span>
+                  <div class="space-y-1.5">
+                    <div class="h-1.5 w-full rounded-full bg-[#0055FF]/80"></div>
+                    <div class="h-1.5 w-2/3 rounded-full bg-white/30"></div>
+                  </div>
+                </div>
+                <div class="rounded-2xl bg-white/[0.05] border border-white/12 p-3.5 flex flex-col justify-between h-32">
+                  <span class="font-mono text-[10px] text-[#C8A24A]">03 · COMUNIDAD</span>
+                  <div class="space-y-1.5">
+                    <div class="h-1.5 w-4/5 rounded-full bg-[#C8A24A]/80"></div>
+                    <div class="h-1.5 w-1/2 rounded-full bg-white/30"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `,
+          telemetry: [
+            { label: 'FORMATO', value: '9:16 Reels' },
+            { label: 'GESTIÓN', value: 'Comunidad' },
+            { label: 'ALCANCE', value: 'Orgánico' },
+          ],
+        },
+      ];
+
+      const chapterCards = document.querySelectorAll('.chapter-card');
+      const chapterCounter = document.getElementById('chapterCounter');
+      const coreAurora = document.getElementById('coreAurora');
+      const coreAurora2 = document.getElementById('coreAurora2');
+      const coreDot = document.getElementById('coreDot');
+      const coreModuleCode = document.getElementById('coreModuleCode');
+      const coreChip = document.getElementById('coreChip');
+      const coreVisualMount = document.getElementById('coreVisualMount');
+      const coreTelemetryGrid = document.getElementById('coreTelemetryGrid');
+
+      function setChapter(idx) {
+        const ch = CHAPTER_DATA[idx];
+        if (!ch) return;
+        currentChapter = idx;
+        chapterCounter.textContent = `0${idx + 1}`;
+
+        chapterCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+        coreAurora.style.background = ch.aurora1;
+        coreAurora2.style.background = ch.aurora2;
+        coreDot.style.backgroundColor = ch.color;
+        coreModuleCode.textContent = ch.code;
+        coreChip.textContent = ch.chip;
+        coreVisualMount.innerHTML = ch.visual;
+        coreTelemetryGrid.innerHTML = ch.telemetry.map((t) => `
+          <div class="rounded-2xl bg-white/[0.05] border border-white/10 p-3">
+            <span class="block font-mono text-[9px] text-slate-400 uppercase tracking-wider">${t.label}</span>
+            <span class="block font-display font-semibold text-xs sm:text-sm text-white mt-0.5">${t.value}</span>
+          </div>
+        `).join('');
+      }
+
+      chapterCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          chapterLocked = true;
+          setChapter(Number(card.dataset.chapter));
+          setTimeout(() => { chapterLocked = false; }, 3800);
+        });
+      });
+
+      // Scroll-linked chapter activation on desktop
+      const ecosistemaEl = document.getElementById('ecosistema');
+      window.addEventListener('scroll', () => {
+        if (!state.motion || chapterLocked || window.innerWidth < 1024 || !ecosistemaEl) return;
+        let closestIdx = currentChapter;
+        let minDist = Infinity;
+        const targetY = window.innerHeight * 0.42;
+        chapterCards.forEach((card, idx) => {
+          const r = card.getBoundingClientRect();
+          const dist = Math.abs(r.top + r.height / 2 - targetY);
+          if (dist < minDist) {
+            minDist = dist;
+            closestIdx = idx;
+          }
+        });
+        const secRect = ecosistemaEl.getBoundingClientRect();
+        if (secRect.top < window.innerHeight * 0.7 && secRect.bottom > window.innerHeight * 0.3 && closestIdx !== currentChapter) {
+          setChapter(closestIdx);
+        }
+      }, { passive: true });
+
+      setChapter(0);
+
+      /* -----------------------------------------------------------------------
+         INTERACTIVE DISCIPLINE SHOWCASE ("EXPLORA CADA DISCIPLINA")
+         ----------------------------------------------------------------------- */
+      const DISCIPLINES = [
+        {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25">01 // SISTEMAS &amp; OPTIMIZACIÓN OS</span>',
+          title: 'Optimización Real de Windows 11',
+          desc: 'Ingeniería aplicada a rendimiento y estabilidad mediante scripts propios como Optima0x. Configuraciones persistentes, limpieza inteligente de memoria y reducción de procesos invasivos sin romper funciones del sistema.',
+          metrics: [
+            { label: 'Estabilidad & Salvaguardas Reversibles', pct: 98, color: '#0055FF' },
+            { label: 'Reducción de Latencia & Bloatware', pct: 94, color: '#0070CC' },
+            { label: 'Automatización Modular (.bat / PS)', pct: 96, color: '#C8A24A' },
+          ],
+          topic: 'Optimización OS',
+          artwork: `
+            <div class="flex items-center justify-between pb-3.5 mb-5 border-b border-hair">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#DC2626]/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#C8A24A]/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#0055FF]/80"></span>
+              </div>
+              <span class="font-mono text-[11px] ink-muted">Optima0x // Windows 11 Engine</span>
+            </div>
+            <div class="font-mono text-xs space-y-2.5 ink-sub">
+              <p class="accent-ink font-semibold">[READY] Configuración persistente detectada</p>
+              <p>&gt; Purga inteligente de RAM en espera... <span class="ink-main font-semibold">OK</span></p>
+              <p>&gt; Bloqueo temporal Delivery Optimization... <span class="ink-main font-semibold">ACTIVO</span></p>
+              <p>&gt; Verificación de integridad de servicios... <span class="text-[#C8A24A] font-semibold">100%</span></p>
+            </div>
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="rounded-2xl surface-card p-3.5">
+                <span class="block font-mono text-[10px] ink-muted">ENFOQUE</span>
+                <span class="font-display font-bold text-base ink-main">Zero Placebo</span>
+              </div>
+              <div class="rounded-2xl surface-card p-3.5">
+                <span class="block font-mono text-[10px] ink-muted">CONTROL</span>
+                <span class="font-display font-bold text-base accent-ink">Reversible</span>
+              </div>
+            </div>
+          `,
+        },
+        {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#C8A24A]/15 text-[#A17E2A] border border-[#C8A24A]/35">02 // HARDWARE &amp; ENSAMBLES CUSTOM</span>',
+          title: 'PCs de Gama Alta (+$1,000 USD)',
+          desc: 'Cotización estratégica y armado profesional de computadoras a medida para gaming exigente y estaciones de trabajo. Cada componente se selecciona por sinergia real, flujo térmico limpio y durabilidad.',
+          metrics: [
+            { label: 'Balance CPU / GPU / PSU sin Cuellos', pct: 97, color: '#C8A24A' },
+            { label: 'Ingeniería Térmica & Acústica', pct: 93, color: '#0055FF' },
+            { label: 'Cable Management & Validación BIOS', pct: 98, color: '#0070CC' },
+          ],
+          topic: 'Armado PC $1K+',
+          artwork: `
+            <div class="flex items-center justify-between pb-3.5 mb-5 border-b border-hair">
+              <span class="font-mono text-[11px] font-semibold text-[#A17E2A]">BUILD TELEMETRY</span>
+              <span class="font-mono text-[11px] px-2.5 py-0.5 rounded-full bg-[#C8A24A]/15 text-[#A17E2A]">TIER $1,000+</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <div class="rounded-2xl surface-card p-3.5">
+                <span class="block font-mono text-[10px] ink-muted">PRESIÓN AIRE</span>
+                <span class="font-display font-bold text-lg ink-main">Positiva</span>
+                <span class="block font-mono text-[10px] accent-ink mt-0.5">Menos polvo · Fresco</span>
+              </div>
+              <div class="rounded-2xl surface-card p-3.5">
+                <span class="block font-mono text-[10px] ink-muted">BIOS &amp; RAM</span>
+                <span class="font-display font-bold text-lg ink-main">XMP / EXPO</span>
+                <span class="block font-mono text-[10px] text-[#A17E2A] mt-0.5">Validado en estrés</span>
+              </div>
+            </div>
+            <div class="rounded-2xl surface-card p-3.5 flex items-center justify-between text-xs font-mono">
+              <span class="ink-sub">Cableado &amp; Estética</span>
+              <span class="ink-main font-semibold">Estándar Estudio</span>
+            </div>
+          `,
+        },
+        {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#DC2626]/10 text-[#DC2626] border border-[#DC2626]/25">03 // COMMUNITY MANAGEMENT</span>',
+          title: 'Estrategia Digital &amp; Contenido Vertical',
+          desc: 'Gestión completa de redes sociales enfocada en retención real, ritmo visual en Reels/TikTok, calendario editorial disciplinado y cercanía genuina con la comunidad.',
+          metrics: [
+            { label: 'Arquitectura de Contenido Vertical 9:16', pct: 95, color: '#DC2626' },
+            { label: 'Consistencia Editorial & Voz de Marca', pct: 96, color: '#0055FF' },
+            { label: 'Crecimiento Orgánico & Analítica', pct: 92, color: '#C8A24A' },
+          ],
+          topic: 'Community Management',
+          artwork: `
+            <div class="flex items-center justify-between pb-3.5 mb-5 border-b border-hair">
+              <span class="font-mono text-[11px] font-semibold text-[#DC2626]">SOCIAL GROWTH PIPELINE</span>
+              <span class="font-mono text-[11px] ink-muted">IG · TikTok</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div class="rounded-2xl surface-card p-3 text-center">
+                <span class="block font-display font-bold text-lg text-[#0055FF]">9:16</span>
+                <span class="font-mono text-[10px] ink-muted">Reels</span>
+              </div>
+              <div class="rounded-2xl surface-card p-3 text-center">
+                <span class="block font-display font-bold text-lg text-[#A17E2A]">30d</span>
+                <span class="font-mono text-[10px] ink-muted">Parrilla</span>
+              </div>
+              <div class="rounded-2xl surface-card p-3 text-center">
+                <span class="block font-display font-bold text-lg text-[#DC2626]">+Org</span>
+                <span class="font-mono text-[10px] ink-muted">Retención</span>
+              </div>
+            </div>
+            <div class="rounded-2xl surface-card p-3.5 flex items-center justify-between text-xs">
+              <span class="font-semibold ink-main">Gestión de Audiencia &amp; DM</span>
+              <span class="font-mono accent-ink">Activa ●</span>
+            </div>
+          `,
+        },
+        {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold accent-pill">04 // IDENTIDAD VISUAL &amp; MARCA</span>',
+          title: 'Dirección Creativa @endlooxs',
+          desc: 'Construcción de una presencia digital sobria y reconocible en Instagram. Curaduría estética, fotografía cuidada y lenguaje gráfico minimalista que conecta proyectos personales y colaboraciones.',
+          metrics: [
+            { label: 'Coherencia de Sistema Visual', pct: 98, color: '#0055FF' },
+            { label: 'Curaduría Fotográfica & Feed', pct: 95, color: '#C8A24A' },
+            { label: 'Narrativa de Marca Personal', pct: 94, color: '#DC2626' },
+          ],
+          topic: 'Marca / Colaboración',
+          artwork: `
+            <div class="flex items-center justify-between pb-3.5 mb-5 border-b border-hair">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full carbon-medallion border border-[#C8A24A]/65 flex items-center justify-center">
+                  <span class="font-display font-bold text-[10px] text-[#C8A24A]">EX</span>
+                </div>
+                <span class="font-display font-bold text-sm ink-main">@endlooxs</span>
+              </div>
+              <a href="https://www.instagram.com/endlooxs/" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] accent-ink hover:underline">Instagram ↗</a>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 mb-4">
+              <div class="aspect-square rounded-2xl bg-gradient-to-br from-[#0055FF]/25 via-[#0A1328] to-[#050814] border border-hair"></div>
+              <div class="aspect-square rounded-2xl bg-gradient-to-br from-[#C8A24A]/25 via-[#1C1810] to-[#07090F] border border-hair"></div>
+              <div class="aspect-square rounded-2xl bg-gradient-to-br from-[#DC2626]/22 via-[#1E0D14] to-[#07090F] border border-hair"></div>
+            </div>
+            <p class="font-mono text-[11px] ink-muted">Paleta controlada · Minimalismo de alto contraste</p>
+          `,
+        },
+      ];
+
+      const discTiles = document.querySelectorAll('.disc-tile');
+      const discArtworkStage = document.getElementById('discArtworkStage');
+      const discBadgeMount = document.getElementById('discBadgeMount');
+      const discTitleMount = document.getElementById('discTitleMount');
+      const discDescMount = document.getElementById('discDescMount');
+      const discMetricsMount = document.getElementById('discMetricsMount');
+      const discCtaBtn = document.getElementById('discCtaBtn');
+
+      function setDiscipline(index) {
+        currentDiscipline = (index + DISCIPLINES.length) % DISCIPLINES.length;
+        const d = DISCIPLINES[currentDiscipline];
+
+        discArtworkStage.innerHTML = d.artwork;
+        discBadgeMount.innerHTML = d.badge;
+        discTitleMount.textContent = d.title;
+        discDescMount.textContent = d.desc;
+
+        discMetricsMount.innerHTML = d.metrics.map((m) => `
+          <div>
+            <div class="flex items-center justify-between text-xs font-medium mb-1.5">
+              <span class="ink-main">${m.label}</span>
+              <span class="font-mono ink-muted">${m.pct}%</span>
+            </div>
+            <div class="h-1.5 w-full rounded-full surface-alt overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-700 ease-out" style="width: 0%; background-color: ${m.color};" data-target-w="${m.pct}%"></div>
+            </div>
+          </div>
+        `).join('');
+
+        requestAnimationFrame(() => {
+          discMetricsMount.querySelectorAll('[data-target-w]').forEach((bar) => {
+            bar.style.width = bar.dataset.targetW;
+          });
+        });
+
+        discCtaBtn.onclick = () => selectBriefTopic(d.topic);
+        discTiles.forEach((tile, i) => tile.classList.toggle('is-active', i === currentDiscipline));
+      }
+
+      discTiles.forEach((tile) => tile.addEventListener('click', () => setDiscipline(Number(tile.dataset.discIdx))));
+      document.getElementById('discPrevBtn').addEventListener('click', () => setDiscipline(currentDiscipline - 1));
+      document.getElementById('discNextBtn').addEventListener('click', () => setDiscipline(currentDiscipline + 1));
+
+      document.querySelectorAll('.hero-anchor-btn').forEach((anchor) => {
+        anchor.addEventListener('click', () => setDiscipline(Number(anchor.dataset.jumpDisc)));
+      });
+
+      setDiscipline(0);
+
+      /* -----------------------------------------------------------------------
+         SELECTED PROJECTS: SLIDING FILTER PILL + FULL CASE STUDY MODAL
+         ----------------------------------------------------------------------- */
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const filterSlider = document.getElementById('filterSlider');
+      const projectCards = document.querySelectorAll('.project-card');
+      let activeFilter = 'all';
+
+      function positionFilterSlider() {
+        const activeBtn = document.querySelector(`.filter-tab[data-filter="${activeFilter}"]`);
+        if (!activeBtn || !filterSlider) return;
+        filterSlider.style.width = activeBtn.offsetWidth + 'px';
+        filterSlider.style.transform = `translateX(${activeBtn.offsetLeft - 6}px)`;
+
+        filterTabs.forEach((tab) => {
+          const isCur = tab === activeBtn;
+          tab.style.color = isCur ? 'var(--accent-ink)' : 'var(--ink-secondary)';
+        });
+      }
+
+      filterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          activeFilter = tab.dataset.filter;
+          positionFilterSlider();
+          projectCards.forEach((card) => {
+            const match = activeFilter === 'all' || card.dataset.category === activeFilter;
+            card.classList.toggle('hidden', !match);
+            if (activeFilter !== 'all' && match) {
+              card.classList.remove('lg:col-span-5', 'lg:col-span-7');
+              card.classList.add('lg:col-span-12');
+            } else if (activeFilter === 'all') {
+              card.classList.remove('lg:col-span-12');
+              const isWide = card.dataset.case === 'optima0x' || card.dataset.case === 'endlooxs-brand';
+              card.classList.add(isWide ? 'lg:col-span-7' : 'lg:col-span-5');
+            }
+          });
+        });
+      });
+
+      window.addEventListener('resize', positionFilterSlider);
+
+      const CASE_STUDIES = {
+        optima0x: {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#0055FF]/10 text-[#0055FF] border border-[#0055FF]/25">01 // SISTEMAS &amp; OS</span>',
+          title: 'Optima0x — Suite de Optimización Windows 11',
+          challenge: 'Muchos optimizadores públicos aplican "tweaks placebo" que rompen Windows Update, Microsoft Store o la estabilidad del sistema sin mejoras reales de latencia.',
+          solution: 'Desarrollé una suite modular en Batch/PowerShell con resolución dinámica de rutas, archivo persistente Optima0x.cfg, limpieza inteligente de RAM en espera y salvaguardas reversibles durante sesiones de juego.',
+          deliverables: [
+            'Control temporal de Delivery Optimization y reglas de firewall en modo juego sin afectar la seguridad diaria.',
+            'Gestión precisa de memoria RAM y servicios en segundo plano orientada a estabilidad de frametimes.',
+            'Configuración persistente en Optima0x.cfg con restauración segura en un clic.'
+          ],
+          stack: ['Windows 11', 'Batch (.bat)', 'PowerShell', 'Optima0x.cfg', 'Low Latency'],
+          wa: 'Hola Edgar (ENDLOOXS), vi tu caso de estudio "Optima0x — Suite de Optimización Windows 11" y me gustaría consultar por una optimización.',
+        },
+        'hardware-custom': {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#C8A24A]/15 text-[#A17E2A] border border-[#C8A24A]/35">02 // HARDWARE CUSTOM</span>',
+          title: 'Estaciones &amp; PCs Custom de Alto Rendimiento ($1,000+)',
+          challenge: 'Equipos de alto presupuesto mal balanceados que sufren cuellos de botella, temperaturas altas, ruido excesivo o fuentes subdimensionadas.',
+          solution: 'Arquitectura completa desde la cotización pieza por pieza hasta el ensamblaje limpio, diseño de presión de aire positiva, curvas silenciosas y pruebas de estrés prolongadas.',
+          deliverables: [
+            'Selección optimizada de CPU, GPU, placa madre, NVMe y PSU certificada según el caso de uso.',
+            'Armado profesional con cable management limpio y flujo térmico validado.',
+            'Actualización de BIOS, activación de perfiles XMP/EXPO y entrega lista para producción o gaming.'
+          ],
+          stack: ['Custom Builds $1,000+', 'Airflow Design', 'BIOS Tuning', 'Stress Testing'],
+          wa: 'Hola Edgar (ENDLOOXS), quiero cotizar un armado de PC a medida de gama alta (+$1,000 USD).',
+        },
+        'social-growth': {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#DC2626]/10 text-[#DC2626] border border-[#DC2626]/25">03 // SOCIAL MEDIA</span>',
+          title: 'Dirección de Comunidad &amp; Contenido Vertical',
+          challenge: 'Cuentas con potencial que publican sin consistencia visual, con baja retención en los primeros segundos y sin una estrategia real de comunidad.',
+          solution: 'Sistema editorial estructurado para formatos verticales (Reels/TikTok), guiones con ganchos visuales claros, diseño coherente y gestión activa de audiencia.',
+          deliverables: [
+            'Calendario editorial mensual y pilares de contenido alineados a la identidad de marca.',
+            'Producción y dirección de contenido vertical 9:16 optimizado para alcance orgánico.',
+            'Community Management diario, analítica de retención y mejora iterativa.'
+          ],
+          stack: ['Community Management', 'Reels & TikTok', 'Estrategia Editorial', 'Analítica'],
+          wa: 'Hola Edgar (ENDLOOXS), me interesa conversar sobre servicios de Community Management y estrategia de contenido.',
+        },
+        'endlooxs-brand': {
+          badge: '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold accent-pill">04 // MARCA PERSONAL</span>',
+          title: 'ENDLOOXS — Identidad Digital &amp; Curaduría (@endlooxs)',
+          challenge: 'Unificar múltiples habilidades (técnicas y creativas) bajo una marca personal minimalista que proyecte criterio propio sin perder coherencia.',
+          solution: 'Creación del ecosistema visual ENDLOOXS en Instagram: emblema geométrico del lobo, paleta de alto contraste controlada y curaduría fotográfica intencional.',
+          deliverables: [
+            'Sistema de identidad visual con emblema característico y jerarquía editorial limpia.',
+            'Dirección fotográfica y curaduría continua en @endlooxs.',
+            'Plataforma web oficial interactiva conectada al ecosistema de marca.'
+          ],
+          stack: ['Branding Personal', 'Dirección Visual', 'Curaduría Instagram', 'UI/UX'],
+          wa: 'Hola Edgar (ENDLOOXS), vi tu marca personal @endlooxs y quiero hablar sobre una colaboración creativa.',
+        },
+      };
+
+      const caseModal = document.getElementById('caseModal');
+      function openCaseModal(id) {
+        const c = CASE_STUDIES[id];
+        if (!c) return;
+        document.getElementById('caseBadge').innerHTML = c.badge;
+        document.getElementById('caseTitle').textContent = c.title;
+        document.getElementById('caseChallenge').textContent = c.challenge;
+        document.getElementById('caseSolution').textContent = c.solution;
+        document.getElementById('caseDeliverables').innerHTML = c.deliverables.map((d) => `
+          <li class="flex items-start gap-2.5">
+            <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0"></span>
+            <span>${d}</span>
+          </li>
+        `).join('');
+        document.getElementById('caseStack').innerHTML = c.stack.map((s) => `
+          <span class="px-3 py-1 rounded-full surface-alt font-mono text-[11px] ink-sub">${s}</span>
+        `).join('');
+        document.getElementById('caseWhatsAppLink').href = `https://wa.me/50768890772?text=${encodeURIComponent(c.wa)}`;
+        caseModal.classList.remove('hidden');
+        caseModal.classList.add('flex');
+      }
+
+      function closeCaseModal() {
+        caseModal.classList.add('hidden');
+        caseModal.classList.remove('flex');
+      }
+
+      projectCards.forEach((card) => card.addEventListener('click', () => openCaseModal(card.dataset.case)));
+      document.getElementById('closeCaseModalBtn').addEventListener('click', closeCaseModal);
+      caseModal.addEventListener('click', (e) => { if (e.target === caseModal) closeCaseModal(); });
+
+      /* -----------------------------------------------------------------------
+         LIVE MEDIA ENGINE: LOGO, PORTRAIT & 4:5 GALLERY + LIGHTBOX
+         ----------------------------------------------------------------------- */
+      const logoUploadInput = document.getElementById('logoUploadInput');
+      const profileUploadInput = document.getElementById('profileUploadInput');
+      const gallerySlotInput = document.getElementById('gallerySlotInput');
+      const galleryMultiInput = document.getElementById('galleryMultiInput');
+      const profilePlaceholder = document.getElementById('profilePlaceholder');
+      const profilePreviewImg = document.getElementById('profilePreviewImg');
+
+      function applyBrandLogo(src) {
+        document.querySelectorAll('.brand-svg').forEach((s) => s.classList.toggle('hidden', Boolean(src)));
+        document.querySelectorAll('.brand-img').forEach((img) => {
+          if (src) {
+            img.src = src;
+            img.classList.remove('hidden');
+          } else {
+            img.src = '';
+            img.classList.add('hidden');
+          }
+        });
+      }
+
+      function applyProfilePhoto(src) {
+        if (src) {
+          profilePreviewImg.src = src;
+          profilePreviewImg.classList.remove('hidden');
+          profilePlaceholder.classList.add('hidden');
+        } else {
+          profilePreviewImg.src = '';
+          profilePreviewImg.classList.add('hidden');
+          profilePlaceholder.classList.remove('hidden');
+        }
+      }
+
+      try {
+        const storedLogo = localStorage.getItem(KEYS.LOGO) || STATIC_ASSETS.logo;
+        if (storedLogo) applyBrandLogo(storedLogo);
+        const storedProfile = localStorage.getItem(KEYS.PROFILE) || STATIC_ASSETS.profile;
+        if (storedProfile) applyProfilePhoto(storedProfile);
+      } catch (e) {}
+
+      document.getElementById('navLogoBtn').addEventListener('click', () => {
+        if (state.editMode) logoUploadInput.click();
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      document.getElementById('heroMedallionBtn').addEventListener('click', () => {
+        if (state.editMode) logoUploadInput.click();
+      });
+      document.getElementById('bannerLogoBtn').addEventListener('click', () => logoUploadInput.click());
+      document.getElementById('drawerLogoBtn').addEventListener('click', () => logoUploadInput.click());
+
+      logoUploadInput.addEventListener('change', async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const data = await compressImage(file, 480, 0.9);
+        applyBrandLogo(data);
+        writeRaw(KEYS.LOGO, data);
+        toast('Emblema ENDLOOXS actualizado', 'gold');
+        e.target.value = '';
+      });
+
+      document.getElementById('profileUploadOverlayBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileUploadInput.click();
+      });
+      document.getElementById('profileFrame').addEventListener('click', () => {
+        if (state.editMode) profileUploadInput.click();
+      });
+      document.getElementById('bannerProfileBtn').addEventListener('click', () => profileUploadInput.click());
+      document.getElementById('drawerProfileBtn').addEventListener('click', () => profileUploadInput.click());
+
+      profileUploadInput.addEventListener('change', async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const data = await compressImage(file, 720, 0.86);
+        applyProfilePhoto(data);
+        writeRaw(KEYS.PROFILE, data);
+        toast('Retrato actualizado');
+        e.target.value = '';
+      });
+
+      // 4:5 Editorial Gallery + Fullscreen Lightbox with Prev/Next
+      const galleryGrid = document.getElementById('galleryGrid');
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+
+      function getFilledGalleryIndices() {
+        return gallery.map((item, idx) => (item.src ? idx : -1)).filter((i) => i !== -1);
+      }
+
+      function openLightboxAt(index) {
+        const item = gallery[index];
+        if (!item || !item.src) return;
+        lightboxIndex = index;
+        lightboxImg.src = item.src;
+        lightboxCaption.textContent = `${item.tag} — ${item.title}`;
+        lightboxModal.classList.remove('hidden');
+        lightboxModal.classList.add('flex');
+      }
+
+      function stepLightbox(dir) {
+        const filled = getFilledGalleryIndices();
+        if (filled.length <= 1) return;
+        const pos = filled.indexOf(lightboxIndex);
+        const nextIdx = filled[(pos + dir + filled.length) % filled.length];
+        openLightboxAt(nextIdx);
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.add('hidden');
+        lightboxModal.classList.remove('flex');
+      }
+
+      document.getElementById('closeLightboxBtn').addEventListener('click', closeLightbox);
+      document.getElementById('lbPrevBtn').addEventListener('click', () => stepLightbox(-1));
+      document.getElementById('lbNextBtn').addEventListener('click', () => stepLightbox(1));
+      lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
+
+      function renderGallery() {
+        galleryGrid.innerHTML = '';
+        gallery.forEach((item, idx) => {
+          const card = document.createElement('div');
+          card.className = 'editable-frame group relative aspect-[4/5] rounded-2xl surface-card overflow-hidden flex items-center justify-center transition-all hover:border-[var(--accent)]';
+
+          if (item.src) {
+            card.innerHTML = `
+              <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover cursor-pointer transition-transform duration-700 group-hover:scale-105" />
+              <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-end justify-between gap-2 opacity-95 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+                <div class="min-w-0">
+                  <span class="block font-mono text-[9px] tracking-[0.18em] text-[#C8A24A] uppercase">${item.tag}</span>
+                  <span class="block text-xs font-semibold text-white truncate mt-0.5">${item.title}</span>
+                </div>
+                <div class="edit-overlay opacity-0 pointer-events-none flex items-center gap-1.5 shrink-0">
+                  <button type="button" data-op="replace" title="Cambiar foto" class="p-1.5 rounded-full bg-white/95 text-[#0A0F1C] hover:bg-white">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
+                    </svg>
+                  </button>
+                  <button type="button" data-op="delete" title="Eliminar foto" class="p-1.5 rounded-full bg-white/95 text-[#DC2626] hover:bg-white">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            `;
+
+            card.querySelector('img').addEventListener('click', () => openLightboxAt(idx));
+            card.querySelector('[data-op="replace"]').addEventListener('click', (e) => {
+              e.stopPropagation();
+              activeSlotIndex = idx;
+              gallerySlotInput.click();
+            });
+            card.querySelector('[data-op="delete"]').addEventListener('click', (e) => {
+              e.stopPropagation();
+              if (idx < 4) gallery[idx].src = '';
+              else gallery.splice(idx, 1);
+              writeJSON(KEYS.GALLERY, gallery);
+              renderGallery();
+              toast('Foto removida');
+            });
+          } else {
+            card.classList.add('cursor-pointer', 'bg-gradient-to-b', ...(item.gradient || 'from-[#0B1224] to-[#050814]').split(' '));
+            card.innerHTML = `
+              <div class="absolute inset-0 bg-arch-grid opacity-30 pointer-events-none"></div>
+              <div class="relative z-10 w-full h-full p-5 flex flex-col justify-between text-white">
+                <div class="flex items-center justify-between font-mono text-[9px] tracking-[0.18em] text-white/55">
+                  <span>${item.tag}</span>
+                  <span>4:5</span>
+                </div>
+                <div class="my-auto flex flex-col items-center text-center">
+                  <div class="w-11 h-11 rounded-full bg-white/[0.07] border border-white/15 flex items-center justify-center mb-3 group-hover:border-[#C8A24A]/70 transition-colors">
+                    <svg class="w-5 h-5 text-[#C8A24A]" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                  </div>
+                  <p class="font-display font-semibold text-sm text-white">${item.title}</p>
+                  <span class="edit-overlay opacity-70 sm:opacity-0 sm:group-hover:opacity-100 mt-1.5 font-mono text-[10px] text-[#60A5FA] uppercase tracking-wider transition-opacity">+ Subir Imagen</span>
+                </div>
+                <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              </div>
+            `;
+            card.addEventListener('click', () => {
+              activeSlotIndex = idx;
+              gallerySlotInput.click();
+            });
+          }
+
+          galleryGrid.appendChild(card);
+        });
+      }
+
+      document.getElementById('addGalleryBtn').addEventListener('click', () => galleryMultiInput.click());
+      document.getElementById('drawerGalleryBtn').addEventListener('click', () => galleryMultiInput.click());
+
+      gallerySlotInput.addEventListener('change', async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file || activeSlotIndex === null) return;
+        const data = await compressImage(file, 920, 0.82);
+        gallery[activeSlotIndex].src = data;
+        writeJSON(KEYS.GALLERY, gallery);
+        renderGallery();
+        toast('Foto guardada en tu galería');
+        activeSlotIndex = null;
+        e.target.value = '';
+      });
+
+      galleryMultiInput.addEventListener('change', async (e) => {
+        const files = Array.from(e.target.files || []);
+        if (!files.length) return;
+        for (const file of files) {
+          const data = await compressImage(file, 880, 0.80);
+          const clean = file.name.replace(/\.[^/.]+$/, '').slice(0, 22);
+          const empty = gallery.find((g) => !g.src);
+          if (empty) {
+            empty.src = data;
+            if (clean) empty.title = clean;
+          } else {
+            gallery.push({
+              id: 'g-' + Date.now() + Math.random(),
+              tag: 'ENDLOOXS',
+              title: clean || 'Archivo Personal',
+              src: data,
+              gradient: 'from-[#0B1224] to-[#050814]',
+            });
+          }
+        }
+        writeJSON(KEYS.GALLERY, gallery);
+        renderGallery();
+        toast(`${files.length} ${files.length === 1 ? 'foto agregada' : 'fotos agregadas'}`);
+        e.target.value = '';
+      });
+
+      /* -----------------------------------------------------------------------
+         COPY TO CLIPBOARD (iFrame-safe execCommand) + CONTACT LAUNCHERS
+         ----------------------------------------------------------------------- */
+      document.querySelectorAll('.copy-trigger').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const val = btn.dataset.copy;
+          const label = btn.dataset.copyName || 'Dato';
+          let ok = false;
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = val;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+          } catch (err) {
+            ok = false;
+          }
+          if (ok) {
+            const prev = btn.textContent;
+            btn.textContent = 'Copiado';
+            toast(`${label} copiado al portapapeles`);
+            setTimeout(() => { btn.textContent = prev; }, 1700);
+          }
+        });
+      });
+
+      const topicBtns = document.querySelectorAll('.topic-btn');
+      function selectBriefTopic(topic) {
+        activeTopic = topic;
+        topicBtns.forEach((btn) => {
+          const on = btn.dataset.topic === topic;
+          btn.classList.toggle('accent-fill', on);
+          btn.classList.toggle('surface-alt', !on);
+          btn.classList.toggle('ink-sub', !on);
+        });
+      }
+      topicBtns.forEach((b) => b.addEventListener('click', () => selectBriefTopic(b.dataset.topic)));
+
+      function getBriefPayload() {
+        const name = document.getElementById('briefName').value.trim();
+        const msg = document.getElementById('briefMsg').value.trim();
+        if (!msg) {
+          toast('Escribe un mensaje breve antes de enviar.', 'gold');
+          document.getElementById('briefMsg').focus();
+          return null;
+        }
+        return { name, topic: activeTopic, msg };
+      }
+
+      document.getElementById('launchWhatsAppBtn').addEventListener('click', () => {
+        const d = getBriefPayload();
+        if (!d) return;
+        const greeting = d.name ? `Hola Edgar (ENDLOOXS), soy ${d.name}.` : 'Hola Edgar (ENDLOOXS).';
+        const text = `${greeting}\n*Área:* ${d.topic}\n*Detalle:* ${d.msg}`;
+        window.open(`https://wa.me/50768890772?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+        toast('Abriendo WhatsApp...');
+      });
+
+      document.getElementById('launchEmailBtn').addEventListener('click', () => {
+        const d = getBriefPayload();
+        if (!d) return;
+        const subject = `[ENDLOOXS] ${d.topic}${d.name ? ' — ' + d.name : ''}`;
+        const body = `${d.name ? 'Hola Edgar, soy ' + d.name + '.\n\n' : 'Hola Edgar,\n\n'}Área: ${d.topic}\n\nDetalle:\n${d.msg}`;
+        window.location.href = `mailto:ej.rj2007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        toast('Abriendo cliente de correo...');
+      });
+
+      /* -----------------------------------------------------------------------
+         SCROLL REVEAL + KEYBOARD ACCESSIBILITY + BOOT
+         ----------------------------------------------------------------------- */
+      const revealItems = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        revealItems.forEach((el) => observer.observe(el));
+      } else {
+        revealItems.forEach((el) => el.classList.add('visible'));
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeSettings();
+          closeCaseModal();
+          closeLightbox();
+        }
+        const lbOpen = !lightboxModal.classList.contains('hidden');
+        if (lbOpen && e.key === 'ArrowRight') stepLightbox(1);
+        if (lbOpen && e.key === 'ArrowLeft') stepLightbox(-1);
+
+        const typing = ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
+        if (!lbOpen && !typing && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
+          const discSec = document.getElementById('disciplinas').getBoundingClientRect();
+          if (discSec.top < window.innerHeight && discSec.bottom > 0) {
+            setDiscipline(currentDiscipline + (e.key === 'ArrowRight' ? 1 : -1));
+          }
+        }
+      });
+
+      window.addEventListener('load', () => {
+        resizeHeroCanvas();
+        renderLightField();
+        animateMonolith();
+        positionFilterSlider();
+      });
+
+      applyState();
+      renderGallery();
+      resizeHeroCanvas();
+    })();
+  </script>
+</body>
+</html>
